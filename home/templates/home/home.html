@@ -48,109 +48,80 @@
                     <div class="container py-4">
                         <div class="row g-5">
                             <div class="col-lg-6 fadeInLeft animated" data-animation="fadeInLeft" data-delay="1s" style="animation-delay: 1s;">
-                                <div class="bg-secondary rounded p-5">
-                                    <h4 class="text-white mb-4">CALCULATE CABLE COST</h4>
-                                    <form id="cableCostForm">
-                                        <div class="row g-3">
-                                            <div class="col-12">
-                                                <select class="form-select" id="cableType" aria-label="Cable type selection">
-                                                    <option selected>Select Cable Type</option>
-                                                    <option value="copper">Copper Cable</option>
-                                                    <option value="aluminum">Aluminum Cable</option>
-                                                    <option value="fiber">Fiber Optic Cable</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-12">
-                                                <select class="form-select" id="cableThickness" aria-label="Cable thickness selection">
-                                                    <option selected>Select Thickness (mm²)</option>
-                                                    <option value="1.5">1.5 mm²</option>
-                                                    <option value="2.5">2.5 mm²</option>
-                                                    <option value="4">4 mm²</option>
-                                                    <option value="6">6 mm²</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="input-group">
-                                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
-                                                        <span class="fas fa-ruler"></span><span class="ms-1">Length (m)</span>
-                                                    </div>
-                                                    <input class="form-control" type="number" id="cableLength" placeholder="Enter Length in Meters" aria-label="Cable length">
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <button class="btn btn-light w-100 py-2" type="submit">Calculate Cost</button>
-                                            </div>
-                                            <div class="col-12">
-                                                <div id="costResult" class="text-white mt-3"></div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 d-none d-lg-flex fadeInRight animated" data-animation="fadeInRight" data-delay="1s" style="animation-delay: 1s;">
-                                <div class="text-start">
-                                    <h1 class="display-5 text-white">Get Your Cable Quote Now</h1>
-                                    <p>High-quality wires and cables for all your needs</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                              <div class="bg-secondary rounded p-5">
+    <h4 class="text-white mb-4">CALCULATE CABLE COST</h4>
+    <form id="cableCostForm">
+        <div class="row g-3">
 
-            <!-- Slide 2 -->
-            <div class="carousel-item">
-                <img src="{% static 'img/cable-carousel-1.jpeg' %}" class="img-fluid w-100" alt="Second slide"/>
-                <div class="carousel-caption">
-                    <div class="container py-4">
-                        <div class="row g-5">
-                            <div class="col-lg-6 fadeInLeft animated" data-animation="fadeInLeft" data-delay="1s" style="animation-delay: 1s;">
-                                <div class="bg-secondary rounded p-5">
-                                    <h4 class="text-white mb-4">CALCULATE CABLE COST</h4>
-                                    <form id="cableCostForm2">
-                                        <div class="row g-3">
-                                            <div class="col-12">
-                                                <select class="form-select" id="cableType2" aria-label="Cable type selection">
-                                                    <option selected>Select Cable Type</option>
-                                                    <option value="copper">Copper Cable</option>
-                                                    <option value="aluminum">Aluminum Cable</option>
-                                                    <option value="fiber">Fiber Optic Cable</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-12">
-                                                <select class="form-select" id="cableThickness2" aria-label="Cable thickness selection">
-                                                    <option selected>Select Thickness (mm²)</option>
-                                                    <option value="1.5">1.5 mm²</option>
-                                                    <option value="2.5">2.5 mm²</option>
-                                                    <option value="4">4 mm²</option>
-                                                    <option value="6">6 mm²</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="input-group">
-                                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
-                                                        <span class="fas fa-ruler"></span><span class="ms-1">Length (m)</span>
-                                                    </div>
-                                                    <input class="form-control" type="number" id="cableLength2" placeholder="Enter Length in Meters" aria-label="Cable length">
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <button class="btn btn-light w-100 py-2" type="submit">Calculate Cost</button>
-                                            </div>
-                                            <div class="col-12">
-                                                <div id="costResult2" class="text-white mt-3"></div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 d-none d-lg-flex fadeInRight animated" data-animation="fadeInRight" data-delay="1s" style="animation-delay: 1s;">
-                                <div class="text-start">
-                                    <h1 class="display-5 text-white">Custom Cable Solutions</h1>
-                                    <p>Tailored for industrial and residential use</p>
-                                </div>
-                            </div>
-                        </div>
+     
+<div class="col-md-4">
+    <select id="cableCategory" class="form-select" name="category" required>
+        <option value="" disabled selected>Select Cable Category</option>
+        <option value="Ladder">Ladder</option>
+     
+        <!-- زوّد الخيارات حسب اللي عندك -->
+    </select>
+</div>
+
+<!-- نوع المقاس -->
+<div class="col-md-4">
+    <select id="cableType" class="form-select" name="type" required>
+        <option value="" disabled selected>Select Cable Type</option>
+        {% for t in types %}
+            <option value="{{ t }}">{{ t }}</option>
+        {% endfor %}
+    </select>
+</div>
+
+<!-- السُمك -->
+<div class="col-md-4">
+    <select id="cableThickness" class="form-select" name="thickness" required>
+        <option value="" disabled selected>Select Thickness</option>
+        {% for th in thicknesses %}
+            <option value="{{ th }}">{{ th }} mm</option>
+        {% endfor %}
+    </select>
+</div>
+
+<!-- الجانب -->
+<div class="col-md-4">
+    <select id="cableSide" class="form-select" name="side" required>
+        <option value="" disabled selected>Select Side</option>
+        {% for s in sides %}
+            <option value="{{ s }}">{{ s }}</option>
+        {% endfor %}
+    </select>
+</div>
+
+<!-- الأبعاد -->
+<div class="col-md-4">
+    <select id="cableDim" class="form-select" name="dim" required>
+        <option value="" disabled selected>Select Dimension</option>
+        {% for d in dims %}
+            <option value="{{ d }}">{{ d }}</option>
+        {% endfor %}
+    </select>
+</div>
+
+<!-- زرار الحساب -->
+<div class="col-12">
+    <button class="btn btn-light w-100 py-2" type="submit">Calculate Cost</button>
+</div>
+
+            <div class="col-12">
+                <div id="costResult" class="text-white mt-3"></div>
+            </div>
+        </div>
+    </form>
+</div>
+
+            <div class="col-12">
+                <div id="costResult" class="text-white mt-3"></div>
+            </div>
+        </div>
+    </form>
+</div>
+                           
                     </div>
                 </div>
             </div>
@@ -161,38 +132,78 @@
 
 <!-- JavaScript for Cost Calculation -->
 <script>
-    document.getElementById('cableCostForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        calculateCost('cableType', 'cableThickness', 'cableLength', 'costResult');
-    });
+function calculateCost(typeId, thicknessId, dimId, lengthId, resultId, url = "{% url 'home:calculate_price' %}") {
+    const type = document.getElementById(typeId).value;
+    const thickness = document.getElementById(thicknessId).value;
+    const dim = document.getElementById(dimId)?.value || "";  // optional
+    const length = document.getElementById(lengthId).value;
+    const resultDiv = document.getElementById(resultId);
 
-    document.getElementById('cableCostForm2').addEventListener('submit', function(e) {
-        e.preventDefault();
-        calculateCost('cableType2', 'cableThickness2', 'cableLength2', 'costResult2');
-    });
-
-    function calculateCost(typeId, thicknessId, lengthId, resultId) {
-        const cableType = document.getElementById(typeId).value;
-        const cableThickness = parseFloat(document.getElementById(thicknessId).value);
-        const cableLength = parseFloat(document.getElementById(lengthId).value);
-
-        let pricePerMeter = 0;
-
-        if (cableType === 'copper') {
-            pricePerMeter = cableThickness * 2; // $2 per mm²
-        } else if (cableType === 'aluminum') {
-            pricePerMeter = cableThickness * 1.2; // $1.2 per mm²
-        } else if (cableType === 'fiber') {
-            pricePerMeter = cableThickness * 3; // $3 per mm²
-        }
-
-        if (cableType && cableThickness && cableLength > 0) {
-            const totalCost = (pricePerMeter * cableLength).toFixed(2);
-            document.getElementById(resultId).innerText = `Estimated Cost: $${totalCost}`;
+    fetch(url, {
+        method: "POST",
+        headers: {
+            "X-CSRFToken": "{{ csrf_token }}",
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: new URLSearchParams({
+            type: type,
+            thickness: thickness,
+            dim: dim,
+            length: length
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.total_price) {
+            resultDiv.innerHTML = `
+                <strong>Total Price:</strong> ${data.total_price} EGP<br>
+                <strong>Price/m:</strong> ${data.price_per_meter || 'N/A'} EGP<br>
+                <strong>Length:</strong> ${data.length || length} m
+            `;
         } else {
-            document.getElementById(resultId).innerText = 'Please fill all fields correctly.';
+            resultDiv.innerHTML = `<span class="text-danger">Error: ${data.error || "No match found"}</span>`;
         }
-    }
+    })
+    .catch(error => {
+        resultDiv.innerHTML = `<span class="text-danger">Error: ${error}</span>`;
+    });
+}
+
+// استدعاءات للفورمات
+document.getElementById("cableCostForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const type = document.getElementById("cableType").value;
+    const thickness = document.getElementById("cableThickness").value;
+    const dim = document.getElementById("cableSize").value;
+    const length = document.getElementById("cableLength").value;
+
+    fetch("{% url 'home:calculate_price' %}", {
+        method: "POST",
+        headers: {
+            "X-CSRFToken": "{{ csrf_token }}",
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: new URLSearchParams({
+            type: type,
+            thickness: thickness,
+            dim: dim,
+            length: length
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.total_price) {
+            document.getElementById("costResult").innerHTML = `
+                <strong>Total Price:</strong> ${data.total_price} EGP<br>
+                <strong>Price/m:</strong> ${data.price_per_meter} EGP<br>
+                <strong>Length:</strong> ${data.length} m
+            `;
+        } else {
+            document.getElementById("costResult").innerText = "No match found.";
+        }
+    });
+});
 </script>
 
 <!-- Features Start -->
