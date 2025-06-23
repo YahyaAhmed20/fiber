@@ -50,70 +50,159 @@
                             <div class="col-lg-6 fadeInLeft animated" data-animation="fadeInLeft" data-delay="1s" style="animation-delay: 1s;">
                               <div class="bg-secondary rounded p-5">
     <h4 class="text-white mb-4">CALCULATE CABLE COST</h4>
-    <form id="cableCostForm">
-        <div class="row g-3">
-
-     
-<div class="col-md-4">
-    <select id="cableCategory" class="form-select" name="category" required>
-        <option value="" disabled selected>Select Cable Category</option>
-        <option value="Ladder">Ladder</option>
-     
-        <!-- زوّد الخيارات حسب اللي عندك -->
-    </select>
-</div>
-
-<!-- نوع المقاس -->
-<div class="col-md-4">
-    <select id="cableType" class="form-select" name="type" required>
-        <option value="" disabled selected>Select Cable Type</option>
-        {% for t in types %}
-            <option value="{{ t }}">{{ t }}</option>
-        {% endfor %}
-    </select>
-</div>
-
-<!-- السُمك -->
-<div class="col-md-4">
-    <select id="cableThickness" class="form-select" name="thickness" required>
-        <option value="" disabled selected>Select Thickness</option>
-        {% for th in thicknesses %}
-            <option value="{{ th }}">{{ th }} mm</option>
-        {% endfor %}
-    </select>
-</div>
-
-<!-- الجانب -->
-<div class="col-md-4">
-    <select id="cableSide" class="form-select" name="side" required>
-        <option value="" disabled selected>Select Side</option>
-        {% for s in sides %}
-            <option value="{{ s }}">{{ s }}</option>
-        {% endfor %}
-    </select>
-</div>
-
-<!-- الأبعاد -->
-<div class="col-md-4">
-    <select id="cableDim" class="form-select" name="dim" required>
-        <option value="" disabled selected>Select Dimension</option>
-        {% for d in dims %}
-            <option value="{{ d }}">{{ d }}</option>
-        {% endfor %}
-    </select>
-</div>
-
-<!-- زرار الحساب -->
-<div class="col-12">
-    <button class="btn btn-light w-100 py-2" type="submit">Calculate Cost</button>
-</div>
-
-            <div class="col-12">
-                <div id="costResult" class="text-white mt-3"></div>
-            </div>
+  <form id="priceForm" method="POST">
+    <div class="row g-3">
+        <!-- كاتيجوري -->
+        <div class="col-md-4">
+            <select id="cableCategory" class="form-select" name="category" required>
+                <option value="" disabled selected>Select Cable Category</option>
+                <option value="Ladder">Ladder</option>
+            </select>
         </div>
-    </form>
-</div>
+
+        <!-- نوع المقاس -->
+        <div class="col-md-4">
+            <select id="cableType" class="form-select" name="type" required>
+                <option value="" disabled selected>Select Cable Type</option>
+                {% for t in types %}
+                    <option value="{{ t }}">{{ t }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- السُمك -->
+        <div class="col-md-4">
+            <select id="cableThickness" class="form-select" name="thickness" required>
+                <option value="" disabled selected>Select Thickness</option>
+                {% for th in thicknesses %}
+                    <option value="{{ th }}">{{ th }} mm</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- الجانب -->
+        <div class="col-md-4">
+            <select id="cableSide" class="form-select" name="side" required>
+                <option value="" disabled selected>Select Side</option>
+                {% for s in sides %}
+                    <option value="{{ s }}">{{ s }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- الأبعاد -->
+        <div class="col-md-4">
+            <select id="cableDim" class="form-select" name="dim" required>
+                <option value="" disabled selected>Select Dimension</option>
+                {% for d in dims %}
+                    <option value="{{ d }}">{{ d }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- الطول -->
+        <div class="col-md-4">
+            <input type="number" step="0.01" min="0" id="cableLength" name="length" class="form-control" placeholder="Enter Length in meters" required>
+        </div>
+
+        <!-- زرار الحساب -->
+        <div class="col-12">
+            <button class="btn btn-primary w-100 py-2" type="submit">Calculate Cost</button>
+        </div>
+
+        <!-- النتيجة -->
+        <div class="col-12 mt-3">
+            <div id="result" class="alert alert-info d-none"></div>
+        </div>
+    </div>
+</form>
+
+
+html
+Copy
+Edit
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById("priceForm");
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();  // ⛔ يمنع الـ refresh
+
+        const type = document.getElementById("cableType").value;
+        const thickness = document.getElementById("cableThickness").value;
+        const side = document.getElementById("cableSide").value;
+        const dim = document.getElementById("cableDim").value;
+        const length = document.getElementById("cableLength").value;
+
+        fetch("{% url 'home:calculate_price' %}", {
+            method: "POST",
+            headers: {
+                "X-CSRFToken": "{{ csrf_token }}",
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: new URLSearchParams({
+                type: type,
+                thickness: thickness,
+                side: side,
+                dim: dim,
+                length: length
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            const resultDiv = document.getElementById("costResult");
+            if (data.total_price) {
+                resultDiv.innerHTML = `
+                    ✅ <strong>Total Price:</strong> ${data.total_price} EGP<br>
+                    💰 <strong>Price/m:</strong> ${data.price_per_meter} EGP<br>
+                    📏 <strong>Length:</strong> ${data.length} m
+                `;
+            } else {
+                resultDiv.innerHTML = `<span class="text-danger">No match found.</span>`;
+            }
+        })
+        .catch(error => {
+            document.getElementById("costResult").innerHTML =
+                `<span class="text-danger">Error: ${error}</span>`;
+        });
+    });
+});
+
+ const optionsData = {{ options_json|safe }};
+
+    document.getElementById('cableType').addEventListener('change', function () {
+        const selectedType = this.value;
+        const options = optionsData[selectedType] || [];
+
+        const thicknessSelect = document.getElementById('cableThickness');
+        const sideSelect = document.getElementById('cableSide');
+        const dimSelect = document.getElementById('cableDim');
+
+        // فضي كل الـ dropdowns الأول
+        thicknessSelect.innerHTML = '<option disabled selected>Select Thickness</option>';
+        sideSelect.innerHTML = '<option disabled selected>Select Side</option>';
+        dimSelect.innerHTML = '<option disabled selected>Select Dimension</option>';
+
+        const addedThick = new Set(), addedSide = new Set(), addedDim = new Set();
+
+        // عبّي كل dropdown بالحاجات المرتبطة بالـ type
+        options.forEach(opt => {
+            if (!addedThick.has(opt.thickness)) {
+                addedThick.add(opt.thickness);
+                thicknessSelect.innerHTML += `<option value="${opt.thickness}">${opt.thickness} mm</option>`;
+            }
+            if (!addedSide.has(opt.side)) {
+                addedSide.add(opt.side);
+                sideSelect.innerHTML += `<option value="${opt.side}">${opt.side}</option>`;
+            }
+            if (!addedDim.has(opt.dim)) {
+                addedDim.add(opt.dim);
+                dimSelect.innerHTML += `<option value="${opt.dim}">${opt.dim}</option>`;
+            }
+        });
+    });
+</script>
+
 
             <div class="col-12">
                 <div id="costResult" class="text-white mt-3"></div>
@@ -131,80 +220,7 @@
 <!-- Carousel End -->
 
 <!-- JavaScript for Cost Calculation -->
-<script>
-function calculateCost(typeId, thicknessId, dimId, lengthId, resultId, url = "{% url 'home:calculate_price' %}") {
-    const type = document.getElementById(typeId).value;
-    const thickness = document.getElementById(thicknessId).value;
-    const dim = document.getElementById(dimId)?.value || "";  // optional
-    const length = document.getElementById(lengthId).value;
-    const resultDiv = document.getElementById(resultId);
 
-    fetch(url, {
-        method: "POST",
-        headers: {
-            "X-CSRFToken": "{{ csrf_token }}",
-            "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: new URLSearchParams({
-            type: type,
-            thickness: thickness,
-            dim: dim,
-            length: length
-        })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.total_price) {
-            resultDiv.innerHTML = `
-                <strong>Total Price:</strong> ${data.total_price} EGP<br>
-                <strong>Price/m:</strong> ${data.price_per_meter || 'N/A'} EGP<br>
-                <strong>Length:</strong> ${data.length || length} m
-            `;
-        } else {
-            resultDiv.innerHTML = `<span class="text-danger">Error: ${data.error || "No match found"}</span>`;
-        }
-    })
-    .catch(error => {
-        resultDiv.innerHTML = `<span class="text-danger">Error: ${error}</span>`;
-    });
-}
-
-// استدعاءات للفورمات
-document.getElementById("cableCostForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    const type = document.getElementById("cableType").value;
-    const thickness = document.getElementById("cableThickness").value;
-    const dim = document.getElementById("cableSize").value;
-    const length = document.getElementById("cableLength").value;
-
-    fetch("{% url 'home:calculate_price' %}", {
-        method: "POST",
-        headers: {
-            "X-CSRFToken": "{{ csrf_token }}",
-            "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: new URLSearchParams({
-            type: type,
-            thickness: thickness,
-            dim: dim,
-            length: length
-        })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.total_price) {
-            document.getElementById("costResult").innerHTML = `
-                <strong>Total Price:</strong> ${data.total_price} EGP<br>
-                <strong>Price/m:</strong> ${data.price_per_meter} EGP<br>
-                <strong>Length:</strong> ${data.length} m
-            `;
-        } else {
-            document.getElementById("costResult").innerText = "No match found.";
-        }
-    });
-});
-</script>
 
 <!-- Features Start -->
 <div class="container-fluid feature py-5">

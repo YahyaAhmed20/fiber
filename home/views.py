@@ -1,66 +1,62 @@
-from django.shortcuts import render
 import pandas as pd
 import os
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
+from django.shortcuts import render
 from project.settings import BASE_DIR
+import numpy as np
+import json
 
-# تحميل الملف مرة واحدة
-EXCEL_PATH = os.path.join(BASE_DIR, 'static', 'New Microsoft Excel Worksheet.xlsx')
-df = pd.read_excel(EXCEL_PATH, skiprows=2)
+# ❗ استخدم الملف الجديد
+EXCEL_PATH = os.path.join(BASE_DIR, 'static', 'calculated_prices.xlsx')
+df = pd.read_excel(EXCEL_PATH)
 
-df.columns = [
-    'type', 'thickness', 'side', 'dim',
-    'metal_price', 'galv_price',
-    'manuf_price', 'price_plain', 'price_with_cover',
-    'price_with_joints', 'price_final'
-]
-df = df[df['type'] != 'type']
+# نتاكد الأعمدة مكتوبة صح
+df.columns = df.columns.str.strip().str.lower()
 
-df = df.dropna(subset=['type', 'thickness', 'side', 'dim', 'price_final'])
-types = sorted(df['type'].astype(str).unique())
-thicknesses = sorted(df['thickness'].astype(str).unique())
-sides = sorted(df['side'].astype(str).unique())
-dims = sorted(df['dim'].astype(str).unique())
+# نفصل ladder فقط
 df_ladder = df[df['type'].astype(str).str.contains(r"\*", na=False)]
 
-# تبعتهم للتمبلت زي كده
-# تمريرهم للتمبلت
-context = {
-    'types': types,
-    'thicknesses': thicknesses,
-    'sides': sides,
-    'dims': dims,
-}
-# نفلتر ladder بس
+grouped_data = df_ladder.groupby('type').apply(
+    lambda x: x[['thickness', 'side', 'dim']].drop_duplicates().to_dict(orient='records')
+).to_dict()
+types = sorted(df_ladder['type'].astype(str).unique())
+thicknesses = sorted(df_ladder['thickness'].astype(str).unique())
+sides = sorted(df_ladder['side'].astype(str).unique())
+dims = sorted(df_ladder['dim'].astype(str).unique())
 
 @csrf_exempt
 def home(request):
-    # نعرض فقط البيانات اللي فيها *
-    types = sorted(df_ladder['type'].astype(str).unique())
-    thicknesses = sorted(df_ladder['thickness'].astype(str).unique())
-    dims = sorted(df_ladder['dim'].astype(str).unique())
+    ...
+    options_json = json.dumps(grouped_data)  # ⬅️ لازم تكون محضر grouped_data زي ما عملنا
 
     return render(request, 'home/home.html', {
         'types': types,
         'thicknesses': thicknesses,
-        'dims': dims,
         'sides': sides,
+        'dims': dims,
+        'options_json': options_json,  # ⬅️ مهم للـ JS
     })
+
 @csrf_exempt
 def calculate_price(request):
     if request.method == "POST":
         type_ = request.POST.get("type")
-        thickness = request.POST.get("thickness")
+        thickness = float(request.POST.get("thickness"))
+        side = float(request.POST.get("side"))
+        dim = float(request.POST.get("dim"))
         length = float(request.POST.get("length", 0))
 
         result = df_ladder[
             (df_ladder['type'].astype(str) == type_) &
-            (df_ladder['thickness'].astype(str) == thickness)
+            (np.isclose(df_ladder['thickness'].astype(float), thickness)) &
+            (np.isclose(df_ladder['side'].astype(float), side)) &
+            (np.isclose(df_ladder['dim'].astype(float), dim))
         ]
 
         if not result.empty:
-            price_per_meter = float(result.iloc[0]['price_final'])
+            row = result.iloc[0]
+            price_per_meter = float(row['price_final'])  # بناخد السعر النهائي من الجدول
             total_price = round(price_per_meter * length, 2)
 
             return JsonResponse({
