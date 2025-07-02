@@ -6,4 +6,4 @@ from django.shortcuts import render,redirect
 
 def send_text(request):
 
-    return render(request,'contact/contact.html')
+    return render(request,'contact/contact.html', {'active_page': 'contact'})

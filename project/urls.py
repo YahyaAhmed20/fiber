@@ -22,6 +22,8 @@ urlpatterns = [
     path('', include('home.urls', namespace='home')),
 
     path('contact-us/', include('contact.urls', namespace='contact')),
+    path('about/', include('about.urls', namespace='about')),
+
 
     
     

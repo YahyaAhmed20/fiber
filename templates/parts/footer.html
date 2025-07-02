@@ -5,23 +5,20 @@
                         <div class="footer-item d-flex flex-column">
                             <div class="footer-item">
                                 <h4 class="text-white mb-4">About Us</h4>
-                                <p class="mb-3">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit.</p>
+                                <p class="mb-3">ROVANA TRADE COMPANY is a leading Egyptian manufacturer specializing in high-quality cable support systems, including cable trays and ladders. With a fully equipped factory and expert team, we deliver durable, customized, and reliable solutions for electrical and industrial infrastructure across Egypt and the Middle East.
+
+</p>
                             </div>
-                            <div class="position-relative">
-                                <input class="form-control rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Enter your email">
-                                <button type="button" class="btn btn-secondary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2">Subscribe</button>
-                            </div>
+                        
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
                             <h4 class="text-white mb-4">Quick Links</h4>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> About</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Cars</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Car Types</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Team</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Contact us</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
+                            <a href="{% url 'home:home' %}"><i class="fas fa-angle-right me-2"></i> Home</a>
+                            <a href="{% url 'about:about' %}"><i class="fas fa-angle-right me-2"></i> About</a>
+                        
+                            <a href="{% url 'contact:send_text' %}"><i class="fas fa-angle-right me-2"></i> Contact us</a>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-xl-3">

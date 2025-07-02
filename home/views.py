@@ -47,6 +47,7 @@ def home(request):
         'tray_dims': tray_dims,
         'options_json_ladder': json.dumps(grouped_data),
         'options_json_tray': json.dumps(grouped_tray),
+        'active_page': 'home',
     })
 
 @csrf_exempt
