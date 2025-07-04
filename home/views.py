@@ -6,15 +6,22 @@ from django.views.decorators.csrf import csrf_exempt
 from .models import LadderPrice, TrayPrice
 import pandas as pd
 
-# 🧠 إعداد بيانات ladder و tray للتعامل مع القوائم
+# 🧠 جلب بيانات الـ Ladder والـ Tray وتحويلها إلى DataFrame
 df_ladder = pd.DataFrame.from_records(LadderPrice.objects.all().values())
 df_tray = pd.DataFrame.from_records(TrayPrice.objects.all().values())
 
-# ✅ لو مفيش بيانات في قاعدة البيانات، نتفادى الانهيار
+# ✅ تجهيز بيانات الـ ladder
 if not df_ladder.empty:
-    grouped_data = df_ladder.groupby('type').apply(
-        lambda x: x[['thickness', 'side', 'dim']].drop_duplicates().to_dict(orient='records')
-    ).to_dict()
+    grouped_data = (
+        df_ladder.groupby('type')
+        .apply(
+            lambda x: x[['thickness', 'side', 'dim']]
+            .drop_duplicates()
+            .to_dict(orient='records'),
+            include_groups=False
+        )
+        .to_dict()
+    )
 
     types = sorted(df_ladder['type'].astype(str).unique())
     thicknesses = sorted(df_ladder['thickness'].astype(str).unique())
@@ -23,10 +30,18 @@ if not df_ladder.empty:
 else:
     grouped_data, types, thicknesses, sides, dims = {}, [], [], [], []
 
+# ✅ تجهيز بيانات الـ tray
 if not df_tray.empty:
-    grouped_tray = df_tray.groupby('type').apply(
-        lambda x: x[['thickness', 'dim']].drop_duplicates().to_dict(orient='records')
-    ).to_dict()
+    grouped_tray = (
+        df_tray.groupby('type')
+        .apply(
+            lambda x: x[['thickness', 'dim']]
+            .drop_duplicates()
+            .to_dict(orient='records'),
+            include_groups=False
+        )
+        .to_dict()
+    )
 
     tray_types = sorted(df_tray['type'].astype(str).unique())
     tray_thicknesses = sorted(df_tray['thickness'].astype(str).unique())
@@ -34,6 +49,7 @@ if not df_tray.empty:
 else:
     grouped_tray, tray_types, tray_thicknesses, tray_dims = {}, [], [], []
 
+# 📄 عرض الصفحة الرئيسية
 @csrf_exempt
 def home(request):
     return render(request, 'home/home.html', {
@@ -47,9 +63,10 @@ def home(request):
         'tray_dims': tray_dims,
         'options_json_ladder': json.dumps(grouped_data),
         'options_json_tray': json.dumps(grouped_tray),
-        'active_page': 'home',
+        'active_page': 'home',  # لتحديد التبويب النشط في الـ navbar
     })
 
+# 🔢 حساب السعر
 @csrf_exempt
 def calculate_price(request):
     if request.method == "POST":
@@ -59,6 +76,7 @@ def calculate_price(request):
         dim = request.POST.get("dim")
         length = request.POST.get("length")
 
+        # ✅ التأكد من كل القيم المطلوبة موجودة
         if not all([category, type_, thickness, dim, length]):
             return JsonResponse({"error": "Missing required fields"}, status=400)
 
@@ -70,6 +88,7 @@ def calculate_price(request):
             return JsonResponse({"error": "Invalid number input"}, status=400)
 
         if category == "ladder":
+            # ladder يحتاج قيمة side
             side_value = request.POST.get("side")
             if side_value in [None, '', 'undefined']:
                 return JsonResponse({"error": "Side is required for ladder"}, status=400)
@@ -79,6 +98,7 @@ def calculate_price(request):
             except ValueError:
                 return JsonResponse({"error": "Invalid side input"}, status=400)
 
+            # البحث عن السعر
             result = LadderPrice.objects.filter(
                 type=type_,
                 thickness=thickness,
@@ -111,4 +131,5 @@ def calculate_price(request):
             "length": length
         })
 
+    # 🚫 لو مش POST
     return JsonResponse({"error": "Invalid request"}, status=400)
