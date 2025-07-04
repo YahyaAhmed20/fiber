@@ -16,7 +16,7 @@
         <!-- Contact Start -->
         <div class="container-fluid contact py-5">
             <div class="container py-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.3s">
                     <h1 class="display-5 text-capitalize text-primary mb-3">Get in Touch</h1>
                     <p class="mb-0">Have questions about our tray and ladder cables or need a custom solution? Fill out the form below, and our team at Rovana will get back to you promptly. For immediate assistance, call us or email our support team.</p>
                 </div>
@@ -72,51 +72,73 @@
                     <div class="col-xl-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="bg-secondary p-5 rounded">
                             <h4 class="text-primary mb-4">Request a Quote or Inquiry</h4>
-                            <form>
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                                        {{ message }}
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                            <form method="POST">
+                                {% csrf_token %}
                                 <div class="row g-4">
                                     <div class="col-lg-12 col-xl-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                            {{ form.name }}
                                             <label for="name">Your Name</label>
+                                            {% if form.name.errors %}
+                                                <small class="text-danger">{{ form.name.errors.as_text }}</small>
+                                            {% endif %}
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-xl-6">
                                         <div class="form-floating">
-                                            <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                            {{ form.email }}
                                             <label for="email">Your Email</label>
+                                            {% if form.email.errors %}
+                                                <small class="text-danger">{{ form.email.errors.as_text }}</small>
+                                            {% endif %}
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-xl-6">
                                         <div class="form-floating">
-                                            <input type="tel" class="form-control" id="phone" placeholder="Phone">
+                                            {{ form.phone }}
                                             <label for="phone">Your Phone</label>
+                                            {% if form.phone.errors %}
+                                                <small class="text-danger">{{ form.phone.errors.as_text }}</small>
+                                            {% endif %}
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-xl-6">
                                         <div class="form-floating">
-                                            <select class="form-control" id="inquiry_type" placeholder="Inquiry Type">
-                                                <option value="quote">Request a Quote</option>
-                                                <option value="technical">Technical Support</option>
-                                                <option value="custom">Custom Cable Solutions</option>
-                                                <option value="other">Other</option>
-                                            </select>
+                                            {{ form.inquiry_type }}
                                             <label for="inquiry_type">Inquiry Type</label>
+                                            {% if form.inquiry_type.errors %}
+                                                <small class="text-danger">{{ form.inquiry_type.errors.as_text }}</small>
+                                            {% endif %}
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                            {{ form.subject }}
                                             <label for="subject">Subject (e.g., Tray Cable Specifications)</label>
+                                            {% if form.subject.errors %}
+                                                <small class="text-danger">{{ form.subject.errors.as_text }}</small>
+                                            {% endif %}
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <textarea class="form-control" placeholder="Describe your requirements" id="message" style="height: 160px"></textarea>
+                                            {{ form.message }}
                                             <label for="message">Message (e.g., Cable type, quantity, or specifications)</label>
+                                            {% if form.message.errors %}
+                                                <small class="text-danger">{{ form.message.errors.as_text }}</small>
+                                            {% endif %}
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <button class="btn btn-light w-100 py-3">Submit Inquiry</button>
+                                        <button class="btn btn-light w-100 py-3" type="submit">Submit Inquiry</button>
                                     </div>
                                 </div>
                             </form>
