@@ -9,7 +9,6 @@
 
 
 
-
 {% extends 'base.html' %}
 {% load static %}
 {% block body %}

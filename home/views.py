@@ -1,57 +1,58 @@
 import json
 import numpy as np
+import pandas as pd
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from .models import LadderPrice, TrayPrice
-import pandas as pd
 
-# 🧠 جلب بيانات الـ Ladder والـ Tray وتحويلها إلى DataFrame
-df_ladder = pd.DataFrame.from_records(LadderPrice.objects.all().values())
-df_tray = pd.DataFrame.from_records(TrayPrice.objects.all().values())
-
-# ✅ تجهيز بيانات الـ ladder
-if not df_ladder.empty:
-    grouped_data = (
-        df_ladder.groupby('type')
-        .apply(
-            lambda x: x[['thickness', 'side', 'dim']]
-            .drop_duplicates()
-            .to_dict(orient='records'),
-            include_groups=False
-        )
-        .to_dict()
-    )
-
-    types = sorted(df_ladder['type'].astype(str).unique())
-    thicknesses = sorted(df_ladder['thickness'].astype(str).unique())
-    sides = sorted(df_ladder['side'].astype(str).unique())
-    dims = sorted(df_ladder['dim'].astype(str).unique())
-else:
-    grouped_data, types, thicknesses, sides, dims = {}, [], [], [], []
-
-# ✅ تجهيز بيانات الـ tray
-if not df_tray.empty:
-    grouped_tray = (
-        df_tray.groupby('type')
-        .apply(
-            lambda x: x[['thickness', 'dim']]
-            .drop_duplicates()
-            .to_dict(orient='records'),
-            include_groups=False
-        )
-        .to_dict()
-    )
-
-    tray_types = sorted(df_tray['type'].astype(str).unique())
-    tray_thicknesses = sorted(df_tray['thickness'].astype(str).unique())
-    tray_dims = sorted(df_tray['dim'].astype(str).unique())
-else:
-    grouped_tray, tray_types, tray_thicknesses, tray_dims = {}, [], [], []
 
 # 📄 عرض الصفحة الرئيسية
 @csrf_exempt
 def home(request):
+    # 🧠 جلب بيانات الـ Ladder والـ Tray وتحويلها إلى DataFrame
+    df_ladder = pd.DataFrame.from_records(LadderPrice.objects.all().values())
+    df_tray = pd.DataFrame.from_records(TrayPrice.objects.all().values())
+
+    # ✅ تجهيز بيانات الـ ladder
+    if not df_ladder.empty:
+        grouped_data = (
+            df_ladder.groupby('type')
+            .apply(
+                lambda x: x[['thickness', 'side', 'dim']]
+                .drop_duplicates()
+                .to_dict(orient='records'),
+                include_groups=False
+            )
+            .to_dict()
+        )
+
+        types = sorted(df_ladder['type'].astype(str).unique())
+        thicknesses = sorted(df_ladder['thickness'].astype(str).unique())
+        sides = sorted(df_ladder['side'].astype(str).unique())
+        dims = sorted(df_ladder['dim'].astype(str).unique())
+    else:
+        grouped_data, types, thicknesses, sides, dims = {}, [], [], [], []
+
+    # ✅ تجهيز بيانات الـ tray
+    if not df_tray.empty:
+        grouped_tray = (
+            df_tray.groupby('type')
+            .apply(
+                lambda x: x[['thickness', 'dim']]
+                .drop_duplicates()
+                .to_dict(orient='records'),
+                include_groups=False
+            )
+            .to_dict()
+        )
+
+        tray_types = sorted(df_tray['type'].astype(str).unique())
+        tray_thicknesses = sorted(df_tray['thickness'].astype(str).unique())
+        tray_dims = sorted(df_tray['dim'].astype(str).unique())
+    else:
+        grouped_tray, tray_types, tray_thicknesses, tray_dims = {}, [], [], []
+
     return render(request, 'home/home.html', {
         'ladder_types': types,
         'ladder_thicknesses': thicknesses,
@@ -63,8 +64,9 @@ def home(request):
         'tray_dims': tray_dims,
         'options_json_ladder': json.dumps(grouped_data),
         'options_json_tray': json.dumps(grouped_tray),
-        'active_page': 'home',  # لتحديد التبويب النشط في الـ navbar
+        'active_page': 'home',
     })
+
 
 # 🔢 حساب السعر
 @csrf_exempt
