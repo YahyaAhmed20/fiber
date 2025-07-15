@@ -8,7 +8,6 @@ app_name = 'home'
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('calculate-price/', views.calculate_price, name='calculate_price'),
     # path('calculate_tray_manual/', calculate_tray_manual, name='calculate_tray_manual'),
 
 

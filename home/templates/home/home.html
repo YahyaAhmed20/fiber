@@ -2,429 +2,355 @@
 {% load static %}
 {% block body %}
 
+<!-- Animate.css Library -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
+<!-- Top Bar Section -->
 <div class="container-fluid topbar bg-secondary d-none d-xl-block w-100 animate__animated animate__fadeInDown wow" data-wow-delay="0.2s">
-    <div class="container">
-        <div class="row gx-0 align-items-center" style="height: 45px;">
-            <div class="col-lg-6 text-center text-lg-start mb-lg-0">
-                <div class="d-flex flex-wrap">
-                    <a href="#" class="text-muted me-4">
-                        <i class="fas fa-map-marker-alt text-primary me-2"></i>Find Our Factory
-                    </a>
-                    <a href="tel:+01234567890" class="text-muted me-4">
-                        <i class="fas fa-phone-alt text-primary me-2"></i>+01234567890
-                    </a>
-                    <a href="mailto:info@cablefactory.com" class="text-muted me-0">
-                        <i class="fas fa-envelope text-primary me-2"></i>info@cablefactory.com
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-6 text-center text-lg-end">
-                <div class="d-flex align-items-center justify-content-end">
-                    <a href="#" class="btn btn-light btn-sm-square rounded-circle me-3"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="btn btn-light btn-sm-square rounded-circle me-3"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="btn btn-light btn-sm-square rounded-circle me-3"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="btn btn-light btn-sm-square rounded-circle me-0"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
+  <div class="container">
+    <div class="row gx-0 align-items-center" style="height: 45px;">
+      <div class="col-lg-6 text-center text-lg-start mb-lg-0">
+        <div class="d-flex flex-wrap">
+          <a href="#" class="text-muted me-4">
+            <i class="fas fa-map-marker-alt text-primary me-2"></i>Find Our Factory
+          </a>
+          <a href="tel:+01234567890" class="text-muted me-4">
+            <i class="fas fa-phone-alt text-primary me-2"></i>+01234567890
+          </a>
+          <a href="mailto:info@cablefactory.com" class="text-muted me-0">
+            <i class="fas fa-envelope text-primary me-2"></i>info@cablefactory.com
+          </a>
         </div>
+      </div>
+      <div class="col-lg-6 text-center text-lg-end">
+        <div class="d-flex align-items-center justify-content-end">
+          <a href="#" class="btn btn-light btn-sm-square rounded-circle me-3"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="btn btn-light btn-sm-square rounded-circle me-3"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="btn btn-light btn-sm-square rounded-circle me-3"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="btn btn-light btn-sm-square rounded-circle me-0"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
+
+<!-- Header Carousel Section -->
 <div class="header-carousel animate__animated animate__fadeIn wow" data-wow-delay="0.4s">
-    <div id="carouselId" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
-        <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-                <img src="{% static 'img/cable-carousel-1.jpeg' %}" class="img-fluid w-100" alt="First slide"/>
-                <div class="carousel-caption">
-                    <div class="container py-4">
-                        <div class="row g-5">
-                            <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.6s">
-                                <div class="bg-secondary rounded p-5 shadow-lg animate__animated animate__fadeIn">
-                                    <h4 class="text-white mb-4">
-                                        ⚡ CALCULATE CABLE COST ⚙️
-                                    </h4>
-                                    
-                                    <div class="col-12 animate__animated animate__fadeIn wow" data-wow-delay="1.6s">
-                                        <div id="costResult" class="text-white mt-3"></div>
-
-
-                               <hr class="my-4">
-<h5 class="text-white">أو احسب يدويًا باستخدام مدخلاتك 👇</h5>
-<form id="manualTrayForm" class="row g-3 text-white">
-    <div class="col-md-4">
-        <label>نوع الكابل</label>
-        <select class="form-select" name="category" id="category" required>
-            <option value="tray" selected>Tray</option>
-            <option value="ladder">Ladder</option>
-        </select>
-    </div>
-
-    <!-- tray / ladder مشترك -->
-    <div class="col-md-4">
-        <label>العرض (سم)</label>
-        <input type="number" name="width" step="0.01" class="form-control" required>
-    </div>
-    <div class="col-md-4">
-        <label>الارتفاع (سم)</label>
-        <input type="number" name="height" step="0.01" class="form-control" required>
-    </div>
-
-    <!-- tray فقط -->
-    <div class="col-md-4 tray-inputs">
-        <label>التخانة (مم)</label>
-        <input type="number" name="thickness" step="0.01" class="form-control">
-    </div>
-
-    <!-- ladder فقط -->
-    <div class="col-md-4 ladder-inputs d-none">
-        <label>تخانة الجانب (مم)</label>
-        <input type="number" name="thickness_side" step="0.01" class="form-control">
-    </div>
-    <div class="col-md-4 ladder-inputs d-none">
-        <label>تخانة العارض (مم)</label>
-        <input type="number" name="thickness_drawer" step="0.01" class="form-control">
-    </div>
-
-    <div class="col-12">
-        <button type="submit" class="btn btn-warning w-100">🧮 احسب يدويًا</button>
-    </div>
-</form>
-
-<div id="manualResult" class="alert alert-info mt-3 d-none"></div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+  <div id="carouselId" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
+    <div class="carousel-inner" role="listbox">
+      <div class="carousel-item active">
+        <img src="{% static 'img/cable-carousel-1.jpeg' %}" class="img-fluid w-100" alt="First slide"/>
+        <div class="carousel-caption">
+          <div class="container py-4">
+            <div class="row g-5">
+              <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.6s">
+                <div class="bg-secondary rounded p-5 shadow-lg animate__animated animate__fadeIn">
+                  <h4 class="text-white mb-4">
+                    ⚡ CALCULATE CABLE COST ⚙️
+                  </h4>
+                  <div class="col-12 animate__animated animate__fadeIn wow" data-wow-delay="1.6s">
+                    <div id="costResult" class="text-white mt-3"></div>
+                    <hr class="my-4">
+                    <h5 class="text-white">أو احسب يدويًا باستخدام مدخلاتك 👇</h5>
+                    <!-- Manual Calculation Form -->
+                    <form id="manualTrayForm" class="row g-3 text-white">
+                      <div class="col-md-4">
+                        <label>نوع الكابل</label>
+                        <select class="form-select" name="category" id="category" required>
+                          <option value="tray" selected>Tray</option>
+                          <option value="ladder">Ladder</option>
+                        </select>
+                      </div>
+                      <!-- القيم المشتركة -->
+                      <div class="col-md-4">
+                        <label>العرض (سم)</label>
+                        <input type="number" name="width" step="0.01" class="form-control" required>
+                      </div>
+                      <div class="col-md-4">
+                        <label>الارتفاع (سم)</label>
+                        <input type="number" name="height" step="0.01" class="form-control" required>
+                      </div>
+                      <!-- مدخلات Tray فقط -->
+                      <div class="col-md-4 tray-inputs">
+                        <label>التخانة (مم)</label>
+                        <input type="number" name="thickness" step="0.01" class="form-control">
+                      </div>
+                      <!-- مدخلات Ladder فقط -->
+                      <div class="col-md-4 ladder-inputs d-none">
+                        <label>تخانة الجانب (مم)</label>
+                        <input type="number" name="thickness_side" step="0.01" class="form-control">
+                      </div>
+                      <div class="col-md-4 ladder-inputs d-none">
+                        <label>تخانة العارض (مم)</label>
+                        <input type="number" name="thickness_drawer" step="0.01" class="form-control">
+                      </div>
+                      <div class="col-12">
+                        <button type="submit" class="btn btn-warning w-100">🧮 احسب يدويًا</button>
+                      </div>
+                    </form>
+                    <div id="manualResult" class="alert alert-info mt-3 d-none"></div>
+                  </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-<script>
-    
+              </div> <!-- End col-lg-6 -->
+            </div> <!-- End row -->
+          </div> <!-- End container -->
+        </div> <!-- End carousel-caption -->
+      </div> <!-- End carousel-item -->
+    </div> <!-- End carousel-inner -->
+  </div> <!-- End carousel -->
+</div> <!-- End Header Carousel -->
 
-    {% comment %} ده الجديد  {% endcomment %}
-   document.getElementById("category").addEventListener("change", function() {
+<!-- JavaScript for Form and Category Toggle -->
+<script>
+  // Toggle between Tray and Ladder fields
+  document.getElementById("category").addEventListener("change", function() {
     const isLadder = this.value === "ladder";
     document.querySelectorAll(".ladder-inputs").forEach(el => el.classList.toggle("d-none", !isLadder));
     document.querySelectorAll(".tray-inputs").forEach(el => el.classList.toggle("d-none", isLadder));
-});
+  });
 
-document.getElementById("manualTrayForm").addEventListener("submit", function(e) {
+  // Manual Calculation Form Submission
+  document.getElementById("manualTrayForm").addEventListener("submit", function(e) {
     e.preventDefault();
     const formData = new FormData(this);
 
     fetch("/calculate_manual_combined/", {
-        method: "POST",
-        headers: {
-            "X-CSRFToken": "{{ csrf_token }}"
-        },
-        body: formData
+      method: "POST",
+      headers: {
+        "X-CSRFToken": "{{ csrf_token }}"
+      },
+      body: formData
     })
     .then(res => res.json())
     .then(data => {
-        const resultDiv = document.getElementById("manualResult");
-        resultDiv.classList.remove("d-none");
-
-        if (data.total_price) {
-            resultDiv.innerHTML = `
-                ✅ <strong>الإجمالي للمتر:</strong> ${data.total_price} جنيه
-            `;
-        } else {
-            resultDiv.innerHTML = `<span class="text-danger">${data.error || 'حدث خطأ أثناء الحساب.'}</span>`;
-        }
+      const resultDiv = document.getElementById("manualResult");
+      resultDiv.classList.remove("d-none");
+      if (data.total_price) {
+        resultDiv.innerHTML = `✅ <strong>الإجمالي للمتر:</strong> ${data.total_price} جنيه`;
+      } else {
+        resultDiv.innerHTML = `<span class="text-danger">${data.error || 'حدث خطأ أثناء الحساب.'}</span>`;
+      }
     })
     .catch(error => {
-        document.getElementById("manualResult").classList.remove("d-none");
-        document.getElementById("manualResult").innerHTML = `<span class="text-danger">Error: ${error}</span>`;
+      const resultDiv = document.getElementById("manualResult");
+      resultDiv.classList.remove("d-none");
+      resultDiv.innerHTML = `<span class="text-danger">Error: ${error}</span>`;
     });
-});
-
-
-
+  });
 </script>
 
+<!-- Inline CSS Styles -->
 <style>
-    .valid-check {
-        position: absolute;
-        right: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 1.2rem;
-        color: #28a745; /* أخضر */
-        pointer-events: none;
-        transition: opacity 0.2s ease-in-out;
-    }
-
-    #clearBtn:hover {
-        background-color: #6c757d !important;
-        transform: scale(1.02);
-        transition: 0.2s ease-in-out;
-    }
+  .valid-check {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #28a745;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out;
+  }
+  #clearBtn:hover {
+    background-color: #6c757d !important;
+    transform: scale(1.02);
+    transition: 0.2s ease-in-out;
+  }
 </style>
 
+<!-- Why Choose Our Products Section -->
 <div class="container-fluid bg-light py-5">
-    <div class="container py-5">
-        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 750px;">
-            <h2 class="fw-bold text-uppercase text-dark mb-3">Why Choose <span class="text-primary">Our Products?</span></h2>
-            <p class="text-muted">We specialize in manufacturing high-quality cable support systems (Tray & Ladder) tailored to meet the needs of electrical and industrial projects.</p>
-        </div>
-
-        <div class="row g-5 align-items-center">
-            <div class="col-xl-4">
-                <div class="d-flex mb-4 wow fadeInLeft" data-wow-delay="0.3s">
-                    <div class="bg-primary text-white rounded-circle p-3 me-3">
-                        <i class="fa fa-cogs fa-2x"></i>
-                    </div>
-                    <div>
-                        <h5 class="fw-bold mb-2">Engineered Quality</h5>
-                        <p class="mb-0 text-muted">We use precision machinery and strict standards to ensure durable and accurate products.</p>
-                    </div>
-                </div>
-                <div class="d-flex mb-4 wow fadeInLeft" data-wow-delay="0.5s">
-                    <div class="bg-primary text-white rounded-circle p-3 me-3">
-                        <i class="fa fa-th-large fa-2x"></i>
-                    </div>
-                    <div>
-                        <h5 class="fw-bold mb-2">Variety of Sizes</h5>
-                        <p class="mb-0 text-muted">Available in multiple dimensions and thicknesses to match your project needs.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-4 text-center wow zoomIn" data-wow-delay="0.7s">
-            </div>
-
-            <div class="col-xl-4">
-                <div class="d-flex mb-4 wow fadeInRight" data-wow-delay="0.3s">
-                    <div class="bg-primary text-white rounded-circle p-3 me-3">
-                        <i class="fa fa-tools fa-2x"></i>
-                    </div>
-                    <div>
-                        <h5 class="fw-bold mb-2">Easy Installation</h5>
-                        <p class="mb-0 text-muted">Smart designs for quick assembly and reduced installation time on-site.</p>
-                    </div>
-                </div>
-                <div class="d-flex mb-4 wow fadeInRight" data-wow-delay="0.5s">
-                    <div class="bg-primary text-white rounded-circle p-3 me-3">
-                        <i class="fa fa-truck-moving fa-2x"></i>
-                    </div>
-                    <div>
-                        <h5 class="fw-bold mb-2">Fast Delivery</h5>
-                        <p class="mb-0 text-muted">Reliable shipping to all locations with on-time delivery guaranteed.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="container py-5">
+    <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 750px;">
+      <h2 class="fw-bold text-uppercase text-dark mb-3">Why Choose <span class="text-primary">Our Products?</span></h2>
+      <p class="text-muted">We specialize in manufacturing high-quality cable support systems (Tray & Ladder) tailored to meet the needs of electrical and industrial projects.</p>
     </div>
+    <div class="row g-5 align-items-center">
+      <div class="col-xl-4">
+        <div class="d-flex mb-4 wow fadeInLeft" data-wow-delay="0.3s">
+          <div class="bg-primary text-white rounded-circle p-3 me-3">
+            <i class="fa fa-cogs fa-2x"></i>
+          </div>
+          <div>
+            <h5 class="fw-bold mb-2">Engineered Quality</h5>
+            <p class="mb-0 text-muted">We use precision machinery and strict standards to ensure durable and accurate products.</p>
+          </div>
+        </div>
+        <div class="d-flex mb-4 wow fadeInLeft" data-wow-delay="0.5s">
+          <div class="bg-primary text-white rounded-circle p-3 me-3">
+            <i class="fa fa-th-large fa-2x"></i>
+          </div>
+          <div>
+            <h5 class="fw-bold mb-2">Variety of Sizes</h5>
+            <p class="mb-0 text-muted">Available in multiple dimensions and thicknesses to match your project needs.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-4 text-center wow zoomIn" data-wow-delay="0.7s">
+        <!-- يمكن إضافة صورة أو محتوى هنا -->
+      </div>
+      <div class="col-xl-4">
+        <div class="d-flex mb-4 wow fadeInRight" data-wow-delay="0.3s">
+          <div class="bg-primary text-white rounded-circle p-3 me-3">
+            <i class="fa fa-tools fa-2x"></i>
+          </div>
+          <div>
+            <h5 class="fw-bold mb-2">Easy Installation</h5>
+            <p class="mb-0 text-muted">Smart designs for quick assembly and reduced installation time on-site.</p>
+          </div>
+        </div>
+        <div class="d-flex mb-4 wow fadeInRight" data-wow-delay="0.5s">
+          <div class="bg-primary text-white rounded-circle p-3 me-3">
+            <i class="fa fa-truck-moving fa-2x"></i>
+          </div>
+          <div>
+            <h5 class="fw-bold mb-2">Fast Delivery</h5>
+            <p class="mb-0 text-muted">Reliable shipping to all locations with on-time delivery guaranteed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+<!-- Counter Section -->
 <div class="container-fluid counter bg-secondary py-5">
-    <div class="container py-5">
-        <div class="row g-5">
-            <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="counter-item text-center">
-                    <div class="counter-item-icon mx-auto">
-                        <i class="fas fa-users fa-2x"></i>
-                    </div>
-                    <div class="counter-counting my-3">
-                        <span class="text-white fs-2 fw-bold" data-toggle="counter-up">1200</span>
-                        <span class="h1 fw-bold text-white">+</span>
-                    </div>
-                    <h4 class="text-white mb-0">Satisfied Customers</h4>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="counter-item text-center">
-                    <div class="counter-item-icon mx-auto">
-                        <i class="fas fa-box fa-2x"></i>
-                    </div>
-                    <div class="counter-counting my-3">
-                        <span class="text-white fs-2 fw-bold" data-toggle="counter-up">500</span>
-                        <span class="h1 fw-bold text-white">+</span>
-                    </div>
-                    <h4 class="text-white mb-0">Products Sold</h4>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="counter-item text-center">
-                    <div class="counter-item-icon mx-auto">
-                        <i class="fas fa-industry fa-2x"></i>
-                    </div>
-                    <div class="counter-counting my-3">
-                        <span class="text-white fs-2 fw-bold" data-toggle="counter-up">50</span>
-                        <span class="h1 fw-bold text-white">+</span>
-                    </div>
-                    <h4 class="text-white mb-0">Factory Outlets</h4>
-                </div>
-            </div>
-             <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
-                <div class="counter-item text-center">
-                    <div class="counter-item-icon mx-auto">
-                        <i class="fas fa-project-diagram fa-2x"></i> </div>
-                    <div class="counter-counting my-3">
-                        <span class="text-white fs-2 fw-bold" data-toggle="counter-up">250</span>
-                        <span class="h1 fw-bold text-white">+</span>
-                    </div>
-                    <h4 class="text-white mb-0">Projects Completed</h4>
-                </div>
-            </div>
+  <div class="container py-5">
+    <div class="row g-5">
+      <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="counter-item text-center">
+          <div class="counter-item-icon mx-auto">
+            <i class="fas fa-users fa-2x"></i>
+          </div>
+          <div class="counter-counting my-3">
+            <span class="text-white fs-2 fw-bold" data-toggle="counter-up">1200</span>
+            <span class="h1 fw-bold text-white">+</span>
+          </div>
+          <h4 class="text-white mb-0">Satisfied Customers</h4>
         </div>
+      </div>
+      <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="counter-item text-center">
+          <div class="counter-item-icon mx-auto">
+            <i class="fas fa-box fa-2x"></i>
+          </div>
+          <div class="counter-counting my-3">
+            <span class="text-white fs-2 fw-bold" data-toggle="counter-up">500</span>
+            <span class="h1 fw-bold text-white">+</span>
+          </div>
+          <h4 class="text-white mb-0">Products Sold</h4>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
+        <div class="counter-item text-center">
+          <div class="counter-item-icon mx-auto">
+            <i class="fas fa-industry fa-2x"></i>
+          </div>
+          <div class="counter-counting my-3">
+            <span class="text-white fs-2 fw-bold" data-toggle="counter-up">50</span>
+            <span class="h1 fw-bold text-white">+</span>
+          </div>
+          <h4 class="text-white mb-0">Factory Outlets</h4>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
+        <div class="counter-item text-center">
+          <div class="counter-item-icon mx-auto">
+            <i class="fas fa-project-diagram fa-2x"></i>
+          </div>
+          <div class="counter-counting my-3">
+            <span class="text-white fs-2 fw-bold" data-toggle="counter-up">250</span>
+            <span class="h1 fw-bold text-white">+</span>
+          </div>
+          <h4 class="text-white mb-0">Projects Completed</h4>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
+
+<!-- Team Section -->
 <div class="container-fluid team pb-5">
-    <div class="container pb-5">
-        <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
-            <h1 class="display-5 text-capitalize mb-3">Customer <span class="text-primary">Support</span> Team</h1>
-            <p class="mb-0">Our dedicated team is here to assist you with all your cable-related queries.</p>
-        </div>
-        <div class="row g-4">
-            <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="team-item p-4 pt-0">
-                    <div class="team-img">
-                        <img src="{% static 'img/team-1.jpg' %}" class="img-fluid rounded w-100" alt="Image">
-                    </div>
-                    <div class="team-content pt-4">
-                        <h4>Ahmed Ali</h4>
-                        <p>Customer Support</p>
-                        <div class="team-icon d-flex justify-content-center">
-                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="team-item p-4 pt-0">
-                    <div class="team-img">
-                        <img src="{% static 'img/team-2.jpg' %}" class="img-fluid rounded w-100" alt="Image">
-                    </div>
-                    <div class="team-content pt-4">
-                        <h4>Fatima Hassan</h4>
-                        <p>Technical Advisor</p>
-                        <div class="team-icon d-flex justify-content-center">
-                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="team-item p-4 pt-0">
-                    <div class="team-img">
-                        <img src="{% static 'img/team-3.jpg' %}" class="img-fluid rounded w-100" alt="Image">
-                    </div>
-                    <div class="team-content pt-4">
-                        <h4>Khaled Omar</h4>
-                        <p>Sales Manager</p>
-                        <div class="team-icon d-flex justify-content-center">
-                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
-                <div class="team-item p-4 pt-0">
-                    <div class="team-img">
-                        <img src="{% static 'img/team-4.jpg' %}" class="img-fluid rounded w-100" alt="Image">
-                    </div>
-                    <div class="team-content pt-4">
-                        <h4>Sara Ahmed</h4>
-                        <p>Order Specialist</p>
-                        <div class="team-icon d-flex justify-content-center">
-                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="container pb-5">
+    <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+      <h1 class="display-5 text-capitalize mb-3">Customer <span class="text-primary">Support</span> Team</h1>
+      <p class="mb-0">Our dedicated team is here to assist you with all your cable-related queries.</p>
     </div>
+    <div class="row g-4">
+      {% for member in team_members %}
+      <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.{{ forloop.counter }}s">
+        <div class="team-item p-4 pt-0">
+          <div class="team-img">
+            <img src="{{ member.image.url }}" class="img-fluid rounded w-100" alt="{{ member.name }}">
+          </div>
+          <div class="team-content pt-4">
+            <h4>{{ member.name }}</h4>
+            <p>{{ member.role }}</p>
+            <div class="team-icon d-flex justify-content-center">
+              {% if member.facebook %}
+              <a class="btn btn-square btn-light rounded-circle mx-1" href="{{ member.facebook }}"><i class="fab fa-facebook-f"></i></a>
+              {% endif %}
+              {% if member.twitter %}
+              <a class="btn btn-square btn-light rounded-circle mx-1" href="{{ member.twitter }}"><i class="fab fa-twitter"></i></a>
+              {% endif %}
+              {% if member.instagram %}
+              <a class="btn btn-square btn-light rounded-circle mx-1" href="{{ member.instagram }}"><i class="fab fa-instagram"></i></a>
+              {% endif %}
+              {% if member.linkedin %}
+              <a class="btn btn-square btn-light rounded-circle mx-1" href="{{ member.linkedin }}"><i class="fab fa-linkedin-in"></i></a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
 </div>
+
+<!-- Reviews Section -->
 <div class="container-fluid testimonial pb-5">
-    <div class="container pb-5">
-        <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
-            <h1 class="display-5 text-capitalize mb-3">Our Clients<span class="text-primary">Reviews</span></h1>
-            <p class="mb-0">Hear from our valued customers about their experience with our cables.</p>
-        </div>
-        <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-            <div class="testimonial-item">
-                <div class="testimonial-quote"><i class="fa fa-quote-right fa-2x"></i></div>
-                <div class="testimonial-inner p-4">
-                    <img src="{% static 'img/testimonial-1.jpg' %}" class="img-fluid rounded" alt="">
-                    <div class="ms-4">
-                        <h4>Mohammed Salem</h4>
-                        <p>Contractor</p>
-                        <div class="d-flex text-primary">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star text-body"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="border-top rounded-bottom p-4">
-                    <p class="mb-0">The cables are reliable and the cost calculator saved us time in budgeting.</p>
-                </div>
-            </div>
-            <div class="testimonial-item">
-                <div class="testimonial-quote"><i class="fa fa-quote-right fa-2x"></i></div>
-                <div class="testimonial-inner p-4">
-                    <img src="{% static 'img/testimonial-2.jpg' %}" class="img-fluid rounded" alt="">
-                    <div class="ms-4">
-                        <h4>Lina Mahmoud</h4>
-                        <p>Project Manager</p>
-                        <div class="d-flex text-primary">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star text-body"></i>
-                            <i class="fas fa-star text-body"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="border-top rounded-bottom p-4">
-                    <p class="mb-0">Excellent customer service and high-quality products.</p>
-                </div>
-            </div>
-            <div class="testimonial-item">
-                <div class="testimonial-quote"><i class="fa fa-quote-right fa-2x"></i></div>
-                <div class="testimonial-inner p-4">
-                    <img src="{% static 'img/testimonial-3.jpg' %}" class="img-fluid rounded" alt="">
-                    <div class="ms-4">
-                        <h4>Hassan Ibrahim</h4>
-                        <p>Electrician</p>
-                        <div class="d-flex text-primary">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="border-top rounded-bottom p-4">
-                    <p class="mb-0">The fiber optic cables exceeded our performance expectations.</p>
-                </div>
-            </div>
-        </div>
+  <div class="container pb-5">
+    <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+      <h1 class="display-5 text-capitalize mb-3">Our Clients<span class="text-primary">Reviews</span></h1>
+      <p class="mb-0">Hear from our valued customers about their experience with our cables.</p>
     </div>
+    <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+      {% for review in reviews %}
+      <div class="testimonial-item">
+        <div class="testimonial-quote"><i class="fa fa-quote-right fa-2x"></i></div>
+        <div class="testimonial-inner p-4">
+          <img src="{{ review.image.url }}" class="img-fluid rounded" alt="{{ review.name }}">
+          <div class="ms-4">
+            <h4>{{ review.name }}</h4>
+            <p>{{ review.job_title }}</p>
+            <div class="d-flex text-primary">
+              {% for i in "12345"|slice:":review.rating"|make_list %}
+                <i class="fas fa-star"></i>
+              {% endfor %}
+              {% for i in "12345"|slice:"review.rating:"|make_list %}
+                <i class="fas fa-star text-body"></i>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="border-top rounded-bottom p-4">
+          <p class="mb-0">{{ review.comment }}</p>
+        </div>
+      </div>
+      {% empty %}
+      <div class="text-center text-muted">
+        <p>No reviews available yet.</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
 </div>
+
+<!-- WOW.js Initialization -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 <script>
-    new WOW().init();
+  new WOW().init();
 </script>
 
 {% endblock %}

@@ -3,24 +3,34 @@ from django.db import models
 # Create your models here.
 
 
-# models.py
 
-class LadderPrice(models.Model):
-    type = models.CharField(max_length=50)
-    thickness = models.FloatField()
-    side = models.FloatField()
-    dim = models.FloatField()
-    price_final = models.FloatField()
+class TeamMember(models.Model):
+    name = models.CharField(max_length=100)
+    role = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='team/')
+    facebook = models.URLField(blank=True, null=True)
+    twitter = models.URLField(blank=True, null=True)
+    instagram = models.URLField(blank=True, null=True)
+    linkedin = models.URLField(blank=True, null=True)
+    order = models.PositiveIntegerField(default=0)
 
-    def __str__(self):
-        return f"{self.type} - {self.thickness} - {self.side} - {self.dim}"
-
-
-class TrayPrice(models.Model):
-    type = models.CharField(max_length=50)
-    thickness = models.FloatField()
-    dim = models.FloatField()
-    price_with_joints = models.FloatField()
+    class Meta:
+        ordering = ['order']  # الترتيب حسب رقم
 
     def __str__(self):
-        return f"{self.type} - {self.thickness} - {self.dim}"
+        return self.name
+    
+class Review(models.Model):
+    name = models.CharField(max_length=100)
+    job_title = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='reviews/')
+    rating = models.PositiveIntegerField(default=5)  # من 1 إلى 5
+    comment = models.TextField()
+    order = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        ordering = ['order']
+
+    def __str__(self):
+        return f"{self.name} - {self.job_title}"
+    
