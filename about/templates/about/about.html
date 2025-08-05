@@ -4,13 +4,18 @@
 <div class="container py-5 mt-5 text-start" dir="ltr">
   <!-- Page Title -->
   <div class="text-center mb-5 animate__animated animate__fadeIn">
-    <h2 class="display-4 text-uppercase fw-bold mb-3">About <span class="text-primary">Rovana Trade Company</span></h2>
-    <p class="lead text-muted">Premier Manufacturer of Cable Support Systems in Egypt and the Middle East</p>
+    <h2 class="display-4 text-uppercase fw-bold mb-3">
+      About <span class="text-primary">Rovana Trade Company</span>
+    </h2>
+    <p class="lead text-muted">
+      Premier Manufacturer of Cable Support Systems in Egypt and the Middle East
+    </p>
   </div>
 
   <!-- Company Introduction -->
-  <div class="row align-items-center mb-5 animate__animated animate__fadeInUp">
-    <div class="col-md-6 pe-md-5">
+  <div class="row align-items-start mb-5 animate__animated animate__fadeInUp">
+    <!-- Left Column -->
+    <div class="col-lg-4 mb-4 mb-lg-0 pe-lg-4">
       <h4 class="fw-bold mb-3">Who We Are</h4>
       <p class="text-secondary">
         Rovana Trade Company is a trusted leader in cable support systems, specializing in high-quality trays and ladders. 
@@ -24,32 +29,58 @@
         <li class="mb-2"><i class="bi bi-truck text-primary me-2"></i> Nationwide delivery across all governorates</li>
       </ul>
     </div>
-    <div class="col-md-6">
-      <img src="{% static 'img/vi1.jpg' %}" class="img-fluid rounded shadow-sm about-img" alt="Factory Overview">
+
+    <!-- Middle Column -->
+    <div class="col-lg-4 mb-4 mb-lg-0 px-lg-4">
+      <h4 class="fw-bold mb-3 text-uppercase">Rovana Trade</h4>
+      <h5 class="text-primary fw-semibold mb-2">About the Company</h5>
+      <p class="text-secondary mb-4">
+        The company was established in 2019 to meet market requirements in the field of industry and electrical supplies.
+      </p>
+      <h6 class="fw-bold">Our Products:</h6>
+      <ul class="list-unstyled">
+        <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> Cable Tray</li>
+        <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> Cable Trunk</li>
+        <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> Cable Ladder</li>
+        <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> Wire Mesh</li>
+        <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> EMT Tube</li>
+        <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> Accessories Tray</li>
+        <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> Accessories EMT</li>
+        <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> Accessories Ladder</li>
+        <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i> Lampposts</li>
+      </ul>
+    </div>
+
+    <!-- Right Column: Image -->
+    <div class="col-lg-4 text-center">
+      <img src="{% static 'img/vi1.jpg' %}" class="img-fluid rounded shadow about-img" alt="Factory Overview" style="max-height: 400px; object-fit: cover;">
     </div>
   </div>
+</div>
+
 
   <!-- Factory Photos -->
   <h4 class="fw-bold mb-4 animate__animated animate__fadeIn">🏭 Our Manufacturing Facility</h4>
-  <div class="row g-4 mb-5">
-    <div class="col-md-4"><img src="{% static 'img/vi2.jpg' %}" class="img-fluid rounded shadow-sm gallery-img" alt="Factory Production Line"></div>
-    <div class="col-md-4"><img src="{% static 'img/vi3.jpg' %}" class="img-fluid rounded shadow-sm gallery-img" alt="Factory Equipment"></div>
-    <div class="col-md-4"><img src="{% static 'img/vi4.jpg' %}" class="img-fluid rounded shadow-sm gallery-img" alt="Factory Operations"></div>
-  </div>
+<div class="row g-4 mb-5">
+  {% for image in facility_images %}
+    <div class="col-md-4">
+      <img src="{{ image.image.url }}" class="img-fluid rounded shadow-sm gallery-img" alt="{{ image.alt_text }}">
+    </div>
+  {% endfor %}
+</div>
 
-  <!-- Product Images -->
-  <h4 class="fw-bold mb-4 animate__animated animate__fadeIn">🔌 Our Cable Solutions</h4>
-  <div class="row g-4 mb-5">
-    <div class="col-md-4"><img src="{% static 'img/lader.jpg' %}" class="img-fluid rounded shadow-sm gallery-img" alt="Cable Ladder System"></div>
-    <div class="col-md-4"><img src="{% static 'img/Tray.jpg' %}" class="img-fluid rounded shadow-sm gallery-img" alt="Cable Tray System"></div>
-  </div>
+<h4 class="fw-bold mb-4 animate__animated animate__fadeIn">🔌 Our Cable Solutions</h4>
+<div class="row g-4 mb-5">
+  {% for image in product_images %}
+    <div class="col-md-4">
+      <img src="{{ image.image.url }}" class="img-fluid rounded shadow-sm gallery-img" alt="{{ image.alt_text }}">
+    </div>
+  {% endfor %}
+</div>
+
 
   <!-- ISO Certifications -->
-  <h4 class="fw-bold mb-4 animate__animated animate__fadeIn">📜 Our Certifications</h4>
-  <div class="row g-4 mb-5">
-    <div class="col-md-6"><img src="{% static 'img/iso1.jpg' %}" class="img-fluid rounded shadow-sm cert-img" alt="ISO Certification 1"></div>
-    <div class="col-md-6"><img src="{% static 'img/iso 2.jpg' %}" class="img-fluid rounded shadow-sm cert-img" alt="ISO Certification 2"></div>
-  </div>
+  
 
   <!-- Vision Statement -->
   <div class="text-center mt-5 animate__animated animate__fadeIn">

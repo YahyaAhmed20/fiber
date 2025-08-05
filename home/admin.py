@@ -1,10 +1,7 @@
 from django.contrib import admin
-from .models import TeamMember,Review
+from .models import Review
 
-@admin.register(TeamMember)
-class TeamMemberAdmin(admin.ModelAdmin):
-    list_display = ('name', 'role', 'order')
-    list_editable = ('order',)
+
     
     
 

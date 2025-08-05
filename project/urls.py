@@ -25,6 +25,8 @@ urlpatterns = [
 
     path('contact-us/', include('contact.urls', namespace='contact')),
     path('about/', include('about.urls', namespace='about')),
+    path('certificates/', include('certificates.urls', namespace='certificates')),
+    path('ourproject/', include('ourproject.urls', namespace='ourproject')),
 
 
     

@@ -39,7 +39,7 @@
   <div id="carouselId" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
     <div class="carousel-inner" role="listbox">
       <div class="carousel-item active">
-        <img src="{% static 'img/cable-carousel-1.jpeg' %}" class="img-fluid w-100" alt="First slide"/>
+        <img src="{% static 'img/hom.jpeg' %}" class="img-fluid w-100" alt="First slide"/>
         <div class="carousel-caption">
           <div class="container py-4">
             <div class="row g-5">
@@ -162,27 +162,31 @@
 <div class="container-fluid bg-light py-5">
   <div class="container py-5">
     <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 750px;">
-      <h2 class="fw-bold text-uppercase text-dark mb-3">Why Choose <span class="text-primary">Our Products?</span></h2>
-      <p class="text-muted">We specialize in manufacturing high-quality cable support systems (Tray & Ladder) tailored to meet the needs of electrical and industrial projects.</p>
+      <h2 class="fw-bold text-uppercase text-dark mb-3">
+        WHY <span class="text-primary">ROVANA TRADE?</span>
+      </h2>
+      <p class="text-muted">
+        Rovana Trade is characterized by high efficiency and distinguished quality in the products we supply. We offer excellent prices and have a strong track record in the field of electrical supplies.
+      </p>
     </div>
     <div class="row g-5 align-items-center">
       <div class="col-xl-4">
         <div class="d-flex mb-4 wow fadeInLeft" data-wow-delay="0.3s">
-          <div class="bg-primary text-white rounded-circle p-3 me-3">
-            <i class="fa fa-cogs fa-2x"></i>
+          <div style="width:110px; height:60px; background:#dc143c; display:flex; align-items:center; justify-content:center; border-radius:50%; margin-right: 16px;">
+            <i class="fa fa-cogs fa-2x text-white"></i>
           </div>
           <div>
-            <h5 class="fw-bold mb-2">Engineered Quality</h5>
-            <p class="mb-0 text-muted">We use precision machinery and strict standards to ensure durable and accurate products.</p>
+            <h5 class="fw-bold mb-2">High Efficiency</h5>
+            <p class="mb-0 text-muted">Our company is known for its operational efficiency, ensuring timely and reliable service for all your electrical supply needs.</p>
           </div>
         </div>
         <div class="d-flex mb-4 wow fadeInLeft" data-wow-delay="0.5s">
-          <div class="bg-primary text-white rounded-circle p-3 me-3">
-            <i class="fa fa-th-large fa-2x"></i>
+          <div style="width:110px; height:60px; background:#dc143c; display:flex; align-items:center; justify-content:center; border-radius:50%; margin-right: 16px;">
+            <i class="fa fa-star fa-2x text-white"></i>
           </div>
           <div>
-            <h5 class="fw-bold mb-2">Variety of Sizes</h5>
-            <p class="mb-0 text-muted">Available in multiple dimensions and thicknesses to match your project needs.</p>
+            <h5 class="fw-bold mb-2">Distinguished Quality</h5>
+            <p class="mb-0 text-muted">We are committed to providing products of the highest quality, meeting international standards and exceeding customer expectations.</p>
           </div>
         </div>
       </div>
@@ -191,21 +195,21 @@
       </div>
       <div class="col-xl-4">
         <div class="d-flex mb-4 wow fadeInRight" data-wow-delay="0.3s">
-          <div class="bg-primary text-white rounded-circle p-3 me-3">
-            <i class="fa fa-tools fa-2x"></i>
+          <div style="width:110px; height:60px; background:#dc143c; display:flex; align-items:center; justify-content:center; border-radius:50%; margin-right: 16px;">
+            <i class="fa fa-tags fa-2x text-white"></i>
           </div>
           <div>
-            <h5 class="fw-bold mb-2">Easy Installation</h5>
-            <p class="mb-0 text-muted">Smart designs for quick assembly and reduced installation time on-site.</p>
+            <h5 class="fw-bold mb-2">Excellent Prices</h5>
+            <p class="mb-0 text-muted">We provide competitive pricing without compromising on quality, ensuring the best value for our clients.</p>
           </div>
         </div>
         <div class="d-flex mb-4 wow fadeInRight" data-wow-delay="0.5s">
-          <div class="bg-primary text-white rounded-circle p-3 me-3">
-            <i class="fa fa-truck-moving fa-2x"></i>
+          <div style="width:110px; height:60px; background:#dc143c; display:flex; align-items:center; justify-content:center; border-radius:50%; margin-right: 16px;">
+            <i class="fa fa-history fa-2x text-white"></i>
           </div>
           <div>
-            <h5 class="fw-bold mb-2">Fast Delivery</h5>
-            <p class="mb-0 text-muted">Reliable shipping to all locations with on-time delivery guaranteed.</p>
+            <h5 class="fw-bold mb-2">Proven Track Record</h5>
+            <p class="mb-0 text-muted">With a great precedent in the field of electrical supplies, Rovana Trade is a trusted partner for your projects.</p>
           </div>
         </div>
       </div>
@@ -270,7 +274,7 @@
 </div>
 
 <!-- Team Section -->
-<div class="container-fluid team pb-5">
+{% comment %} <div class="container-fluid team pb-5">
   <div class="container pb-5">
     <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
       <h1 class="display-5 text-capitalize mb-3">Customer <span class="text-primary">Support</span> Team</h1>
@@ -306,7 +310,7 @@
       {% endfor %}
     </div>
   </div>
-</div>
+</div> {% endcomment %}
 
 <!-- Reviews Section -->
 <div class="container-fluid testimonial pb-5">
