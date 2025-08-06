@@ -6,20 +6,22 @@
 <!-- Page Header -->
 <div class="container py-5 mt-5 text-center">
   <h2 class="display-5 fw-bold mb-4 animate__animated animate__fadeIn">📄 Certificates & Accreditations</h2>
-  <p class="lead text-muted animate__animated animate__fadeIn">Explore our official certifications and accreditations that reflect our commitment to quality and excellence.</p>
+  <p class="lead text-muted animate__animated animate__fadeIn">
+    Explore our official certifications and accreditations that reflect our commitment to quality and excellence.
+  </p>
 </div>
 
 <!-- Certificates Gallery -->
 <div class="container pb-5">
   <div class="row g-4">
     {% for cert in certificates %}
-      <div class="col-md-4 col-sm-6 text-center">
-        <div class="card border-0 shadow-sm h-100">
-          <img src="{{ cert.image.url }}" class="card-img-top img-fluid" alt="{{ cert.alt_text }}">
-          <div class="card-body">
-            <h5 class="card-title fw-semibold">{{ cert.title }}</h5>
-            <p class="card-text text-muted small">{{ cert.description }}</p>
-          </div>
+      <div class="col-lg-4 col-md-6 text-center">
+        <div class="card border-0 shadow h-100 p-3">
+          <img src="{{ cert.image.url }}" class="card-img-top img-fluid rounded mb-3" alt="{{ cert.alt_text }}">
+          <h5 class="fw-bold text-danger">{{ cert.title }}</h5>
+          {% if cert.description %}
+            <p class="text-muted small">{{ cert.description }}</p>
+          {% endif %}
         </div>
       </div>
     {% endfor %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<div class="container py-5 mt-5 text-center">
+  <h2 class="display-5 fw-bold mb-4">🤝 Our Partners</h2>
+</div>
+
+<div class="container pb-5">
+  <div class="row g-4">
+    {% for partner in partners %}
+      <div class="col-md-6 col-lg-4 text-center">
+        <div class="card border-0 shadow-sm h-100">
+          {% if partner.images.first %}
+            <img src="{{ partner.images.first.image.url }}" class="card-img-top img-fluid rounded" alt="Partner Image">
+          {% endif %}
+          <div class="card-body">
+            <h5 class="card-title text-primary">{{ partner.name }}</h5>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock body %}

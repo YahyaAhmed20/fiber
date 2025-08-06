@@ -17,6 +17,8 @@
                            <a href="{% url 'home:home' %}" class="nav-item nav-link {% if active_page == 'home' %}active-link{% endif %}">Home</a>
           <a href="{% url 'about:about' %}" class="nav-item nav-link {% if active_page == 'about' %}active-link{% endif %}">About Us</a>
           <a href="{% url 'certificates:certificates' %}" class="nav-item nav-link {% if active_page == 'certificates' %}active-link{% endif %}">Certificates & Accreditations</a>
+          <a href="{% url 'ourpartner:ourpartner' %}" class="nav-item nav-link {% if active_page == 'ourpartner' %}active-link{% endif %}">Our Partner</a>
+
           <a href="{% url 'ourproject:ourproject' %}" class="nav-item nav-link {% if active_page == 'ourproject' %}active-link{% endif %}">Our Project</a>
           <a href="{% url 'contact:send_text' %}" class="nav-item nav-link {% if active_page == 'contact' %}active-link{% endif %}">Contact</a>
                         </div>
