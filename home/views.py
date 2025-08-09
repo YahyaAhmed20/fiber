@@ -28,20 +28,20 @@ def calculate_manual_combined(request):
         try:
             category = request.POST.get("category")
 
-            steel = 35
-            galvanize = 22
+            steel = 37
+            galvanize = 24
             percentage = 1
 
             if category == "tray":
                 width = float(request.POST.get("width"))
                 height = float(request.POST.get("height"))
                 thickness = float(request.POST.get("thickness"))
-                manufacturing = 50
+                manufacturing = 15
 
                 individuals = width + (height * 2)
                 stick_price = ((individuals / 100) * thickness * 3 * 8) * (steel + galvanize)
                 price_per_meter = (stick_price / 3) + manufacturing
-                total_price = price_per_meter * 1.1
+                total_price = price_per_meter * 1.04
 
                 return JsonResponse({
                     "total_price": round(total_price, 2),
