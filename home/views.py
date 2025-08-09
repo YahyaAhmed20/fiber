@@ -4,7 +4,9 @@ import pandas as pd
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-from .models import *
+from .models import TeamMember, Review
+
+
 # 📄 عرض الصفحة الرئيسية
 @csrf_exempt
 def home(request):
@@ -15,13 +17,10 @@ def home(request):
         'active_page': 'home',
         'team_members': team_members,
         'reviews': reviews,
-
     })
 
 
 # 🔢 حساب السعر
-
-
 @csrf_exempt
 def calculate_manual_combined(request):
     if request.method == "POST":
@@ -32,6 +31,7 @@ def calculate_manual_combined(request):
             galvanize = 24
             percentage = 1
 
+            # 🛠 حساب سعر الـ Tray
             if category == "tray":
                 width = float(request.POST.get("width"))
                 height = float(request.POST.get("height"))
@@ -45,28 +45,39 @@ def calculate_manual_combined(request):
 
                 return JsonResponse({
                     "total_price": round(total_price, 2),
-                    "details": f"📏 سعر المتر: {round(price_per_meter, 2)}<br>🪵 سعر العود: {round(stick_price, 2)}<br>👥 عدد الأفراد: {round(individuals, 2)}"
+                    "details": (
+                        f"📏 سعر المتر: {round(price_per_meter, 2)}<br>"
+                        f"🪵 سعر العود: {round(stick_price, 2)}<br>"
+                        f"👥 عدد الأفراد: {round(individuals, 2)}"
+                    )
                 })
 
+            # 🪜 حساب سعر الـ Ladder
             elif category == "ladder":
                 A = float(request.POST.get("width"))
                 B = float(request.POST.get("height"))
                 C = float(request.POST.get("thickness_side"))
                 D = float(request.POST.get("thickness_drawer"))
-                labor = 200
+                manufacturing = 60  # تكلفة التصنيع للـ ladder
 
                 E = ((B / 100) + 0.03) * 2
-                F = (E * 3 * C * 8) + (steel + galvanize)
+                F = (E * 3 * C * 8) * (steel + galvanize)
                 G = (A / 100) * 10
                 H = (G * 0.1 * D * 8) * (steel + galvanize)
 
-                total_price = (F + H + labor) * percentage
+                total_price = ((F + H) / 3 * 1.04) + manufacturing
 
                 return JsonResponse({
                     "total_price": round(total_price, 2),
-                    "details": f"👥 الأفراد: {round(E, 3)}<br>📐 جانب الأدراج: {round(F, 2)}<br>🪵 العارض: {round(H, 2)}"
+                    "details": (
+                        f"👥 الأفراد: {round(E, 3)}<br>"
+                        f"📐 جانب الأدراج: {round(F, 2)}<br>"
+                        f"🪵 العارض: {round(H, 2)}<br>"
+                        f"🏭 التصنيع: {manufacturing}"
+                    )
                 })
 
+            # ❌ نوع غير معروف
             else:
                 return JsonResponse({"error": "نوع غير معروف"}, status=400)
 
