@@ -102,8 +102,7 @@ Disallow: /checkout/
 
 Allow: /
 
-Sitemap: https://www.rovanatrade.com/sitemap.xml
-"""
+Sitemap: https://www.rovanatrade.com/sitemap.xml"""
     return HttpResponse(content, content_type="text/plain")
 
 
@@ -114,14 +113,13 @@ from django.urls import reverse
 def sitemap_xml(request):
     # قائمة بالروابط المهمة في موقعك
     urls = [
-        {"loc": "https://www.rovanatrade.com/", "changefreq": "weekly", "priority": "1.0"},
-        {"loc": "https://www.rovanatrade.com/products", "changefreq": "weekly", "priority": "0.9"},
-        {"loc": "https://www.rovanatrade.com/cable-tray", "changefreq": "weekly", "priority": "0.9"},
-        {"loc": "https://www.rovanatrade.com/cable-ladder", "changefreq": "weekly", "priority": "0.8"},
-        {"loc": "https://www.rovanatrade.com/galvanized", "changefreq": "monthly", "priority": "0.8"},
-        {"loc": "https://www.rovanatrade.com/painted", "changefreq": "monthly", "priority": "0.8"},
-        {"loc": "https://www.rovanatrade.com/contact", "changefreq": "monthly", "priority": "0.7"},
-    ]
+    {"loc": "https://www.rovanatrade.com/", "changefreq": "weekly", "priority": "1.0"},
+    {"loc": "https://www.rovanatrade.com/products", "changefreq": "weekly", "priority": "0.9"},
+    {"loc": "https://www.rovanatrade.com/cable-tray", "changefreq": "weekly", "priority": "0.9"},
+    {"loc": "https://www.rovanatrade.com/cable-ladder", "changefreq": "weekly", "priority": "0.8"},
+    {"loc": "https://www.rovanatrade.com/galvanized", "changefreq": "monthly", "priority": "0.8"},
+    {"loc": "https://www.rovanatrade.com/painted", "changefreq": "monthly", "priority": "0.8"},
+    {"loc": "https://www.rovanatrade.com/contact-us", "changefreq": "monthly", "priority": "0.7"},]
 
     # بناء ملف XML
     xml = """<?xml version="1.0" encoding="UTF-8"?>
