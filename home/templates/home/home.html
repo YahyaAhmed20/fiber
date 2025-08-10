@@ -1,9 +1,11 @@
+
+
 {% extends 'base.html' %}
 {% load static %}
 {% block body %}
 
 <!-- Animate.css Library -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
 <!-- Top Bar Section -->
 <div class="container-fluid topbar bg-secondary d-none d-xl-block w-100 animate__animated animate__fadeInDown wow" data-wow-delay="0.2s">
@@ -11,30 +13,36 @@
     <div class="row gx-0 align-items-center" style="height: 45px;">
       <div class="col-lg-6 text-center text-lg-start mb-lg-0">
         <div class="d-flex flex-wrap">
+         
+
           <a href="https://wa.me/201061166987" target="_blank" class="text-muted me-4">
-            <i class="fas fa-phone-alt text-primary me-2"></i>+01061166987
-          </a>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sara.galal@rovanatrade.com" target="_blank" class="text-muted me-0">
-            <i class="fas fa-envelope text-primary me-2"></i>sara.galal@rovanatrade.com
-          </a>
+    <i class="fas fa-phone-alt text-primary me-2"></i>+01061166987
+    </a>
+
+        
+         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sara.galal@rovanatrade.com" target="_blank" class="text-muted me-0">
+    <i class="fas fa-envelope text-primary me-2"></i>sara.galal@rovanatrade.com
+</a>
+
         </div>
       </div>
-      <div class="col-lg-6 text-center text-lg-end">
-        <div class="d-flex align-items-center justify-content-end gap-2">
-          <a href="https://www.facebook.com/RovanaTradeSteel" class="btn btn-light btn-sm-square rounded-circle">
+   <div class="col-lg-6 text-center text-lg-end">
+    <div class="d-flex align-items-center justify-content-end gap-2">
+        <a href="https://www.facebook.com/RovanaTradeSteel" class="btn btn-light btn-sm-square rounded-circle">
             <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="https://www.instagram.com/rovana_trade/?igsh=MWxhN2pvcXVoc3V6Ng%3D%3D#" class="btn btn-light btn-sm-square rounded-circle">
+        </a>
+        <a href="https://www.instagram.com/rovana_trade/?igsh=MWxhN2pvcXVoc3V6Ng%3D%3D#" class="btn btn-light btn-sm-square rounded-circle">
             <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/rovana-trade-for-cable-tray-95a3aa321/" class="btn btn-light btn-sm-square rounded-circle">
+        </a>
+        <a href="https://www.linkedin.com/in/rovana-trade-for-cable-tray-95a3aa321/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="btn btn-light btn-sm-square rounded-circle">
             <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a href="https://www.tiktok.com/@rovana.trade.for" class="btn btn-light btn-sm-square rounded-circle">
+        </a>
+        <a href="https://www.tiktok.com/@rovana.trade.for?_t=ZS-8yk834j1jom&_r=1" class="btn btn-light btn-sm-square rounded-circle">
             <i class="fab fa-tiktok"></i>
-          </a>
-        </div>
-      </div>
+        </a>
+    </div>
+</div>
+
     </div>
   </div>
 </div>
@@ -44,18 +52,15 @@
   <div id="carouselId" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
     <div class="carousel-inner" role="listbox">
       <div class="carousel-item active">
-        <img src="{% static 'img/WhatsApp Image.jpg' %}" class="img-fluid w-100" alt="كابل تري مجلفن وكابل ليدر في مصر | Rovana Trade | ISO 9001 Cable Tray Manufacturer"/>
+        <img src="{% static 'img/WhatsApp Image.jpg' %}" class="img-fluid w-100" alt="First slide"/>
         <div class="carousel-caption">
           <div class="container py-4">
             <div class="row g-5">
               <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.6s">
                 <div class="bg-secondary rounded p-5 shadow-lg animate__animated animate__fadeIn">
                   <h4 class="text-white mb-4">
-                    ⚡ احسب تكلفة <span class="fw-bold">كابل تري مجلفن أو ليدر </span> ⚙️
+                    ⚡ CALCULATE CABLE COST ⚙️
                   </h4>
-                  <p class="text-white small mb-3">
-                    استخدم الحاسبة لتقدير تكلفة <strong>Hot Dip Galvanized Cable Tray</strong> أو <strong>Electrostatic Painted Ladder</strong> حسب المقاسات.
-                  </p>
                   <div class="col-12 animate__animated animate__fadeIn wow" data-wow-delay="1.6s">
                     <div id="costResult" class="text-white mt-3"></div>
                     <hr class="my-4">
@@ -63,12 +68,13 @@
                     <!-- Manual Calculation Form -->
                     <form id="manualTrayForm" class="row g-3 text-white">
                       <div class="col-md-4">
-                        <label>النوع</label>
+                        <label>النوع </label>
                         <select class="form-select" name="category" id="category" required>
                           <option value="tray" selected>Tray Hot Dip Galvanized</option>
                           <option value="ladder">Ladder</option>
                         </select>
                       </div>
+                      <!-- القيم المشتركة -->
                       <div class="col-md-4">
                         <label>العرض (سم)</label>
                         <input type="number" name="width" step="0.01" class="form-control" required>
@@ -77,10 +83,12 @@
                         <label>الارتفاع (سم)</label>
                         <input type="number" name="height" step="0.01" class="form-control" required>
                       </div>
+                      <!-- مدخلات Tray فقط -->
                       <div class="col-md-4 tray-inputs">
                         <label>التخانة (مم)</label>
                         <input type="number" name="thickness" step="0.01" class="form-control">
                       </div>
+                      <!-- مدخلات Ladder فقط -->
                       <div class="col-md-4 ladder-inputs d-none">
                         <label>تخانة الجانب (مم)</label>
                         <input type="number" name="thickness_side" step="0.01" class="form-control">
@@ -96,30 +104,72 @@
                     <div id="manualResult" class="alert alert-info mt-3 d-none"></div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+              </div> <!-- End col-lg-6 -->
+            </div> <!-- End row -->
+          </div> <!-- End container -->
+        </div> <!-- End carousel-caption -->
+      </div> <!-- End carousel-item -->
+    </div> <!-- End carousel-inner -->
+  </div> <!-- End carousel -->
+</div> <!-- End Header Carousel -->
 
-<!-- SEO-Optimized Hero Section -->
-<div class="container py-5 text-center wow fadeInUp" data-wow-delay="0.1s">
-  <h1 class="display-4 fw-bold text-dark">
-    شركة تصنيع وتوريد <span class="text-primary">كابل تري وكابل ليدر في مصر</span>
-  </h1>
-  <p class="lead text-muted mb-4">
-    أفضل حلول <strong>حوامل الكابلات الكهربائية</strong> – <strong>كابل تري مجلفن</strong> و<strong>كابل ليدر مطلي إلكتروستاتيك</strong> – بمواصفات <strong>ISO 9001</strong>
-  </p>
-  <div class="d-flex flex-wrap justify-content-center gap-3">
-    <span class="badge bg-primary px-3 py-2">Hot Dip Galvanized Cable Tray</span>
-    <span class="badge bg-secondary px-3 py-2">Cable Ladder Supplier in Egypt</span>
-    <span class="badge bg-danger px-3 py-2">Custom Fabrication</span>
-    <span class="badge bg-success px-3 py-2">تركيب وصيانة</span>
-  </div>
-</div>
+<!-- JavaScript for Form and Category Toggle -->
+<script>
+  // Toggle between Tray and Ladder fields
+  document.getElementById("category").addEventListener("change", function() {
+    const isLadder = this.value === "ladder";
+    document.querySelectorAll(".ladder-inputs").forEach(el => el.classList.toggle("d-none", !isLadder));
+    document.querySelectorAll(".tray-inputs").forEach(el => el.classList.toggle("d-none", isLadder));
+  });
+
+  // Manual Calculation Form Submission
+  document.getElementById("manualTrayForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+
+    fetch("/calculate_manual_combined/", {
+      method: "POST",
+      headers: {
+        "X-CSRFToken": "{{ csrf_token }}"
+      },
+      body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+      const resultDiv = document.getElementById("manualResult");
+      resultDiv.classList.remove("d-none");
+      if (data.total_price) {
+        resultDiv.innerHTML = `✅ <strong>الإجمالي للمتر:</strong> ${data.total_price} جنيه`;
+      } else {
+        resultDiv.innerHTML = `<span class="text-danger">${data.error || 'حدث خطأ أثناء الحساب.'}</span>`;
+      }
+    })
+    .catch(error => {
+      const resultDiv = document.getElementById("manualResult");
+      resultDiv.classList.remove("d-none");
+      resultDiv.innerHTML = `<span class="text-danger">Error: ${error}</span>`;
+    });
+  });
+</script>
+
+<!-- Inline CSS Styles -->
+<style>
+  .valid-check {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #28a745;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out;
+  }
+  #clearBtn:hover {
+    background-color: #6c757d !important;
+    transform: scale(1.02);
+    transition: 0.2s ease-in-out;
+  }
+</style>
 
 <!-- Why Choose Our Products Section -->
 <div class="container-fluid bg-light py-5">
@@ -129,7 +179,7 @@
         WHY <span class="text-primary">ROVANA TRADE?</span>
       </h2>
       <p class="text-muted">
-        نحن <strong>أكبر مورد لكابل تري وكابل ليدر في مصر</strong>، متخصصون في تصنيع <strong>حوامل الكابلات المجلفنة</strong> و<strong>أنظمة إدارة الكابلات الصناعية</strong>. نوفر حلول متكاملة للشركات والمقاولين الكهربائيين بجودة عالية وسعر تنافسي.
+        Rovana Trade is characterized by high efficiency and distinguished quality in the products we supply. We offer excellent prices and have a strong track record in the field of electrical supplies.
       </p>
     </div>
     <div class="row g-5 align-items-center">
@@ -139,8 +189,8 @@
             <i class="fa fa-cogs fa-2x text-white"></i>
           </div>
           <div>
-            <h5 class="fw-bold mb-2">تصنيع محلي معتمد ISO 9001</h5>
-            <p class="mb-0 text-muted">نحن <strong>شركة تصنيع كابل تري في مصر</strong> معتمدة حسب معايير الجودة العالمية ISO 9001، ونضمن لك منتجات تدوم طويلاً.</p>
+            <h5 class="fw-bold mb-2">High Efficiency</h5>
+            <p class="mb-0 text-muted">Our company is known for its operational efficiency, ensuring timely and reliable service for all your electrical supply needs.</p>
           </div>
         </div>
         <div class="d-flex mb-4 wow fadeInLeft" data-wow-delay="0.5s">
@@ -148,13 +198,13 @@
             <i class="fa fa-star fa-2x text-white"></i>
           </div>
           <div>
-            <h5 class="fw-bold mb-2">كابل تري مجلفن وليدر مطلي إلكتروستاتيك</h5>
-            <p class="mb-0 text-muted">نستخدم تقنيات <strong>Hot Dip Galvanization</strong> وطلاء <strong>Electrostatic Paint</strong> لضمان حماية فائقة ضد الصدأ والتآكل.</p>
+            <h5 class="fw-bold mb-2">Distinguished Quality</h5>
+            <p class="mb-0 text-muted">We are committed to providing products of the highest quality, meeting international standards and exceeding customer expectations.</p>
           </div>
         </div>
       </div>
       <div class="col-xl-4 text-center wow zoomIn" data-wow-delay="0.7s">
-        <!-- يمكن إضافة صورة أو محتوى هنا لاحقًا -->
+        <!-- يمكن إضافة صورة أو محتوى هنا -->
       </div>
       <div class="col-xl-4">
         <div class="d-flex mb-4 wow fadeInRight" data-wow-delay="0.3s">
@@ -162,8 +212,8 @@
             <i class="fa fa-tags fa-2x text-white"></i>
           </div>
           <div>
-            <h5 class="fw-bold mb-2">أفضل أسعار توريد كابل تري في مصر</h5>
-            <p class="mb-0 text-muted">نقدم <strong>أسعار تنافسية</strong> لجميع أنواع <strong>حوامل الكابلات الكهربائية</strong> مع خصومات للجملة والمشاريع الكبيرة.</p>
+            <h5 class="fw-bold mb-2">Excellent Prices</h5>
+            <p class="mb-0 text-muted">We provide competitive pricing without compromising on quality, ensuring the best value for our clients.</p>
           </div>
         </div>
         <div class="d-flex mb-4 wow fadeInRight" data-wow-delay="0.5s">
@@ -171,8 +221,8 @@
             <i class="fa fa-history fa-2x text-white"></i>
           </div>
           <div>
-            <h5 class="fw-bold mb-2">خبرة في تركيب أنظمة إدارة الكابلات</h5>
-            <p class="mb-0 text-muted">لدينا فريق فني متخصص في <strong>تركيب كابل تري وليدر</strong> في المشاريع الصناعية والتجارية بجودة عالية وسرعة.</p>
+            <h5 class="fw-bold mb-2">Proven Track Record</h5>
+            <p class="mb-0 text-muted">With a great precedent in the field of electrical supplies, Rovana Trade is a trusted partner for your projects.</p>
           </div>
         </div>
       </div>
@@ -235,68 +285,6 @@
     </div>
   </div>
 </div>
-
-<!-- WOW.js Initialization -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-<script>
-  new WOW().init();
-
-  // Toggle between Tray and Ladder fields
-  document.getElementById("category").addEventListener("change", function() {
-    const isLadder = this.value === "ladder";
-    document.querySelectorAll(".ladder-inputs").forEach(el => el.classList.toggle("d-none", !isLadder));
-    document.querySelectorAll(".tray-inputs").forEach(el => el.classList.toggle("d-none", isLadder));
-  });
-
-  // Manual Calculation Form Submission
-  document.getElementById("manualTrayForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    const formData = new FormData(this);
-
-    fetch("/calculate_manual_combined/", {
-      method: "POST",
-      headers: {
-        "X-CSRFToken": "{{ csrf_token }}"
-      },
-      body: formData
-    })
-    .then(res => res.json())
-    .then(data => {
-      const resultDiv = document.getElementById("manualResult");
-      resultDiv.classList.remove("d-none");
-      if (data.total_price) {
-        resultDiv.innerHTML = `✅ <strong>الإجمالي للمتر:</strong> ${data.total_price} جنيه`;
-      } else {
-        resultDiv.innerHTML = `<span class="text-danger">${data.error || 'حدث خطأ أثناء الحساب.'}</span>`;
-      }
-    })
-    .catch(error => {
-      const resultDiv = document.getElementById("manualResult");
-      resultDiv.classList.remove("d-none");
-      resultDiv.innerHTML = `<span class="text-danger">Error: ${error}</span>`;
-    });
-  });
-</script>
-
-<!-- Inline CSS Styles -->
-<style>
-  .valid-check {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.2rem;
-    color: #28a745;
-    pointer-events: none;
-    transition: opacity 0.2s ease-in-out;
-  }
-  #clearBtn:hover {
-    background-color: #6c757d !important;
-    transform: scale(1.02);
-    transition: 0.2s ease-in-out;
-  }
-</style>
-
 
 <!-- Team Section -->
 {% comment %} <div class="container-fluid team pb-5">
@@ -381,3 +369,5 @@
 </script>
 
 {% endblock %}
+
+
