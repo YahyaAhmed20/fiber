@@ -20,7 +20,6 @@ def home(request):
     })
 
 
-# 🔢 حساب السعر
 @csrf_exempt
 def calculate_manual_combined(request):
     if request.method == "POST":
@@ -52,13 +51,35 @@ def calculate_manual_combined(request):
                     )
                 })
 
+            # ❄️ حساب سعر الـ Cold Tray (بدون جلفنة)
+            elif category == "cold_tray":
+                galvanize = 0  # لا يوجد جلفنة
+                width = float(request.POST.get("width"))
+                height = float(request.POST.get("height"))
+                thickness = float(request.POST.get("thickness"))
+                manufacturing = 15
+
+                individuals = width + (height * 2)
+                stick_price = ((individuals / 100) * thickness * 3 * 8) * (steel + galvanize)
+                price_per_meter = (stick_price / 3) + manufacturing
+                total_price = price_per_meter * 1.04
+
+                return JsonResponse({
+                    "total_price": round(total_price, 2),
+                    "details": (
+                        f"📏 سعر المتر: {round(price_per_meter, 2)}<br>"
+                        f"🪵 سعر العود: {round(stick_price, 2)}<br>"
+                        f"👥 عدد الأفراد: {round(individuals, 2)}"
+                    )
+                })
+
             # 🪜 حساب سعر الـ Ladder
             elif category == "ladder":
                 A = float(request.POST.get("width"))
                 B = float(request.POST.get("height"))
                 C = float(request.POST.get("thickness_side"))
                 D = float(request.POST.get("thickness_drawer"))
-                manufacturing = 60  # تكلفة التصنيع للـ ladder
+                manufacturing = 60
 
                 E = ((B / 100) + 0.03) * 2
                 F = (E * 3 * C * 8) * (steel + galvanize)
@@ -77,7 +98,6 @@ def calculate_manual_combined(request):
                     )
                 })
 
-            # ❌ نوع غير معروف
             else:
                 return JsonResponse({"error": "نوع غير معروف"}, status=400)
 
@@ -85,8 +105,6 @@ def calculate_manual_combined(request):
             return JsonResponse({"error": str(e)}, status=400)
 
     return JsonResponse({"error": "Invalid request"}, status=400)
-
-
 
 
 
