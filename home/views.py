@@ -52,10 +52,9 @@ def calculate_manual_combined(request):
                 })
 
             # ❄️ حساب سعر الـ Cold Tray (بدون جلفنة)
-            # 🥇 حساب سعر الـ Gold Tray
-            elif category == "gold_tray":
-                steel = 45      # سعر الحديد في gold tray
-                galvanize = 0   # بدون جلفنة
+            elif category == "cold_tray":
+                steel = 45 
+                galvanize = 0  # لا يوجد جلفنة
                 width = float(request.POST.get("width"))
                 height = float(request.POST.get("height"))
                 thickness = float(request.POST.get("thickness"))
@@ -74,7 +73,6 @@ def calculate_manual_combined(request):
                         f"👥 عدد الأفراد: {round(individuals, 2)}"
                     )
                 })
-
 
             # 🪜 حساب سعر الـ Ladder
             elif category == "ladder":
@@ -108,6 +106,7 @@ def calculate_manual_combined(request):
             return JsonResponse({"error": str(e)}, status=400)
 
     return JsonResponse({"error": "Invalid request"}, status=400)
+
 
 
 

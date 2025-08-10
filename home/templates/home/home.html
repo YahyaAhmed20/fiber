@@ -69,11 +69,11 @@
                     <form id="manualTrayForm" class="row g-3 text-white">
                       <div class="col-md-4">
                         <label>النوع </label>
-                                    <select class="form-select" name="category" id="category" required>
-                <option value="tray" selected>Tray Hot Dip Galvanized</option>
-                <option value="cold_tray">Tray Pre Galvanized</option>
-                <option value="ladder">Ladder</option>
-              </select>
+                <select class="form-select" name="category" id="category" required>
+  <option value="tray" selected>Tray Hot Dip Galvanized</option>
+  <option value="cold_tray">Tray Pre Galvanised</option>
+  <option value="ladder">Ladder</option>
+</select>
 
                       </div>
                       <!-- القيم المشتركة -->
@@ -118,15 +118,13 @@
 <!-- JavaScript for Form and Category Toggle -->
 <script>
   // Toggle between Tray and Ladder fields
- // Toggle between Tray, Cold Tray, and Ladder fields
-document.getElementById("category").addEventListener("change", function() {
-  const isLadder = this.value === "ladder";
-  const isTrayType = this.value === "tray" || this.value === "cold_tray";
+  document.getElementById("category").addEventListener("change", function() {
+    const isLadder = this.value === "ladder";
+    const isTrayType = this.value === "tray" || this.value === "cold_tray";
 
-  document.querySelectorAll(".ladder-inputs").forEach(el => el.classList.toggle("d-none", !isLadder));
-  document.querySelectorAll(".tray-inputs").forEach(el => el.classList.toggle("d-none", !isTrayType));
-});
-
+    document.querySelectorAll(".ladder-inputs").forEach(el => el.classList.toggle("d-none", !isLadder));
+    document.querySelectorAll(".tray-inputs").forEach(el => el.classList.toggle("d-none", !isTrayType));
+  });
 
   // Manual Calculation Form Submission
   document.getElementById("manualTrayForm").addEventListener("submit", function(e) {
