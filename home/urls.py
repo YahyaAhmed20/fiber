@@ -18,5 +18,13 @@ urlpatterns = [
 
     path('googleb7c44eff2d1899d9.html', views.google_verify, name='google_verify'),   
     # path('calculate/', views.calculate_dynamic_price, name='calculate_price'),
+    
+    
+    # الصفحات الجديدة
+    path('products/', views.products, name='products'),
+    path('cable-tray/', views.cable_tray, name='cable_tray'),
+    path('cable-ladder/', views.cable_ladder, name='cable_ladder'),
+    path('galvanized/', views.galvanized, name='galvanized'),
+    path('painted/', views.painted, name='painted'),
 
 ]

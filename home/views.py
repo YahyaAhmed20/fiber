@@ -146,3 +146,20 @@ def google_verify(request):
     # ضع محتوى الملف اللي جوجل بعته
     content = """google-site-verification: googleb7c44eff2d1899d9.html"""
     return HttpResponse(content, content_type="text/html")
+
+
+
+def products(request):
+    return render(request, 'home/products.html')
+
+def cable_tray(request):
+    return render(request, 'home/cable_tray.html')
+
+def cable_ladder(request):
+    return render(request, 'home/cable_ladder.html')
+
+def galvanized(request):
+    return render(request, 'home/galvanized.html')
+
+def painted(request):
+    return render(request, 'home/painted.html')
