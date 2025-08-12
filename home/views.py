@@ -110,6 +110,58 @@ def calculate_manual_combined(request):
 
 
 
+
+
+@csrf_exempt
+def calculate_cover_cost(request):
+    if request.method == "POST":
+        try:
+            cover_type = request.POST.get("cover_type")
+            cover_width = float(request.POST.get("cover_width"))
+            side_height = float(request.POST.get("side_height"))
+            thickness = 1.5  # ثابت
+            manufacturing = 10
+            percentage = 1.03
+
+            # تحديد القيم حسب نوع الغطا
+            if cover_type == "hot_cover":
+                steel = 37
+                galvanize = 24
+            elif cover_type == "cold_cover":
+                steel = 45
+                galvanize = 0
+            else:
+                return JsonResponse({"error": "Invalid cover type"}, status=400)
+
+            # الأفراد (ديناميكي)
+            individuals = (side_height * 2) + cover_width
+
+            # إجمالي سعر العود
+            stick_price = ((individuals / 100) * thickness * 3 * 8) * (steel + galvanize)
+
+            # إجمالي سعر المتر
+            price_per_meter = (stick_price / 3) + manufacturing
+
+            # الإجمالي للمتر للغطا
+            total_price = price_per_meter * percentage
+
+            return JsonResponse({
+                "total_price": round(total_price, 2),
+                "details": (
+                    f"👥 الأفراد: {round(individuals, 2)}<br>"
+                    f"🪵 سعر العود: {round(stick_price, 2)}<br>"
+                    f"📏 سعر المتر: {round(price_per_meter, 2)}<br>"
+                    f"🏭 المصنعيات: {manufacturing}<br>"
+                    f"📈 النسبة: {percentage}"
+                )
+            })
+
+        except Exception as e:
+            return JsonResponse({"error": str(e)}, status=400)
+
+    return JsonResponse({"error": "Invalid request"}, status=400)
+
+
 from django.http import HttpResponse
 
 def robots_txt(request):

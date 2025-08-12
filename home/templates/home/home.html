@@ -46,74 +46,112 @@
     </div>
   </div>
 </div>
+<img src="{% static 'img/WhatsApp Image.jpg' %}" class="img-fluid w-100" alt="Background" style="position: absolute; top: 0; left: 0; z-index: -1; height: 100%; object-fit: cover;">
 
-<!-- Header Carousel Section -->
-<div class="header-carousel animate__animated animate__fadeIn wow" data-wow-delay="0.4s">
-  <div id="carouselId" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
-    <div class="carousel-inner" role="listbox">
-      <div class="carousel-item active">
-        <img src="{% static 'img/WhatsApp Image.jpg' %}" class="img-fluid w-100" alt="First slide"/>
-        <div class="carousel-caption">
-          <div class="container py-4">
-            <div class="row g-5">
-              <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.6s">
-                <div class="bg-secondary rounded p-5 shadow-lg animate__animated animate__fadeIn">
-                  <h4 class="text-white mb-4">
-                    ⚡ CALCULATE CABLE COST ⚙️
-                  </h4>
-                  <div class="col-12 animate__animated animate__fadeIn wow" data-wow-delay="1.6s">
-                    <div id="costResult" class="text-white mt-3"></div>
-                    <hr class="my-4">
-                    <h5 class="text-white">أو احسب يدويًا باستخدام مدخلاتك 👇</h5>
-                    <!-- Manual Calculation Form -->
-                    <form id="manualTrayForm" class="row g-3 text-white">
-                      <div class="col-md-4">
-                        <label>النوع </label>
-                <select class="form-select" name="category" id="category" required>
-  <option value="tray" selected>Tray Hot Dip Galvanized</option>
-  <option value="cold_tray">Tray Pre Galvanised</option>
-  <option value="ladder">Ladder</option>
-</select>
+<div class="container py-4 position-relative">  
+  <div class="row g-4">
 
-                      </div>
-                      <!-- القيم المشتركة -->
-                      <div class="col-md-4">
-                        <label>العرض (سم)</label>
-                        <input type="number" name="width" step="0.01" class="form-control" required>
-                      </div>
-                      <div class="col-md-4">
-                        <label>الارتفاع (سم)</label>
-                        <input type="number" name="height" step="0.01" class="form-control" required>
-                      </div>
-                      <!-- مدخلات Tray فقط -->
-                      <div class="col-md-4 tray-inputs">
-                        <label>التخانة (مم)</label>
-                        <input type="number" name="thickness" step="0.01" class="form-control">
-                      </div>
-                      <!-- مدخلات Ladder فقط -->
-                      <div class="col-md-4 ladder-inputs d-none">
-                        <label>تخانة الجانب (مم)</label>
-                        <input type="number" name="thickness_side" step="0.01" class="form-control">
-                      </div>
-                      <div class="col-md-4 ladder-inputs d-none">
-                        <label>تخانة العارض (مم)</label>
-                        <input type="number" name="thickness_drawer" step="0.01" class="form-control">
-                      </div>
-                      <div class="col-12">
-                        <button type="submit" class="btn btn-warning w-100">🧮 احسب يدويًا</button>
-                      </div>
-                    </form>
-                    <div id="manualResult" class="alert alert-info mt-3 d-none"></div>
-                  </div>
-                </div>
-              </div> <!-- End col-lg-6 -->
-            </div> <!-- End row -->
-          </div> <!-- End container -->
-        </div> <!-- End carousel-caption -->
-      </div> <!-- End carousel-item -->
-    </div> <!-- End carousel-inner -->
-  </div> <!-- End carousel -->
-</div> <!-- End Header Carousel -->
+    <!-- Form 1: Cable Cost -->
+    <div class="col-lg-6">
+      <div class="bg-secondary rounded p-4 shadow-lg h-100 animate__animated animate__fadeInLeft">
+        <h4 class="text-white mb-4">
+          ⚡ <span class="fw-bold">CALCULATE CABLE COST</span> ⚙️
+        </h4>
+
+        <form id="manualTrayForm" class="row g-3 text-white">
+          <div class="col-md-6">
+            <label class="form-label">📦 النوع</label>
+            <select class="form-select" name="category" id="category" required>
+              <option value="tray" selected>Tray Hot Dip Galvanized</option>
+              <option value="cold_tray">Tray Pre Galvanised</option>
+              <option value="ladder">Ladder</option>
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">📏 العرض (سم)</label>
+            <input type="number" name="width" step="0.01" class="form-control" required>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">📐 الارتفاع (سم)</label>
+            <input type="number" name="height" step="0.01" class="form-control" required>
+          </div>
+
+          <div class="col-md-6 tray-inputs">
+            <label class="form-label">⚖️ التخانة (مم)</label>
+            <input type="number" name="thickness" step="0.01" class="form-control">
+          </div>
+
+          <div class="col-md-6 ladder-inputs d-none">
+            <label class="form-label">📏 تخانة الجانب (مم)</label>
+            <input type="number" name="thickness_side" step="0.01" class="form-control">
+          </div>
+
+          <div class="col-md-6 ladder-inputs d-none">
+            <label class="form-label">📏 تخانة العارض (مم)</label>
+            <input type="number" name="thickness_drawer" step="0.01" class="form-control">
+          </div>
+
+          <div class="col-12">
+            <button type="submit" class="btn btn-warning w-100 fw-bold py-2">
+              🧮 احسب يدويًا
+            </button>
+          </div>
+        </form>
+
+        <div id="manualResult" class="alert alert-info mt-3 d-none"></div>
+      </div>
+    </div>
+
+    <!-- Form 2: Cover Cost -->
+    <div class="col-lg-6">
+      <div class="bg-secondary rounded p-4 shadow-lg h-100 animate__animated animate__fadeInRight">
+        <h4 class="text-white mb-4">
+          🛡 <span class="fw-bold">CALCULATE COVER COST</span>
+        </h4>
+
+        <form id="coverCostForm" class="row g-3 text-white">
+          <div class="col-md-6">
+            <label class="form-label">🧾 نوع الغطا</label>
+            <select class="form-select" name="cover_type" required>
+              <option value="hot_cover" selected>Hot Cover Tray</option>
+              <option value="cold_cover">Cold Cover Tray</option>
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">📏 عرض الغطا (سم)</label>
+            <input type="number" name="cover_width" step="0.01" class="form-control" required>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">📐 ارتفاع الجانب (سم)</label>
+            <input type="number" name="side_height" step="0.01" class="form-control" required>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">⚖️ التخانة (مم) - ثابتة</label>
+            <input type="number" value="1.5" class="form-control" disabled>
+          </div>
+
+          <div class="col-12">
+            <button type="submit" class="btn btn-warning w-100 fw-bold py-2">
+              🧮 احسب الغطا
+            </button>
+          </div>
+        </form>
+
+        <div id="coverResult" class="alert alert-info mt-3 d-none"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+{% comment %} End Cover  {% endcomment %}
 
 <!-- JavaScript for Form and Category Toggle -->
 <script>
@@ -154,6 +192,53 @@
       resultDiv.innerHTML = `<span class="text-danger">Error: ${error}</span>`;
     });
   });
+
+
+
+  {% comment %} Cover {% endcomment %}
+
+
+  
+// عند تغيير نوع الغطا نمسح القيم المدخلة فقط
+document.querySelector('select[name="cover_type"]').addEventListener("change", function () {
+  // مسح عرض الغطا
+  document.querySelector('input[name="cover_width"]').value = "";
+  // مسح ارتفاع الجانب
+  document.querySelector('input[name="side_height"]').value = "";
+  // مسح النتيجة
+  const resultDiv = document.getElementById("coverResult");
+  resultDiv.classList.add("d-none");
+  resultDiv.innerHTML = "";
+});
+
+document.getElementById("coverCostForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const formData = new FormData(this);
+
+  fetch("/calculate_cover_cost/", {
+    method: "POST",
+    headers: {
+      "X-CSRFToken": "{{ csrf_token }}"
+    },
+    body: formData
+  })
+  .then(res => res.json())
+  .then(data => {
+    const resultDiv = document.getElementById("coverResult");
+    resultDiv.classList.remove("d-none");
+    if (data.total_price) {
+      resultDiv.innerHTML = `✅ <strong>الإجمالي للمتر:</strong> ${data.total_price} جنيه`;
+    } else {
+      resultDiv.innerHTML = `<span class="text-danger">${data.error || 'حدث خطأ أثناء الحساب.'}</span>`;
+    }
+  })
+  .catch(error => {
+    const resultDiv = document.getElementById("coverResult");
+    resultDiv.classList.remove("d-none");
+    resultDiv.innerHTML = `<span class="text-danger">Error: ${error}</span>`;
+  });
+});
+
 </script>
 
 <!-- Inline CSS Styles -->

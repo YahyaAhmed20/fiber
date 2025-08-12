@@ -12,6 +12,7 @@ urlpatterns = [
 
 
     path("calculate_manual_combined/", views.calculate_manual_combined, name="calculate_manual_combined"),
+    path("calculate_cover_cost/", views.calculate_cover_cost, name="calculate_cover_cost"),
     path('robots.txt', views.robots_txt, name='robots_txt'),
 
     path('sitemap.xml', views.sitemap_xml, name='sitemap_xml'),  # ← السطر الجديد
