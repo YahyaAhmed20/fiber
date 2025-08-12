@@ -1,19 +1,0 @@
-<!-- templates/home/calculate_dynamic_price.html -->
-
-<h2>احسب السعر</h2>
-
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">احسب</button>
-</form>
-
-{% if total_price %}
-  <h3>✅ السعر الإجمالي: {{ total_price }} جنيه</h3>
-  <h4>📊 تفاصيل الحساب:</h4>
-  <ul>
-    {% for key, value in breakdown.items %}
-      <li>{{ key }}: {{ value }}</li>
-    {% endfor %}
-  </ul>
-{% endif %}

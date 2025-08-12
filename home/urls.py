@@ -13,19 +13,6 @@ urlpatterns = [
 
     path("calculate_manual_combined/", views.calculate_manual_combined, name="calculate_manual_combined"),
     path("calculate_cover_cost/", views.calculate_cover_cost, name="calculate_cover_cost"),
-    path('robots.txt', views.robots_txt, name='robots_txt'),
-
-    path('sitemap.xml', views.sitemap_xml, name='sitemap_xml'),  # ← السطر الجديد
-
-    path('googleb7c44eff2d1899d9.html', views.google_verify, name='google_verify'),   
-    # path('calculate/', views.calculate_dynamic_price, name='calculate_price'),
-    
-    
-    # الصفحات الجديدة
-    path('products/', views.products, name='products'),
-    path('cable-tray/', views.cable_tray, name='cable_tray'),
-    path('cable-ladder/', views.cable_ladder, name='cable_ladder'),
-    path('galvanized/', views.galvanized, name='galvanized'),
-    path('painted/', views.painted, name='painted'),
+   
 
 ]
