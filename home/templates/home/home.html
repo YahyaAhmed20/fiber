@@ -125,14 +125,14 @@
             <input type="number" name="cover_width" step="0.01" class="form-control" required>
           </div>
 
-          <div class="col-md-6">
-            <label class="form-label">📐 ارتفاع الجانب (سم)</label>
-            <input type="number" name="side_height" step="0.01" class="form-control" required>
+                    <div class="col-md-6">
+            <label class="form-label">📐 ارتفاع الجانب (سم) - ثابت</label>
+            <input type="number" name="side_height" value="1.5" step="0.01" class="form-control" readonly>
           </div>
 
           <div class="col-md-6">
-            <label class="form-label">⚖️ التخانة (مم) - ثابتة</label>
-            <input type="number" value="1.5" class="form-control" disabled>
+            <label class="form-label">⚖️ التخانة (مم)</label>
+            <input type="number" name="thickness" step="0.01" class="form-control" required>
           </div>
 
           <div class="col-12">
@@ -200,16 +200,18 @@
 
   
 // عند تغيير نوع الغطا نمسح القيم المدخلة فقط
+// عند تغيير نوع الغطا نمسح القيم المدخلة فقط
 document.querySelector('select[name="cover_type"]').addEventListener("change", function () {
   // مسح عرض الغطا
   document.querySelector('input[name="cover_width"]').value = "";
-  // مسح ارتفاع الجانب
-  document.querySelector('input[name="side_height"]').value = "";
+  // مسح التخانة
+  document.querySelector('input[name="thickness"]').value = "";
   // مسح النتيجة
   const resultDiv = document.getElementById("coverResult");
   resultDiv.classList.add("d-none");
   resultDiv.innerHTML = "";
 });
+
 
 document.getElementById("coverCostForm").addEventListener("submit", function(e) {
   e.preventDefault();

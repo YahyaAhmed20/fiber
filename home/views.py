@@ -118,8 +118,10 @@ def calculate_cover_cost(request):
         try:
             cover_type = request.POST.get("cover_type")
             cover_width = float(request.POST.get("cover_width"))
-            side_height = float(request.POST.get("side_height"))
-            thickness = 1.5  # ثابت
+            thickness = float(request.POST.get("thickness"))  # متغير
+
+            side_height = 1.5  # ثابت
+
             manufacturing = 10
             percentage = 1.03
 
