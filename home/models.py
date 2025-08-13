@@ -4,21 +4,6 @@ from django.db import models
 
 
 
-class TeamMember(models.Model):
-    name = models.CharField(max_length=100)
-    role = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='team/')
-    facebook = models.URLField(blank=True, null=True)
-    twitter = models.URLField(blank=True, null=True)
-    instagram = models.URLField(blank=True, null=True)
-    linkedin = models.URLField(blank=True, null=True)
-    order = models.PositiveIntegerField(default=0)
-
-    class Meta:
-        ordering = ['order']  # الترتيب حسب رقم
-
-    def __str__(self):
-        return self.name
     
 class Review(models.Model):
     name = models.CharField(max_length=100)
@@ -34,3 +19,15 @@ class Review(models.Model):
     def __str__(self):
         return f"{self.name} - {self.job_title}"
     
+
+
+
+class UserData(models.Model):
+    name = models.CharField(max_length=255)
+    company = models.CharField(max_length=255)
+    phone = models.CharField(max_length=20)
+    email = models.EmailField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.name} - {self.company}"

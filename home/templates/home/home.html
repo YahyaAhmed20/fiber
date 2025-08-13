@@ -44,9 +44,62 @@
     </div>
   </div>
 </div>
-<img src="{% static 'img/WhatsApp Image.jpg' %}" class="img-fluid w-100" alt="Background" style="position: absolute; top: 0; left: 0; z-index: -1; height: 100%; object-fit: cover;">
+<div id="userDataFormWrapper" class="bg-secondary p-4 rounded shadow-lg mb-4 text-white d-none">
+  <h4 class="mb-3">📋 بياناتك قبل الحساب</h4>
+  <form id="userDataForm" class="row g-3">
+    <div class="col-md-6">
+      <label for="name" class="form-label">👤 الاسم</label>
+      <input id="name" type="text" name="name" placeholder="اكتب اسمك" class="form-control" required>
+    </div>
 
-<div class="container py-4 position-relative">  
+    <div class="col-md-6">
+      <label for="company" class="form-label">🏢 اسم الشركة</label>
+      <input id="company" type="text" name="company" placeholder="اسم شركتك" class="form-control" required>
+    </div>
+
+    <div class="col-md-6">
+      <label for="phone" class="form-label">📞 رقم الهاتف</label>
+      <input 
+        id="phone" 
+        type="tel" 
+        name="phone" 
+        placeholder="01xxxxxxxxx" 
+        pattern="^[0-9]{11}$" 
+        title="رقم الهاتف يجب أن يكون 11 رقم بالضبط" 
+        class="form-control" 
+        required
+      >
+    </div>
+
+    <div class="col-md-6">
+      <label for="email" class="form-label">📧 الإيميل</label>
+      <input 
+        id="email" 
+        type="email" 
+        name="email" 
+        placeholder="example@gmail.com" 
+        class="form-control" 
+        pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$" 
+        title="يجب إدخال إيميل صحيح ينتهي بـ @gmail.com" 
+        required
+      >
+    </div>
+
+    <div class="col-12">
+      <button type="submit" class="btn btn-warning w-100 fw-bold py-2">✅ حفظ ومتابعة</button>
+    </div>
+  </form>
+</div>
+
+
+<!-- Background Image -->
+<img src="{% static 'img/WhatsApp Image.jpg' %}" 
+     class="img-fluid w-100" 
+     alt="Background" 
+     style="position: absolute; top: 0; left: 0; z-index: -1; height: 100%; object-fit: cover;">
+
+<!-- Main Container -->
+<div class="container py-4 position-relative">
   <div class="row g-5">
 
     <!-- Form 1: Cable Cost -->
@@ -65,32 +118,26 @@
               <option value="ladder">Ladder</option>
             </select>
           </div>
-
           <div class="col-md-6">
             <label class="form-label">📏 العرض (سم)</label>
             <input type="number" name="width" step="0.01" class="form-control" required>
           </div>
-
           <div class="col-md-6">
             <label class="form-label">📐 الارتفاع (سم)</label>
             <input type="number" name="height" step="0.01" class="form-control" required>
           </div>
-
           <div class="col-md-6 tray-inputs">
             <label class="form-label">⚖️ التخانة (مم)</label>
             <input type="number" name="thickness" step="0.01" class="form-control">
           </div>
-
           <div class="col-md-6 ladder-inputs d-none">
             <label class="form-label">📏 تخانة الجانب (مم)</label>
             <input type="number" name="thickness_side" step="0.01" class="form-control">
           </div>
-
           <div class="col-md-6 ladder-inputs d-none">
             <label class="form-label">📏 تخانة العارض (مم)</label>
             <input type="number" name="thickness_drawer" step="0.01" class="form-control">
           </div>
-
           <div class="col-12">
             <button type="submit" class="btn btn-warning w-100 fw-bold py-2">
               🧮 احسب يدويًا
@@ -117,22 +164,18 @@
               <option value="cold_cover">Cold Cover Tray</option>
             </select>
           </div>
-
           <div class="col-md-6">
             <label class="form-label">📏 عرض الغطا (سم)</label>
             <input type="number" name="cover_width" step="0.01" class="form-control" required>
           </div>
-
-                    <div class="col-md-6">
+          <div class="col-md-6">
             <label class="form-label">📐 ارتفاع الجانب (سم) - ثابت</label>
             <input type="number" name="side_height" value="1.5" step="0.01" class="form-control" readonly>
           </div>
-
           <div class="col-md-6">
             <label class="form-label">⚖️ التخانة (مم)</label>
             <input type="number" name="thickness" step="0.01" class="form-control" required>
           </div>
-
           <div class="col-12">
             <button type="submit" class="btn btn-warning w-100 fw-bold py-2">
               🧮 احسب الغطا
@@ -153,6 +196,71 @@
 
 <!-- JavaScript for Form and Category Toggle -->
 <script>
+
+let pendingForm = null; 
+let skipCheck = false; 
+
+function checkUserData(formId) {
+  if (!localStorage.getItem("userData") && !skipCheck) {
+    pendingForm = formId;
+    document.getElementById("userDataFormWrapper").classList.remove("d-none");
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    return false;
+  }
+  return true;
+}
+
+document.getElementById("userDataForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  
+  const formData = {
+    name: this.name.value,
+    company: this.company.value,
+    phone: this.phone.value,
+    email: this.email.value
+  };
+
+  // حفظ في قاعدة البيانات عبر AJAX
+  fetch("/save-user-data/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "X-CSRFToken": getCookie("csrftoken") // لو الفورم محمي
+    },
+    body: JSON.stringify(formData)
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.status === "success") {
+      localStorage.setItem("userData", JSON.stringify(formData));
+      document.getElementById("userDataFormWrapper").classList.add("d-none");
+
+      if (pendingForm) {
+        skipCheck = true;
+        document.getElementById(pendingForm).dispatchEvent(new Event("submit"));
+        skipCheck = false;
+        pendingForm = null;
+      }
+    }
+  });
+
+});
+
+// دالة للحصول على CSRF
+function getCookie(name) {
+  let cookieValue = null;
+  if (document.cookie && document.cookie !== "") {
+    const cookies = document.cookie.split(";");
+    for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim();
+      if (cookie.substring(0, name.length + 1) === (name + "=")) {
+        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+        break;
+      }
+    }
+  }
+  return cookieValue;
+}
   // Toggle between Tray and Ladder fields
   document.getElementById("category").addEventListener("change", function() {
     const isLadder = this.value === "ladder";
@@ -164,8 +272,12 @@
 
   // Manual Calculation Form Submission
   document.getElementById("manualTrayForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    const formData = new FormData(this);
+  e.preventDefault();
+
+  if (!checkUserData("manualTrayForm")) return; // 🚀 هنا بيجبر على التسجيل الأول
+
+  const formData = new FormData(this);
+
 
     fetch("/calculate_manual_combined/", {
       method: "POST",
@@ -213,7 +325,11 @@ document.querySelector('select[name="cover_type"]').addEventListener("change", f
 
 document.getElementById("coverCostForm").addEventListener("submit", function(e) {
   e.preventDefault();
+
+  if (!checkUserData("coverCostForm")) return; // 🚀 برضو يجبر على التسجيل
+
   const formData = new FormData(this);
+
 
   fetch("/calculate_cover_cost/", {
     method: "POST",

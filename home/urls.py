@@ -13,6 +13,8 @@ urlpatterns = [
 
     path("calculate_manual_combined/", views.calculate_manual_combined, name="calculate_manual_combined"),
     path("calculate_cover_cost/", views.calculate_cover_cost, name="calculate_cover_cost"),
+    path('save-user-data/', views.save_user_data, name='save_user_data'),
+
    
 
 ]

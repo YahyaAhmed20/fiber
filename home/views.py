@@ -4,18 +4,16 @@ import pandas as pd
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-from .models import TeamMember, Review
+from .models import  Review
 
 
 # 📄 عرض الصفحة الرئيسية
 @csrf_exempt
 def home(request):
-    team_members = TeamMember.objects.all()
     reviews = Review.objects.all()
 
     return render(request, 'home/home.html', {
         'active_page': 'home',
-        'team_members': team_members,
         'reviews': reviews,
     })
 
@@ -164,3 +162,22 @@ def calculate_cover_cost(request):
     return JsonResponse({"error": "Invalid request"}, status=400)
 
 
+
+# home/views.py
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+import json
+from .models import UserData
+
+@csrf_exempt
+def save_user_data(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        user_data = UserData.objects.create(
+            name=data.get('name'),
+            company=data.get('company'),
+            phone=data.get('phone'),
+            email=data.get('email')
+        )
+        return JsonResponse({'status': 'success', 'id': user_data.id})
+    return JsonResponse({'status': 'error', 'message': 'Invalid request'}, status=400)
