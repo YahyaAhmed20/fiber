@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
-    
+    'django.contrib.sites',
+
     'home',
     'contact',
     'about',
@@ -58,6 +59,7 @@ INSTALLED_APPS = [
     'ourpartner',
 
 ]
+SITE_ID = 1
 
 
 
