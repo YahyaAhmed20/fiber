@@ -2,3 +2,5 @@ User-agent: *
 
 Disallow: /admin/
 Disallow: /accounts/
+
+Sitemap: https://www.rovanatrade.com/sitemap.xml
