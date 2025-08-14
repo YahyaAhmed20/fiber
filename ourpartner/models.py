@@ -10,8 +10,7 @@ class Partner(models.Model):
     def __str__(self):
         return self.name
     
-    def get_absolute_url(self):
-        return reverse("ourpartner:ourpartner")
+ 
 
 class PartnerImage(models.Model):
     partner = models.ForeignKey(Partner, related_name='images', on_delete=models.CASCADE)

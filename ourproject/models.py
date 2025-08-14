@@ -12,8 +12,7 @@ class Project(models.Model):
         return self.title
     
     
-    def get_absolute_url(self):
-        return reverse("ourproject:ourproject")
+
 
 
 class ProjectImage(models.Model):
