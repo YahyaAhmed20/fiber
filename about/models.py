@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 class GalleryImage(models.Model):
@@ -14,3 +15,7 @@ class GalleryImage(models.Model):
 
     def __str__(self):
         return f"{self.get_section_display()} - {self.title or self.alt_text}"
+    
+    
+    def get_absolute_url(self):
+        return reverse("about:about")

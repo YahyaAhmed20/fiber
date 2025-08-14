@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 
@@ -8,6 +9,9 @@ class Partner(models.Model):
 
     def __str__(self):
         return self.name
+    
+    def get_absolute_url(self):
+        return reverse("ourpartner:ourpartner")
 
 class PartnerImage(models.Model):
     partner = models.ForeignKey(Partner, related_name='images', on_delete=models.CASCADE)
@@ -15,3 +19,7 @@ class PartnerImage(models.Model):
 
     def __str__(self):
         return f"Image for {self.partner.name}"
+
+
+
+ 

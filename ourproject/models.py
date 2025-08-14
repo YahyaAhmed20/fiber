@@ -1,4 +1,5 @@
 # projects/models.py
+from django.urls import reverse
 
 from django.db import models
 
@@ -9,6 +10,10 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
+    
+    
+    def get_absolute_url(self):
+        return reverse("ourproject:ourproject")
 
 
 class ProjectImage(models.Model):
@@ -17,3 +22,4 @@ class ProjectImage(models.Model):
 
     def __str__(self):
         return f"Image for {self.project.title}"
+

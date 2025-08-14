@@ -181,3 +181,15 @@ def save_user_data(request):
         )
         return JsonResponse({'status': 'success', 'id': user_data.id})
     return JsonResponse({'status': 'error', 'message': 'Invalid request'}, status=400)
+
+
+
+from django.http import HttpResponse
+
+def robots_txt(request):
+    content = [
+        "User-agent: *",
+        "Allow: /",
+        "Sitemap: https://www.rovanatrade.com/sitemap.xml"
+    ]
+    return HttpResponse("\n".join(content), content_type="text/plain")
