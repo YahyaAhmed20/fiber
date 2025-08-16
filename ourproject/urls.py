@@ -1,15 +1,9 @@
 from django.urls import path
 from . import views
-from .views import *
-
-# calculate_tray_manual
 
 app_name = 'ourproject'
 
 urlpatterns = [
-    path('', views.ourproject, name='ourproject'),
-
-
-
-
+    path('', views.project_list, name='project_list'),
+    path('<int:pk>/', views.project_detail, name='project_detail'),
 ]
