@@ -12,20 +12,28 @@
       <div class="col-md-4 col-sm-6">
         <div class="card border-0 shadow-sm h-100 text-center">
 
-          <!-- 👇 لو عند المشروع صور، نعرض أول صورة كـ thumbnail -->
           {% if project.images.first %}
             <a href="{% url 'ourproject:project_detail' project.pk %}">
-              <img src="{{ project.images.first.image.url }}" class="card-img-top uniform-img" alt="{{ project.title }}">
+              <img src="{{ project.images.first.image.url }}" 
+                   class="card-img-top uniform-img" 
+                   alt="{{ project.title }} Project" 
+                   loading="lazy">
             </a>
           {% else %}
-            <!-- صورة افتراضية لو مفيش صور -->
             <a href="{% url 'ourproject:project_detail' project.pk %}">
-              <img src="{% static 'img/no-image.jpg' %}" class="card-img-top uniform-img" alt="No image">
+              <img src="{% static 'img/no-image.jpg' %}" 
+                   class="card-img-top uniform-img" 
+                   alt="No image available" 
+                   loading="lazy">
             </a>
           {% endif %}
 
           <div class="card-body">
-            <h5 class="card-title">{{ project.title }}</h5>
+            <h5 class="card-title">
+              <a href="{% url 'ourproject:project_detail' project.pk %}" class="text-decoration-none text-dark">
+                {{ project.title }}
+              </a>
+            </h5>
             <p class="card-text">{{ project.description|truncatewords:20 }}</p>
           </div>
         </div>
