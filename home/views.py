@@ -193,3 +193,18 @@ def robots_txt(request):
         "Sitemap: https://www.rovanatrade.com/sitemap.xml"
     ]
     return HttpResponse("\n".join(content), content_type="text/plain")
+
+
+
+# home/views.py
+from django.http import HttpResponse
+
+def robots_txt(request):
+    lines = [
+        "User-agent: *",
+        "Allow: /",
+        "Disallow: /admin/",
+     
+        "Sitemap: https://www.rovanatrade.com/sitemap.xml",
+    ]
+    return HttpResponse("\n".join(lines), content_type="text/plain")

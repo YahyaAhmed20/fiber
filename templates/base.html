@@ -3,21 +3,54 @@
 {% load static %}
 
 <head>
-
-
-
     <meta charset="utf-8">
-    <title>Rovana Trade Company
-</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta name="keywords" content="Cable Tray Egypt, Cable Ladder Egypt, Hot Dip Galvanized Cable Tray, Electrostatic Painted Cable Ladder, ISO 9001 Cable Tray Manufacturer, Cable Management Systems Egypt, Electrical Cable Support Systems, Cable Tray Supplier in Egypt, Cable Ladder Supplier in Egypt, Custom Cable Tray Fabrication, Galvanized Steel Cable Tray, Cable Tray and Ladder Installation, Electrical Contractors Cable Support, Industrial Cable Management Solutions, كابل تري مصر, كابل ليدر مصر, كابل تري مجلفن, كابل ليدر مجلفن, حوامل كابلات كهرباء, شركة تصنيع كابل تري, شركة تصنيع كابل ليدر, أنظمة إدارة الكابلات, كابل تري مطلي إلكتروستاتيك, توريد كابل تري في مصر, توريد كابل ليدر في مصر, تركيب حوامل الكابلات, تصنيع حوامل كابلات مجلفنة, تريهات, تريه">
 
-    <meta name="description" content="Rovana Trade Company - متخصصون في تصنيع وتوريد كابل تري وكابل ليدر في مصر، منتجاتنا تشمل Hot Dip Galvanized Cable Tray و Electrostatic Painted Cable Ladder وأنظمة إدارة الكابلات بأعلى معايير الجودة.">
+    <!-- Page Title -->
+    <title>{% block title %}Rovana Trade Company{% endblock %}</title>
 
+    <!-- Meta Tags -->
+    <meta name="description" content="{% block meta_description %}Rovana Trade Company - Leading manufacturer and supplier of cable trays and ladders in Egypt, specializing in Hot Dip Galvanized Cable Trays and Electrostatic Painted Cable Ladders.{% endblock %}">
+    <meta name="keywords" content="{% block meta_keywords %}Cable Tray Egypt, Cable Ladder Egypt, Hot Dip Galvanized Cable Tray, Cable Management Systems, Rovana Trade{% endblock %}">
+
+    <!-- Open Graph Tags -->
+    {% block og_tags %}
+    <meta property="og:title" content="{% block og_title %}Rovana Trade Company{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Leading manufacturer of cable trays and ladders in Egypt, offering high-quality galvanized and electrostatic painted solutions.{% endblock %}">
+    <meta property="og:image" content="{% static 'img/og-image.jpg' %}">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
+    <meta property="og:type" content="website">
+    {% endblock %}
+
+    <!-- Schema Markup -->
+    {% block schema %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Rovana Trade Company",
+      "url": "https://www.rovanatrade.com",
+      "logo": "{% static 'img/logo.png' %}",
+      "description": "Leading manufacturer of cable trays and ladders in Egypt, specializing in galvanized and electrostatic painted solutions.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "EG",
+        "addressLocality": "Cairo",
+        "postalCode": "12345",
+        "streetAddress": "123 Industrial Zone"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+20-123-456-7890",
+        "contactType": "Customer Service"
+      }
+    }
+    </script>
+    {% endblock %}
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com"  crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
@@ -36,11 +69,12 @@
 </head>
 
 <body>
-  <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 Baumgartner-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
         </div>
+    </div>
+
     {% include 'parts/navbar.html' %}
 
     {% block body %}
@@ -57,9 +91,12 @@
     <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
     <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
 
+    <!-- Conditional JS for specific pages -->
+    {% block extra_js %}
+    {% endblock %}
+
     <!-- Template Javascript -->
     <script src="{% static 'js/main.js' %}"></script>
-
 </body>
 
 </html>
