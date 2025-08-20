@@ -106,15 +106,14 @@ WSGI_APPLICATION = 'project.wsgi.application'
 #     }
 # }
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'wqytcBByDhZQHinIcoSiXnHZaryDYSAS',
+        'PASSWORD': 'GGxgpcVxOCcSxAOaDjfRblupbITjYBlb',
         'HOST': 'yamabiko.proxy.rlwy.net',
-        'PORT': '28142',
+        'PORT': '40064',
     }
 }
 
