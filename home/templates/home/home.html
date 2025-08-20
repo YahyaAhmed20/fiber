@@ -60,7 +60,7 @@
   </div>
 </div>
 <div id="userDataFormWrapper" class="bg-secondary p-4 rounded shadow-lg mb-4 text-white d-none">
-  <h4 class="mb-3">📋 بياناتك قبل الحساب</h4>
+<h4 class="mb-3 custom-title">📋 بياناتك قبل الحساب</h4>
   <form id="userDataForm" class="row g-3">
     <div class="col-md-6">
       <label for="name" class="form-label">👤 الاسم</label>
@@ -374,6 +374,12 @@ document.getElementById("coverCostForm").addEventListener("submit", function(e) 
 
 <!-- Inline CSS Styles -->
 <style>
+.custom-title {
+    font-style: italic;
+    color: white;
+}
+
+
   .valid-check {
     position: absolute;
     right: 10px;
