@@ -1,10 +1,12 @@
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from django.conf import settings
 from django.conf.urls.static import static
 from home.views import robots_txt
 from django.contrib.sitemaps.views import sitemap
 from .sitemaps import StaticViewSitemap  # استيراد الـ sitemap
+from django.views.static import serve
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -18,6 +20,7 @@ urlpatterns = [
     path('sitemap.xml', sitemap, {'sitemaps': {'static': StaticViewSitemap}}, name='django.contrib.sitemaps.views.sitemap'),
     # Robots.txt
     path('robots.txt', robots_txt, name='robots'),
+
 ]
 
 if settings.DEBUG:
