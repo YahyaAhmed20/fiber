@@ -1,6 +1,5 @@
 import json
-import numpy as np
-import pandas as pd
+
 from django.http import JsonResponse
 from django.shortcuts import render
 from .models import  Review
