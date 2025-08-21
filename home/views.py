@@ -7,6 +7,7 @@ from .models import  Review
 from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.http import require_POST
 from django.views.decorators.http import require_GET
+import re
 
 from .models import UserData
 from django.core.validators import validate_email
@@ -175,11 +176,11 @@ def calculate_cover_cost(request):
 
 
 
+
 @require_POST
 @csrf_protect
 def save_user_data(request):
     try:
-        # ✅ نتأكد إن الريكوست جاي JSON
         data = json.loads(request.body.decode("utf-8"))
     except json.JSONDecodeError:
         return JsonResponse({'status': 'error', 'message': 'Invalid JSON'}, status=400)
@@ -189,24 +190,23 @@ def save_user_data(request):
     phone = data.get('phone', '').strip()
     email = data.get('email', '').strip()
 
-    # ✅ validation أساسي
-    if not name:
-        return JsonResponse({'status': 'error', 'message': 'الاسم مطلوب'}, status=400)
-    if not company:
-        return JsonResponse({'status': 'error', 'message': 'اسم الشركة مطلوب'}, status=400)
-    if not phone.isdigit() or len(phone) < 7 or len(phone) > 15:
+    # ✅ Basic validation
+    if not name or not company:
+        return JsonResponse({'status': 'error', 'message': 'الاسم والشركة مطلوبين'}, status=400)
+
+    if not re.match(r"^01[0-9]{9}$", phone):
         return JsonResponse({'status': 'error', 'message': 'رقم الهاتف غير صالح'}, status=400)
+
     try:
         validate_email(email)
     except ValidationError:
         return JsonResponse({'status': 'error', 'message': 'البريد الإلكتروني غير صالح'}, status=400)
 
-    # ✅ حفظ البيانات
+    if not email.endswith("@gmail.com"):
+        return JsonResponse({'status': 'error', 'message': 'يجب استخدام Gmail فقط'}, status=400)
+
     user_data = UserData.objects.create(
-        name=name,
-        company=company,
-        phone=phone,
-        email=email
+        name=name, company=company, phone=phone, email=email
     )
 
     return JsonResponse({'status': 'success', 'id': user_data.id})

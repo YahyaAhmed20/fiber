@@ -215,4 +215,176 @@ def robots_txt(request):
     return HttpResponse("\n".join(lines), content_type="text/plain")
 
 
+
+
+
+
+
+Script in home page  
+
+
+
+<script>
+
+let pendingForm = null; 
+let skipCheck = false; 
+
+function checkUserData(formId) {
+  if (!localStorage.getItem("userData") && !skipCheck) {
+    pendingForm = formId;
+    document.getElementById("userDataFormWrapper").classList.remove("d-none");
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    return false;
+  }
+  return true;
+}
+
+document.getElementById("userDataForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  
+  const formData = {
+    name: this.name.value,
+    company: this.company.value,
+    phone: this.phone.value,
+    email: this.email.value
+  };
+
+  // حفظ في قاعدة البيانات عبر AJAX
+  fetch("/save-user-data/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "X-CSRFToken": getCookie("csrftoken") // لو الفورم محمي
+    },
+    body: JSON.stringify(formData)
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.status === "success") {
+      localStorage.setItem("userData", JSON.stringify(formData));
+      document.getElementById("userDataFormWrapper").classList.add("d-none");
+
+      if (pendingForm) {
+        skipCheck = true;
+        document.getElementById(pendingForm).dispatchEvent(new Event("submit"));
+        skipCheck = false;
+        pendingForm = null;
+      }
+    }
+  });
+
+});
+
+// دالة للحصول على CSRF
+function getCookie(name) {
+  let cookieValue = null;
+  if (document.cookie && document.cookie !== "") {
+    const cookies = document.cookie.split(";");
+    for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim();
+      if (cookie.substring(0, name.length + 1) === (name + "=")) {
+        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+        break;
+      }
+    }
+  }
+  return cookieValue;
+}
+  // Toggle between Tray and Ladder fields
+  document.getElementById("category").addEventListener("change", function() {
+    const isLadder = this.value === "ladder";
+    const isTrayType = this.value === "tray" || this.value === "cold_tray";
+
+    document.querySelectorAll(".ladder-inputs").forEach(el => el.classList.toggle("d-none", !isLadder));
+    document.querySelectorAll(".tray-inputs").forEach(el => el.classList.toggle("d-none", !isTrayType));
+  });
+
+  // Manual Calculation Form Submission
+  document.getElementById("manualTrayForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  if (!checkUserData("manualTrayForm")) return; // 🚀 هنا بيجبر على التسجيل الأول
+
+  const formData = new FormData(this);
+
+
+    fetch("/calculate_manual_combined/", {
+      method: "POST",
+      headers: {
+        "X-CSRFToken": "{{ csrf_token }}"
+      },
+      body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+      const resultDiv = document.getElementById("manualResult");
+      resultDiv.classList.remove("d-none");
+      if (data.total_price) {
+        resultDiv.innerHTML = `✅ <strong>الإجمالي للمتر:</strong> ${data.total_price} جنيه`;
+      } else {
+        resultDiv.innerHTML = `<span class="text-danger">${data.error || 'حدث خطأ أثناء الحساب.'}</span>`;
+      }
+    })
+    .catch(error => {
+      const resultDiv = document.getElementById("manualResult");
+      resultDiv.classList.remove("d-none");
+      resultDiv.innerHTML = `<span class="text-danger">Error: ${error}</span>`;
+    });
+  });
+
+
+
+  {% comment %} Cover {% endcomment %}
+
+
+  
+// عند تغيير نوع الغطا نمسح القيم المدخلة فقط
+// عند تغيير نوع الغطا نمسح القيم المدخلة فقط
+document.querySelector('select[name="cover_type"]').addEventListener("change", function () {
+  // مسح عرض الغطا
+  document.querySelector('input[name="cover_width"]').value = "";
+  // مسح التخانة
+  document.querySelector('input[name="thickness"]').value = "";
+  // مسح النتيجة
+  const resultDiv = document.getElementById("coverResult");
+  resultDiv.classList.add("d-none");
+  resultDiv.innerHTML = "";
+});
+
+
+document.getElementById("coverCostForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  if (!checkUserData("coverCostForm")) return; // 🚀 برضو يجبر على التسجيل
+
+  const formData = new FormData(this);
+
+
+  fetch("/calculate_cover_cost/", {
+    method: "POST",
+    headers: {
+      "X-CSRFToken": "{{ csrf_token }}"
+    },
+    body: formData
+  })
+  .then(res => res.json())
+  .then(data => {
+    const resultDiv = document.getElementById("coverResult");
+    resultDiv.classList.remove("d-none");
+    if (data.total_price) {
+      resultDiv.innerHTML = `✅ <strong>الإجمالي للمتر:</strong> ${data.total_price} جنيه`;
+    } else {
+      resultDiv.innerHTML = `<span class="text-danger">${data.error || 'حدث خطأ أثناء الحساب.'}</span>`;
+    }
+  })
+  .catch(error => {
+    const resultDiv = document.getElementById("coverResult");
+    resultDiv.classList.remove("d-none");
+    resultDiv.innerHTML = `<span class="text-danger">Error: ${error}</span>`;
+  });
+});
+
+</script>
+
+
 السلام عليكم ي ععالمي problem solving and security and python and django and programmer
