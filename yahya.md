@@ -1,94 +1,218 @@
-
-# @csrf_exempt
-# def calculate_tray_manual(request):
-#     if request.method == "POST":
-#         try:
-#             # 🔹 القيم المدخلة من المستخدم
-#             width = float(request.POST.get("width"))
-#             height = float(request.POST.get("height"))
-#             thickness = float(request.POST.get("thickness"))
-
-#             # ✅ الثوابت
-#             metal_price = 35         # الصاج
-#             galvanize_price = 22     # الجلفنة
-#             manufacturing = 50       # مصنعيات
-#             ratio = 1.01             # النسبة
-
-#             # ✅ الحسابات
-#             individuals = width + (height * 2)  # الأفراد
-#             stick_price = ((individuals / 100) * thickness * 3 * 8) * (metal_price + galvanize_price)  # اجمالي سعر العود
-#             price_per_meter = (stick_price / 3) + manufacturing  # اجمالي سعر المتر
-#             total_price = price_per_meter * ratio  # الإجمالي للمتر
-
-#             return JsonResponse({
-#                 "individuals": round(individuals, 2),
-#                 "stick_price": round(stick_price, 2),
-#                 "price_per_meter": round(price_per_meter, 2),
-#                 "total_price": round(total_price, 2),
-#             })
-#         except Exception as e:
-#             return JsonResponse({"error": str(e)}, status=400)
-
-#     return JsonResponse({"error": "Invalid request"}, status=400)
+دي views بس مش مضافه عليها security 
 
 
 
 
-
-# # home/views.py
-
-# from django.shortcuts import render
-# from .forms import ManualPricingForm
-
-# def calculate_dynamic_price(request):
-#     total_price = None
-#     breakdown = {}
-
-#     if request.method == 'POST':
-#         form = ManualPricingForm(request.POST)
-#         if form.is_valid():
-#             A = form.cleaned_data['width_drawer']
-#             B = form.cleaned_data['height_side']
-#             C = form.cleaned_data['thickness_side']
-#             D = form.cleaned_data['thickness_drawer']
-
-#             # 🔢 القيم الثابتة
-#             steel = 35        # الصاج
-#             galvanize = 22    # الجلفنه
-#             labor = 200       # مصنعيات
-#             percentage = 1.0174   # النسبه
-
-#             # 🔢 الحسابات بالمعادلات
-#             E = ((B / 100) + 0.03) * 2                     # الافراد للجانب
-#             F = (E * 3 * C * 8) + (steel + galvanize)      # جانب الادر
-#             G = (A / 100) * 10                             # افراد درج
-#             H = (G * 0.1 * D * 8) * (steel + galvanize)    # الدرج الإجمالي
-#             K = labor                                      # مصنعيات
-#             L = percentage                                 # النسبة
-
-#             total_price = (F + H + K) * L
-
-#             # علشان نعرض القيم لو حابب تطبعهم في القالب
-#             breakdown = {
-#                 'الافراد للجانب': round(E, 3),
-#                 'جانب الادر': round(F, 3),
-#                 'افراد درج': round(G, 3),
-#                 'الدرج الإجمالي': round(H, 3),
-#                 'اجمالي السعر': round(total_price, 3)
-#             }
-
-#     else:
-#         form = ManualPricingForm()
-
-#     return render(request, 'home/calculate_dynamic_price.html', {
-#         'form': form,
-#         'total_price': total_price,
-#         'breakdown': breakdown
-#     })
+import json
+import numpy as np
+import pandas as pd
+from django.http import JsonResponse
+from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
+from .models import  Review
 
 
+# 📄 عرض الصفحة الرئيسية
+@csrf_exempt
+def home(request):
+    reviews = Review.objects.all()
+
+    return render(request, 'home/home.html', {
+        'active_page': 'home',
+        'reviews': reviews,
+    })
+
+
+@csrf_exempt
+def calculate_manual_combined(request):
+    if request.method == "POST":
+        try:
+            category = request.POST.get("category")
+
+            steel = 37
+            galvanize = 24
+            percentage = 1
+
+            # 🛠 حساب سعر الـ Tray
+            if category == "tray":
+                width = float(request.POST.get("width"))
+                height = float(request.POST.get("height"))
+                thickness = float(request.POST.get("thickness"))
+                manufacturing = 15
+
+                individuals = width + (height * 2)
+                stick_price = ((individuals / 100) * thickness * 3 * 8) * (steel + galvanize)
+                price_per_meter = (stick_price / 3) + manufacturing
+                total_price = price_per_meter * 1.04
+
+                return JsonResponse({
+                    "total_price": round(total_price, 2),
+                    "details": (
+                        f"📏 سعر المتر: {round(price_per_meter, 2)}<br>"
+                        f"🪵 سعر العود: {round(stick_price, 2)}<br>"
+                        f"👥 عدد الأفراد: {round(individuals, 2)}"
+                    )
+                })
+
+            # ❄️ حساب سعر الـ Cold Tray (بدون جلفنة)
+            elif category == "cold_tray":
+                steel = 45 
+                galvanize = 0  # لا يوجد جلفنة
+                width = float(request.POST.get("width"))
+                height = float(request.POST.get("height"))
+                thickness = float(request.POST.get("thickness"))
+                manufacturing = 15
+
+                individuals = width + (height * 2)
+                stick_price = ((individuals / 100) * thickness * 3 * 8) * (steel + galvanize)
+                price_per_meter = (stick_price / 3) + manufacturing
+                total_price = price_per_meter * 1.04
+
+                return JsonResponse({
+                    "total_price": round(total_price, 2),
+                    "details": (
+                        f"📏 سعر المتر: {round(price_per_meter, 2)}<br>"
+                        f"🪵 سعر العود: {round(stick_price, 2)}<br>"
+                        f"👥 عدد الأفراد: {round(individuals, 2)}"
+                    )
+                })
+
+            # 🪜 حساب سعر الـ Ladder
+            elif category == "ladder":
+                A = float(request.POST.get("width"))
+                B = float(request.POST.get("height"))
+                C = float(request.POST.get("thickness_side"))
+                D = float(request.POST.get("thickness_drawer"))
+                manufacturing = 60
+
+                E = ((B / 100) + 0.03) * 2
+                F = (E * 3 * C * 8) * (steel + galvanize)
+                G = (A / 100) * 10
+                H = (G * 0.1 * D * 8) * (steel + galvanize)
+
+                total_price = ((F + H) / 3 * 1.04) + manufacturing
+
+                return JsonResponse({
+                    "total_price": round(total_price, 2),
+                    "details": (
+                        f"👥 الأفراد: {round(E, 3)}<br>"
+                        f"📐 جانب الأدراج: {round(F, 2)}<br>"
+                        f"🪵 العارض: {round(H, 2)}<br>"
+                        f"🏭 التصنيع: {manufacturing}"
+                    )
+                })
+
+            else:
+                return JsonResponse({"error": "نوع غير معروف"}, status=400)
+
+        except Exception as e:
+            return JsonResponse({"error": str(e)}, status=400)
+
+    return JsonResponse({"error": "Invalid request"}, status=400)
 
 
 
 
 
+
+@csrf_exempt
+def calculate_cover_cost(request):
+    if request.method == "POST":
+        try:
+            cover_type = request.POST.get("cover_type")
+            cover_width = float(request.POST.get("cover_width"))
+            thickness = float(request.POST.get("thickness"))  # متغير
+
+            side_height = 1.5  # ثابت
+
+            manufacturing = 10
+            percentage = 1.03
+
+            # تحديد القيم حسب نوع الغطا
+            if cover_type == "hot_cover":
+                steel = 37
+                galvanize = 24
+            elif cover_type == "cold_cover":
+                steel = 45
+                galvanize = 0
+            else:
+                return JsonResponse({"error": "Invalid cover type"}, status=400)
+
+            # الأفراد (ديناميكي)
+            individuals = (side_height * 2) + cover_width
+
+            # إجمالي سعر العود
+            stick_price = ((individuals / 100) * thickness * 3 * 8) * (steel + galvanize)
+
+            # إجمالي سعر المتر
+            price_per_meter = (stick_price / 3) + manufacturing
+
+            # الإجمالي للمتر للغطا
+            total_price = price_per_meter * percentage
+
+            return JsonResponse({
+                "total_price": round(total_price, 2),
+                "details": (
+                    f"👥 الأفراد: {round(individuals, 2)}<br>"
+                    f"🪵 سعر العود: {round(stick_price, 2)}<br>"
+                    f"📏 سعر المتر: {round(price_per_meter, 2)}<br>"
+                    f"🏭 المصنعيات: {manufacturing}<br>"
+                    f"📈 النسبة: {percentage}"
+                )
+            })
+
+        except Exception as e:
+            return JsonResponse({"error": str(e)}, status=400)
+
+    return JsonResponse({"error": "Invalid request"}, status=400)
+
+
+
+# home/views.py
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+import json
+from .models import UserData
+
+@csrf_exempt
+def save_user_data(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        user_data = UserData.objects.create(
+            name=data.get('name'),
+            company=data.get('company'),
+            phone=data.get('phone'),
+            email=data.get('email')
+        )
+        return JsonResponse({'status': 'success', 'id': user_data.id})
+    return JsonResponse({'status': 'error', 'message': 'Invalid request'}, status=400)
+
+
+
+from django.http import HttpResponse
+
+def robots_txt(request):
+    content = [
+        "User-agent: *",
+        "Allow: /",
+        "Sitemap: https://www.rovanatrade.com/sitemap.xml"
+    ]
+    return HttpResponse("\n".join(content), content_type="text/plain")
+
+
+
+# home/views.py
+from django.http import HttpResponse
+
+def robots_txt(request):
+    lines = [
+        "User-agent: *",
+        "Allow: /",
+        "Disallow: /admin/",
+     
+        "Sitemap: https://www.rovanatrade.com/sitemap.xml",
+    ]
+    return HttpResponse("\n".join(lines), content_type="text/plain")
+
+
+السلام عليكم ي ععالمي problem solving and security and python and django and programmer

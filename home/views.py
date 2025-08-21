@@ -3,12 +3,20 @@ import numpy as np
 import pandas as pd
 from django.http import JsonResponse
 from django.shortcuts import render
-from django.views.decorators.csrf import csrf_exempt
 from .models import  Review
+from django.views.decorators.csrf import csrf_protect
+from django.views.decorators.http import require_POST
+from django.views.decorators.http import require_GET
+
+from .models import UserData
+from django.core.validators import validate_email
+from django.core.exceptions import ValidationError
+from django.http import HttpResponse
 
 
 # 📄 عرض الصفحة الرئيسية
-@csrf_exempt
+@require_GET
+@csrf_protect
 def home(request):
     reviews = Review.objects.all()
 
@@ -18,7 +26,8 @@ def home(request):
     })
 
 
-@csrf_exempt
+@require_POST
+@csrf_protect
 def calculate_manual_combined(request):
     if request.method == "POST":
         try:
@@ -110,7 +119,8 @@ def calculate_manual_combined(request):
 
 
 
-@csrf_exempt
+@require_POST
+@csrf_protect
 def calculate_cover_cost(request):
     if request.method == "POST":
         try:
@@ -163,28 +173,45 @@ def calculate_cover_cost(request):
 
 
 
-# home/views.py
-from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
-import json
-from .models import UserData
 
-@csrf_exempt
+
+@require_POST
+@csrf_protect
 def save_user_data(request):
-    if request.method == 'POST':
-        data = json.loads(request.body)
-        user_data = UserData.objects.create(
-            name=data.get('name'),
-            company=data.get('company'),
-            phone=data.get('phone'),
-            email=data.get('email')
-        )
-        return JsonResponse({'status': 'success', 'id': user_data.id})
-    return JsonResponse({'status': 'error', 'message': 'Invalid request'}, status=400)
+    try:
+        # ✅ نتأكد إن الريكوست جاي JSON
+        data = json.loads(request.body.decode("utf-8"))
+    except json.JSONDecodeError:
+        return JsonResponse({'status': 'error', 'message': 'Invalid JSON'}, status=400)
+
+    name = data.get('name', '').strip()
+    company = data.get('company', '').strip()
+    phone = data.get('phone', '').strip()
+    email = data.get('email', '').strip()
+
+    # ✅ validation أساسي
+    if not name:
+        return JsonResponse({'status': 'error', 'message': 'الاسم مطلوب'}, status=400)
+    if not company:
+        return JsonResponse({'status': 'error', 'message': 'اسم الشركة مطلوب'}, status=400)
+    if not phone.isdigit() or len(phone) < 7 or len(phone) > 15:
+        return JsonResponse({'status': 'error', 'message': 'رقم الهاتف غير صالح'}, status=400)
+    try:
+        validate_email(email)
+    except ValidationError:
+        return JsonResponse({'status': 'error', 'message': 'البريد الإلكتروني غير صالح'}, status=400)
+
+    # ✅ حفظ البيانات
+    user_data = UserData.objects.create(
+        name=name,
+        company=company,
+        phone=phone,
+        email=email
+    )
+
+    return JsonResponse({'status': 'success', 'id': user_data.id})
 
 
-
-from django.http import HttpResponse
 
 def robots_txt(request):
     content = [
@@ -196,15 +223,3 @@ def robots_txt(request):
 
 
 
-# home/views.py
-from django.http import HttpResponse
-
-def robots_txt(request):
-    lines = [
-        "User-agent: *",
-        "Allow: /",
-        "Disallow: /admin/",
-     
-        "Sitemap: https://www.rovanatrade.com/sitemap.xml",
-    ]
-    return HttpResponse("\n".join(lines), content_type="text/plain")
