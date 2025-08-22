@@ -64,7 +64,7 @@ INSTALLED_APPS = [
     'ourpartner',
 
 ]
-SITE_ID = 1
+SITE_ID = 1  # لو لم تستخدم django.contrib.sites
 
 
 
