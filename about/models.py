@@ -1,5 +1,7 @@
 from django.db import models
 from django.urls import reverse
+from cloudinary.models import CloudinaryField
+
 
 # Create your models here.
 class GalleryImage(models.Model):
@@ -10,7 +12,7 @@ class GalleryImage(models.Model):
 
     section = models.CharField(max_length=20, choices=SECTION_CHOICES)
     title = models.CharField(max_length=100, blank=True)
-    image = models.ImageField(upload_to='about/gallery/')
+    image = CloudinaryField('aboutgallery')
     alt_text = models.CharField(max_length=255, blank=True)
 
     def __str__(self):

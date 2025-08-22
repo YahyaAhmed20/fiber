@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -14,7 +15,7 @@ class Partner(models.Model):
 
 class PartnerImage(models.Model):
     partner = models.ForeignKey(Partner, related_name='images', on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='partner_images/')
+    image = CloudinaryField('partner_images')
 
     def __str__(self):
         return f"Image for {self.partner.name}"
