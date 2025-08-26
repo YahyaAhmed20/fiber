@@ -388,3 +388,62 @@ document.getElementById("coverCostForm").addEventListener("submit", function(e) 
 
 
 السلام عليكم ي ععالمي problem solving and security and python and django and programmer
+
+
+
+
+<!-- Counter Section -->
+<div class="container-fluid counter bg-secondary py-5">
+  <div class="container py-5">
+    <div class="row g-5">
+      <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="counter-item text-center">
+          <div class="counter-item-icon mx-auto">
+            <i class="fas fa-users fa-2x"></i>
+          </div>
+          <div class="counter-counting my-3">
+            <span class="text-white fs-2 fw-bold" data-toggle="counter-up">1200</span>
+            <span class="h1 fw-bold text-white">+</span>
+          </div>
+          <h4 class="text-white mb-0">Satisfied Customers</h4>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="counter-item text-center">
+          <div class="counter-item-icon mx-auto">
+            <i class="fas fa-box fa-2x"></i>
+          </div>
+          <div class="counter-counting my-3">
+            <span class="text-white fs-2 fw-bold" data-toggle="counter-up">500</span>
+            <span class="h1 fw-bold text-white">+</span>
+          </div>
+          <h4 class="text-white mb-0">Products Sold</h4>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
+        <div class="counter-item text-center">
+          <div class="counter-item-icon mx-auto">
+            <i class="fas fa-industry fa-2x"></i>
+          </div>
+          <div class="counter-counting my-3">
+            <span class="text-white fs-2 fw-bold" data-toggle="counter-up">50</span>
+            <span class="h1 fw-bold text-white">+</span>
+          </div>
+          <h4 class="text-white mb-0">Factory Outlets</h4>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
+        <div class="counter-item text-center">
+          <div class="counter-item-icon mx-auto">
+            <i class="fas fa-project-diagram fa-2x"></i>
+          </div>
+          <div class="counter-counting my-3">
+            <span class="text-white fs-2 fw-bold" data-toggle="counter-up">250</span>
+            <span class="h1 fw-bold text-white">+</span>
+          </div>
+          <h4 class="text-white mb-0">Projects Completed</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
