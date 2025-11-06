@@ -32,11 +32,13 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
     "www.rovanatrade.com",
+    "rovanatrade.com",
 ]
 CSRF_TRUSTED_ORIGINS = [
     # "https://fiber-production-0802.up.railway.app",
     "https://web-production-ffb34.up.railway.app",
     "https://www.rovanatrade.com",
+    "https://rovanatrade.com/",
 
 ]
 
@@ -162,10 +164,22 @@ STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'project/static')
 ]
 
-CLOUDINARY_URL = os.getenv("CLOUDINARY_URL")
+# CLOUDINARY_URL = os.getenv("CLOUDINARY_URL")
+# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+
+# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+from decouple import config
+
+# Cloudinary
+cloudinary_url  = config('CLOUDINARY_URL')
+cloudinary.config(
+    cloud_name = cloudinary_url.split('@')[1],  # بعد الـ @
+    api_key = cloudinary_url.split('//')[1].split(':')[0],  # قبل :
+    api_secret = cloudinary_url.split(':')[1].split('@')[0]  # بين : و @
+)
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # MEDIA_ROOT = os.path.join(BASE_DIR, "media")
