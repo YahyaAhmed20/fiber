@@ -39,7 +39,7 @@ CSRF_TRUSTED_ORIGINS = [
     # "https://fiber-production-0802.up.railway.app",
     "https://web-production-ffb34.up.railway.app",
     "https://www.rovanatrade.com",
-    "https://rovanatrade.com/",
+    "https://rovanatrade.com",
 
 ]
 
