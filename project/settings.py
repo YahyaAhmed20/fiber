@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-@olq19@%nd8t78w_wb*0z9o0eh7+7z5lq(hrm3a#97726*(7*+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     "web-production-ffb34.up.railway.app",
@@ -47,7 +47,7 @@ CSRF_TRUSTED_ORIGINS = [
 # Application definition
 
 INSTALLED_APPS = [
-    'jazzmin',
+    # 'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
