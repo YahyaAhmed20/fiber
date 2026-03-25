@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-25 20:28+0200\n"
+"POT-Creation-Date: 2026-03-25 21:45+0200\n"
 "PO-Revision-Date: 2026-03-25 20:00+0200\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -14,6 +14,253 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: .\about\templates\about\about.html:6 .\about\templates\about\about.html:12
+#, fuzzy
+#| msgid "Rovana Trade - Leading Cable Tray Manufacturer in Egypt"
+msgid "About Rovana Trade - Leading Cable Tray Manufacturer in Egypt"
+msgstr "عن روفانا تريد - الشركة الرائدة في تصنيع حوامل الكابلات في مصر"
+
+#: .\about\templates\about\about.html:9
+msgid ""
+"Learn about Rovana Trade, Egypt's premier manufacturer of cable trays and "
+"ladders, offering high-quality Hot Dip Galvanized and Electrostatic Painted "
+"solutions for industrial and electrical projects."
+msgstr ""
+"تعرف على روفانا تريد، الشركة المصرية الرائدة في تصنيع حوامل وسلالم الكابلات، "
+"ونقدم حلول عالية الجودة مجلفنة بالغمر الساخن (Hot Dip) ومطلية إلكتروستاتيكياً "
+"للمشروعات الصناعية والكهربائية."
+
+#: .\about\templates\about\about.html:13
+#, fuzzy
+#| msgid ""
+#| "Discover Rovana Trade, experts in manufacturing cable trays and ladders "
+#| "with high quality and reliability across Egypt."
+msgid ""
+"Discover Rovana Trade, Egypt's trusted supplier of cable trays and ladders, "
+"delivering innovative and reliable cable management solutions."
+msgstr ""
+"اكتشف روفانا تريد، المورد الموثوق في مصر لحوامل وسلالم الكابلات، "
+"ونقدم حلول مبتكرة وموثوقة لإدارة الكابلات."
+
+#: .\about\templates\about\about.html:24
+#, fuzzy
+#| msgid "About Us"
+msgid "About"
+msgstr "عن"
+
+#: .\about\templates\about\about.html:24
+#, fuzzy
+#| msgid "Rovana Trade?"
+msgid "Rovana Trade Company"
+msgstr "شركة روفانا تريد"
+
+#: .\about\templates\about\about.html:27
+msgid ""
+"Premier Manufacturer of Cable Support Systems in Egypt and the Middle East"
+msgstr "الشركة الرائدة في تصنيع أنظمة دعم الكابلات في مصر والشرق الأوسط"
+
+#: .\about\templates\about\about.html:37
+msgid "Who We Are"
+msgstr "من نحن"
+
+#: .\about\templates\about\about.html:41
+msgid ""
+"\n"
+"      Rovana Trade Company, established in 2019, is a trusted leader in "
+"cable support systems, specializing in high-quality cable trays and "
+"ladders. \n"
+"      We deliver durable, customized solutions tailored to the needs of the "
+"electrical and industrial sectors, ensuring reliability and efficiency in "
+"every project across Egypt and the Middle East.\n"
+"      "
+msgstr ""
+"\n"
+"      شركة روفانا تريد، تأسست عام 2019، وهي رائدة موثوقة في أنظمة دعم الكابلات، ومتخصصة في حوامل وسلالم الكابلات عالية الجودة.\n"
+"      بنقدم حلول متينة ومخصصة حسب احتياجات القطاعات الكهربائية والصناعية، وبنضمن الموثوقية والكفاءة في كل مشروع في مصر والشرق الأوسط.\n"
+"      "
+
+#: .\about\templates\about\about.html:47
+msgid "innovative cable management solutions"
+msgstr "حلول مبتكرة لإدارة الكابلات"
+
+#: .\about\templates\about\about.html:50
+msgid ""
+"\n"
+"      are designed to meet ISO 9001 standards.\n"
+"      "
+msgstr ""
+"\n"
+"      مصممة لتطابق معايير ISO 9001.\n"
+"      "
+
+#: .\about\templates\about\about.html:59
+msgid "Experts in cable tray and ladder systems"
+msgstr "خبراء في أنظمة حوامل وسلالم الكابلات"
+
+#: .\about\templates\about\about.html:64
+msgid "State-of-the-art manufacturing facility"
+msgstr "مصنع مجهز بأحدث التقنيات"
+
+#: .\about\templates\about\about.html:69
+msgid "Customizable dimensions and finishes"
+msgstr "أبعاد وتشطيبات قابلة للتخصيص"
+
+#: .\about\templates\about\about.html:74
+msgid "Nationwide delivery across all governorates"
+msgstr "توصيل لجميع محافظات الجمهورية"
+
+#: .\about\templates\about\about.html:80
+#, fuzzy
+#| msgid "Contact"
+msgid "Contact Us"
+msgstr "تواصل معنا"
+
+#: .\about\templates\about\about.html:89
+#, fuzzy
+#| msgid "Rovana Trade?"
+msgid "Rovana Trade"
+msgstr "روفانا تريد"
+
+#: .\about\templates\about\about.html:93
+msgid "About the Company"
+msgstr "عن الشركة"
+
+#: .\about\templates\about\about.html:98
+msgid ""
+"\n"
+"    Founded in 2019, Rovana Trade was created to meet the growing demand for "
+"high-quality electrical supplies and cable management systems in Egypt.\n"
+"    Our commitment to excellence and innovation has positioned us as a "
+"trusted partner for industrial and commercial projects.\n"
+"    "
+msgstr ""
+"\n"
+"    تأسست روفانا تريد عام 2019، عشان نلبي الطلب المتزايد على التوريدات الكهربائية وأنظمة إدارة الكابلات عالية الجودة في مصر.\n"
+"    التزامنا بالتميز والابتكار خلى مكانتنا شريك موثوق للمشروعات الصناعية والتجارية.\n"
+"    "
+
+#: .\about\templates\about\about.html:104
+msgid "ISO certifications"
+msgstr "شهادات الأيزو"
+
+#: .\about\templates\about\about.html:107
+msgid ""
+"\n"
+"    Learn more about our.\n"
+"    "
+msgstr ""
+"\n"
+"    اعرف أكتر عن.\n"
+"    "
+
+#: .\about\templates\about\about.html:114
+#, fuzzy
+#| msgid "Our Project"
+msgid "Our Products:"
+msgstr "منتجاتنا:"
+
+#: .\about\templates\about\about.html:121
+#, fuzzy
+#| msgid "Cable Trays"
+msgid "Cable Tray"
+msgstr "حوامل الكابلات"
+
+#: .\about\templates\about\about.html:126
+#, fuzzy
+#| msgid "Cable Trays"
+msgid "Cable Trunk"
+msgstr "قنوات الكابلات"
+
+#: .\about\templates\about\about.html:131
+#, fuzzy
+#| msgid "Cable Ladders"
+msgid "Cable Ladder"
+msgstr "سلالم الكابلات"
+
+#: .\about\templates\about\about.html:136
+msgid "Wire Mesh"
+msgstr "شبك سلكي"
+
+#: .\about\templates\about\about.html:141
+msgid "EMT Tube"
+msgstr "مواسير EMT"
+
+#: .\about\templates\about\about.html:146
+msgid "Accessories Tray"
+msgstr "إكسسوارات الحوامل"
+
+#: .\about\templates\about\about.html:151
+msgid "Accessories EMT"
+msgstr "إكسسوارات المواسير"
+
+#: .\about\templates\about\about.html:156
+msgid "Accessories Ladder"
+msgstr "إكسسوارات السلالم"
+
+#: .\about\templates\about\about.html:161
+msgid "Lampposts"
+msgstr "أعمدة الإنارة"
+
+#: .\about\templates\about\about.html:173
+#, fuzzy
+#| msgid "Rovana Trade - Cable Tray & Ladder Manufacturing in Egypt"
+msgid "Rovana Trade cable tray manufacturing facility"
+msgstr "مصنع روفانا تريد لحوامل الكابلات"
+
+#: .\about\templates\about\about.html:182
+msgid "Our Manufacturing Facility"
+msgstr "مرفق التصنيع الخاص بنا"
+
+#: .\about\templates\about\about.html:191
+#, fuzzy
+#| msgid "Rovana Trade - Cable Tray & Ladder Manufacturing in Egypt"
+msgid "Rovana Trade manufacturing facility"
+msgstr "مصنع روفانا تريد"
+
+#: .\about\templates\about\about.html:200
+msgid "Our Cable Solutions"
+msgstr "حلول الكابلات بتاعتنا"
+
+#: .\about\templates\about\about.html:209
+#, fuzzy
+#| msgid "Rovana Trade - Cable Tray & Ladder Manufacturing in Egypt"
+msgid "Rovana Trade cable tray and ladder solutions"
+msgstr "حلول حوامل وسلالم الكابلات من روفانا تريد"
+
+#: .\about\templates\about\about.html:220
+msgid "Our Vision"
+msgstr "رؤيتنا"
+
+#: .\about\templates\about\about.html:225
+msgid ""
+"\n"
+"    To lead the region as the premier provider of innovative, high-quality, "
+"and reliable cable support solutions, driving excellence in every project we "
+"undertake.\n"
+"    "
+msgstr ""
+"\n"
+"    الريادة في المنطقة كأول مقدم لحلول دعم كابلات مبتكرة وعالية الجودة وموثوقة، وبنحقق التميز في كل مشروع بنشتغل فيه.\n"
+"    "
+
+#: .\about\templates\about\about.html:230
+msgid "Explore our products"
+msgstr "استكشف منتجاتنا"
+
+#: .\about\templates\about\about.html:233
+msgid "or"
+msgstr "أو"
+
+#: .\about\templates\about\about.html:236
+#, fuzzy
+#| msgid "Our Project"
+msgid "view our projects"
+msgstr "شوف مشروعاتنا"
+
+#: .\about\templates\about\about.html:239
+msgid "to see how we can support your next project."
+msgstr "عشان تشوف إزاي نقدر ندعم مشروعك الجاي."
 
 #: .\home\templates\home\home.html:6
 msgid "Rovana Trade - Cable Tray & Ladder Manufacturing in Egypt"
@@ -25,15 +272,16 @@ msgid ""
 "cable ladders, and electrical cable management systems in Egypt."
 msgstr ""
 "روفانا تريد هي شركة رائدة في التصنيع المصري، ومتخصصة في إنتاج حوامل الكابلات "
-"(Cable Trays)، وسلالم الكابلات (Cable Ladders)، وأنظمة إدارة الكابلات الكهربائية في جميع أنحاء مصر."
+"(Cable Trays)، وسلالم الكابلات (Cable Ladders)، وأنظمة إدارة الكابلات "
+"الكهربائية في جميع أنحاء مصر."
 
 #: .\home\templates\home\home.html:14
 msgid ""
 "cable tray Egypt, cable ladder Egypt, galvanized cable tray, cable "
 "management systems, electrical cable support, Rovana Trade"
 msgstr ""
-"حوامل كابلات مصر، سلالم كابلات مصر، حوامل كابلات مجلفنة، أنظمة إدارة الكابلات، "
-"دعامات الكابلات الكهربائية، روفانا تريد"
+"حوامل كابلات مصر، سلالم كابلات مصر، حوامل كابلات مجلفنة، أنظمة إدارة "
+"الكابلات، دعامات الكابلات الكهربائية، روفانا تريد"
 
 #: .\home\templates\home\home.html:22
 msgid "Rovana Trade - Leading Cable Tray Manufacturer in Egypt"
@@ -44,8 +292,8 @@ msgid ""
 "Discover Rovana Trade, experts in manufacturing cable trays and ladders with "
 "high quality and reliability across Egypt."
 msgstr ""
-"اكتشف روفانا تريد، الخبراء في تصنيع حوامل وسلالم الكابلات بأعلى معايير الجودة "
-"والموثوقية في جميع أنحاء مصر."
+"اكتشف روفانا تريد، الخبراء في تصنيع حوامل وسلالم الكابلات بأعلى معايير "
+"الجودة والموثوقية في جميع أنحاء مصر."
 
 #: .\home\templates\home\home.html:83
 msgid "Your Data Before Calculation"
@@ -192,7 +440,9 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"        روفانا تتميز بكفاءة عالية وجودة مميزة في المنتجات اللي بنقدمها. بنقدم أسعار ممتازة ولينا سجل حافل ونجاحات كبيرة في مجال التوريدات الكهربائية.\n"
+"        روفانا تتميز بكفاءة عالية وجودة مميزة في المنتجات اللي بنقدمها. "
+"بنقدم أسعار ممتازة ولينا سجل حافل ونجاحات كبيرة في مجال التوريدات "
+"الكهربائية.\n"
 "        "
 
 #: .\home\templates\home\home.html:499
@@ -207,7 +457,8 @@ msgid ""
 "              "
 msgstr ""
 "\n"
-"              شركتنا معروفة بالكفاءة التشغيلية العالية، وبنضمن لك خدمة في الوقت المحدد وموثوقة لكل احتياجاتك من التوريدات الكهربائية.\n"
+"              شركتنا معروفة بالكفاءة التشغيلية العالية، وبنضمن لك خدمة في "
+"الوقت المحدد وموثوقة لكل احتياجاتك من التوريدات الكهربائية.\n"
 "              "
 
 #: .\home\templates\home\home.html:513
@@ -222,7 +473,8 @@ msgid ""
 "              "
 msgstr ""
 "\n"
-"              إحنا ملتزمين بتقديم منتجات بأعلى جودة، بتطابق المواصفات الدولية وبتفوق توقعات عملائنا.\n"
+"              إحنا ملتزمين بتقديم منتجات بأعلى جودة، بتطابق المواصفات "
+"الدولية وبتفوق توقعات عملائنا.\n"
 "              "
 
 #: .\home\templates\home\home.html:537
@@ -237,7 +489,8 @@ msgid ""
 "              "
 msgstr ""
 "\n"
-"              بنقدم أسعار تنافسية من غير أي مساومة على الجودة، عشان نضمن لأعملائنا أفضل قيمة مقابل السعر.\n"
+"              بنقدم أسعار تنافسية من غير أي مساومة على الجودة، عشان نضمن "
+"لأعملائنا أفضل قيمة مقابل السعر.\n"
 "              "
 
 #: .\home\templates\home\home.html:551
@@ -252,7 +505,8 @@ msgid ""
 "              "
 msgstr ""
 "\n"
-"              بفضل خبرتنا الكبيرة وسجلنا الحافل في مجال التوريدات الكهربائية، روفانا تريد شريك موثوق لمشاريعك.\n"
+"              بفضل خبرتنا الكبيرة وسجلنا الحافل في مجال التوريدات "
+"الكهربائية، روفانا تريد شريك موثوق لمشاريعك.\n"
 "              "
 
 #: .\home\templates\home\home.html:576
@@ -273,10 +527,13 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"        إحنا متخصصين في <strong>حوامل الكابلات في مصر</strong>، و<strong>سلالم الكابلات في مصر</strong>،\n"
-"        <strong>حوامل الكابلات المجلفنة</strong>، و<strong>سلالم الكابلات المجلفنة</strong>.\n"
+"        إحنا متخصصين في <strong>حوامل الكابلات في مصر</strong>، "
+"و<strong>سلالم الكابلات في مصر</strong>،\n"
+"        <strong>حوامل الكابلات المجلفنة</strong>، و<strong>سلالم الكابلات "
+"المجلفنة</strong>.\n"
 "        كمان بنقدم <strong>أنظمة دعم الكابلات الكهربائية</strong> و\n"
-"        <strong>حلول إدارة الكابلات</strong> مع خدمات توريد وتركيب متكاملة في جميع أنحاء مصر.\n"
+"        <strong>حلول إدارة الكابلات</strong> مع خدمات توريد وتركيب متكاملة "
+"في جميع أنحاء مصر.\n"
 "        "
 
 #: .\home\templates\home\home.html:590
@@ -284,7 +541,8 @@ msgid ""
 "Rovana Trade Company achievements in manufacturing and supplying Cable "
 "Trays, Cable Ladders, and Electrical Cable Management Systems in Egypt."
 msgstr ""
-"إنجازات شركة روفانا تريد في تصنيع وتوريد حوامل الكابلات، سلالم الكابلات، وأنظمة إدارة الكابلات الكهربائية في مصر."
+"إنجازات شركة روفانا تريد في تصنيع وتوريد حوامل الكابلات، سلالم الكابلات، "
+"وأنظمة إدارة الكابلات الكهربائية في مصر."
 
 #: .\home\templates\home\home.html:603 .\home\templates\home\home.html:612
 msgid "Satisfied Customers"
@@ -307,8 +565,7 @@ msgstr "مشاريع تم إنجازها"
 msgid ""
 "Rovana Trade Company achievements in manufacturing and supplying cable trays "
 "and ladders in Egypt."
-msgstr ""
-"إنجازات شركة روفانا تريد في تصنيع وتوريد حوامل وسلالم الكابلات في مصر."
+msgstr "إنجازات شركة روفانا تريد في تصنيع وتوريد حوامل وسلالم الكابلات في مصر."
 
 #: .\home\templates\home\home.html:691
 msgid "Cable Trays"
