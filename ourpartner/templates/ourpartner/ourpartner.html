@@ -1,40 +1,67 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}شركاء النجاح - شركة روفانا تريد مصر{% endblock %}
+{% block title %}
+{% trans "Our Partners - Rovana Trade Egypt" %}
+{% endblock %}
 
 {% block meta_description %}
-تعرف على شركاء النجاح لشركة روفانا تريد، رواد صناعة وتوريد الكابل تري والليدر في مصر. شراكات استراتيجية تعكس الثقة والجودة العالية في منتجاتنا.
+{% trans "Discover Rovana Trade partners and collaborations with leading companies in electrical and industrial sectors across Egypt and the Middle East." %}
 {% endblock %}
 
-{% block meta_keywords %}
-شركاء روفانا تريد, شركاء النجاح, كابل تري مصر, كابل ليدر مصر, شركة تصنيع كابل تري, شركة تصنيع كابل ليدر, أنظمة إدارة الكابلات, كابل تري مجلفن, كابل ليدر مجلفن
+{% block og_title %}
+{% trans "Our Partners - Rovana Trade" %}
 {% endblock %}
 
-{% block og_title %}شركاء النجاح - Rovana Trade{% endblock %}
 {% block og_description %}
-شركة روفانا تريد تفتخر بشركاء النجاح الذين يدعمون رؤيتنا في تقديم أفضل حلول إدارة الكابلات في مصر.
+{% trans "Rovana Trade is proud of its trusted partners who support our vision in delivering high-quality cable management solutions." %}
 {% endblock %}
 
 {% block body %}
+
 <div class="container py-5 mt-5 text-center">
-  <h2 class="display-5 fw-bold mb-4">🤝 Our Partners</h2>
+
+<h2 class="display-5 fw-bold mb-4">
+    🤝 {% trans "Our Partners" %}
+</h2>
+
+<p class="lead text-muted">
+{% blocktrans %}
+نفخر بالتعاون مع شركائنا الموثوقين الذين يساهمون في تقديم حلول إدارة الكابلات عالية الجودة في مصر والشرق الأوسط.
+{% endblocktrans %}
+</p>
 </div>
 
 <div class="container pb-5">
   <div class="row g-4">
+
     {% for partner in partners %}
       <div class="col-md-6 col-lg-4 text-center">
+
         <div class="card border-0 shadow-sm h-100">
+
           {% if partner.images.first %}
-            <img src="{{ partner.images.first.image.url }}" class="card-img-top img-fluid rounded" alt="Partner Image">
+            <img 
+              src="{{ partner.images.first.image.url }}" 
+              class="card-img-top img-fluid rounded"
+              alt="{{ partner.name }}"
+              loading="lazy"
+            >
           {% endif %}
+
           <div class="card-body">
-            <h5 class="card-title text-primary">{{ partner.name }}</h5>
+            <h5 class="card-title text-primary">
+              {{ partner.name }}
+            </h5>
           </div>
+
         </div>
+
       </div>
     {% endfor %}
+
   </div>
 </div>
+
 {% endblock body %}
