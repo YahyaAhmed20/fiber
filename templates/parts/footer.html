@@ -1,80 +1,85 @@
-   <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
-            <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <div class="footer-item">
-                                <h4 class="text-white mb-4">About Us</h4>
-                                <p class="mb-3">ROVANA TRADE COMPANY is a leading Egyptian manufacturer specializing in high-quality cable support systems, including cable trays and ladders. With a fully equipped factory and expert team, we deliver durable, customized, and reliable solutions for electrical and industrial infrastructure across Egypt and the Middle East.
+{% load i18n %}
 
-</p>
-                            </div>
-                        
-                        </div>
+<div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+    <div class="container py-5">
+        <div class="row g-5">
+
+            <!-- About -->
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="text-white mb-4">{% trans "About Us" %}</h4>
+
+                    <p class="mb-3">
+                        {% blocktrans %}
+                        ROVANA TRADE COMPANY is a leading Egyptian manufacturer specializing in high-quality cable support systems, including cable trays and ladders. With a fully equipped factory and expert team, we deliver durable, customized, and reliable solutions for electrical and industrial infrastructure across Egypt and the Middle East.
+                        {% endblocktrans %}
+                    </p>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="text-white mb-4">{% trans "Quick Links" %}</h4>
+
+                    <a href="{% url 'home:home' %}" class="nav-item nav-link">{% trans "Home" %}</a>
+                    <a href="{% url 'about:about' %}" class="nav-item nav-link">{% trans "About Us" %}</a>
+                    <a href="{% url 'certificates:certificates' %}" class="nav-item nav-link">{% trans "Certificates & Accreditations" %}</a>
+                    <a href="{% url 'ourpartner:ourpartner' %}" class="nav-item nav-link">{% trans "Our Partner" %}</a>
+                    <a href="{% url 'ourproject:project_list' %}" class="nav-item nav-link">{% trans "Our Project" %}</a>
+                    <a href="{% url 'contact:send_text' %}" class="nav-item nav-link">{% trans "Contact" %}</a>
+                </div>
+            </div>
+
+            <!-- Business Hours -->
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="text-white mb-4">{% trans "Business Hours" %}</h4>
+
+                    <div class="mb-3">
+                        <h6 class="text-muted mb-0">{% trans "Every day except Friday:" %}</h6>
+                        <p class="text-white mb-0">{% trans "09:00 AM to 06:00 PM" %}</p>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="text-white mb-4">Quick Links</h4>
-                            <a href="{% url 'home:home' %}" class="nav-item nav-link {% if active_page == 'home' %}active-link{% endif %}">Home</a>
-          <a href="{% url 'about:about' %}" class="nav-item nav-link {% if active_page == 'about' %}active-link{% endif %}">About Us</a>
-          <a href="{% url 'certificates:certificates' %}" class="nav-item nav-link {% if active_page == 'certificates' %}active-link{% endif %}">Certificates & Accreditations</a>
-          <a href="{% url 'ourpartner:ourpartner' %}" class="nav-item nav-link {% if active_page == 'ourpartner' %}active-link{% endif %}">Our Partner</a>
 
-          <a href="{% url 'ourproject:project_list' %}" class="nav-item nav-link {% if active_page == 'ourproject' %}active-link{% endif %}">Our Project</a>
-          <a href="{% url 'contact:send_text' %}" class="nav-item nav-link {% if active_page == 'contact' %}active-link{% endif %}">Contact</a>
-                        </div>
-                    </div>
-                 <div class="col-md-6 col-lg-6 col-xl-3">
-    <div class="footer-item d-flex flex-column">
-        <h4 class="text-white mb-4">Business Hours</h4>
-        <div class="mb-3">
-            <h6 class="text-muted mb-0">Every day except Friday:</h6>
-            <p class="text-white mb-0">09.00 am to 06.00 pm</p>
-        </div>
-        <div class="mb-3">
-            <h6 class="text-muted mb-0">Friday:</h6>
-            <p class="text-white mb-0">Closed</p>
-        </div>
-
-    </div>
-</div>
-
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="text-white mb-4">Contact Info</h4>
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sara.galal@rovanatrade.com" target="_blank" class="text-muted me-0">
-    <i class="fas fa-envelope text-primary me-2"></i>sara.galal@rovanatrade.com
-</a>
-      <a href="https://wa.me/201061166987" target="_blank" class="text-muted me-4"><i class="fas fa-phone-alt text-primary me-2"></i>+01061166987
-    </a>                            <div class="d-flex">
-                                 <a href="https://www.facebook.com/RovanaTradeSteel" class="btn btn-light btn-sm-square rounded-circle">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://www.instagram.com/rovana_trade/?igsh=MWxhN2pvcXVoc3V6Ng%3D%3D#" class="btn btn-light btn-sm-square rounded-circle">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/rovana-trade-for-cable-tray-95a3aa321/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="btn btn-light btn-sm-square rounded-circle">
-            <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="https://www.tiktok.com/@rovana.trade.for?_t=ZS-8yk834j1jom&_r=1" class="btn btn-light btn-sm-square rounded-circle">
-            <i class="fab fa-tiktok"></i>
-        </a>
-                            </div>
-                        </div>
-
-                        
-
+                    <div class="mb-3">
+                        <h6 class="text-muted mb-0">{% trans "Friday:" %}</h6>
+                        <p class="text-white mb-0">{% trans "Closed" %}</p>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- حقوق الملكية أسفل الصفحة -->
+            <!-- Contact -->
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="text-white mb-4">{% trans "Contact Info" %}</h4>
+
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sara.galal@rovanatrade.com" target="_blank" class="text-muted me-0">
+                        <i class="fas fa-envelope text-primary me-2"></i>sara.galal@rovanatrade.com
+                    </a>
+
+                    <a href="https://wa.me/201061166987" target="_blank" class="text-muted me-4">
+                        <i class="fas fa-phone-alt text-primary me-2"></i>+01061166987
+                    </a>
+
+                    <div class="d-flex">
+                        <a href="https://www.facebook.com/RovanaTradeSteel" class="btn btn-light btn-sm-square rounded-circle"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/rovana_trade/" class="btn btn-light btn-sm-square rounded-circle"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/" class="btn btn-light btn-sm-square rounded-circle"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.tiktok.com/" class="btn btn-light btn-sm-square rounded-circle"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Footer Bottom -->
 <div class="text-center py-3" style="background-color: #222; color: #777; font-size: 14px;">
-    &copy;<script>document.write(new Date().getFullYear());</script> جميع الحقوق محفوظة | تصميم وتطوير بواسطة 
-    <a href="https://myportfolioo.up.railway.app/" target="_blank" style="color: #172bc4ff; text-decoration: none; font-weight: 500;" 
-       onmouseover="this.style.textDecoration='underline'" 
-       onmouseout="this.style.textDecoration='none'">
-       Yahya Ahmed
+    &copy;<script>document.write(new Date().getFullYear());</script>
+    {% trans "All rights reserved" %} |
+    {% trans "Designed and developed by" %}
+    <a href="https://myportfolioo.up.railway.app/" target="_blank" style="color: #172bc4ff; text-decoration: none; font-weight: 500;">
+        Yahya Ahmed
     </a>
 </div>

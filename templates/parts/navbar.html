@@ -1,48 +1,70 @@
-
 {% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
 
 <div class="container-fluid nav-bar sticky-top px-0 px-lg-4 py-2 py-lg-0">
-            <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-light">
-                    <a href="{% url "home:home" %}" class="navbar-brand p-0">
-<h1 class="display-6 text-primary">
-  <i class="fas fa-industry me-3"></i>ROVANA
-</h1>                        <!-- <img src="img/logo.png" alt="Logo"> -->
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                        <span class="fa fa-bars"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarCollapse">
-                        <div class="navbar-nav mx-auto py-0">
-                           <a href="{% url 'home:home' %}" class="nav-item nav-link {% if active_page == 'home' %}active-link{% endif %}">Home</a>
-          <a href="{% url 'about:about' %}" class="nav-item nav-link {% if active_page == 'about' %}active-link{% endif %}">About Us</a>
-          <a href="{% url 'certificates:certificates' %}" class="nav-item nav-link {% if active_page == 'certificates' %}active-link{% endif %}">Certificates & Accreditations</a>
-          <a href="{% url 'ourpartner:ourpartner' %}" class="nav-item nav-link {% if active_page == 'ourpartner' %}active-link{% endif %}">Our Partner</a>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a href="{% url "home:home" %}" class="navbar-brand p-0">
+                <h1 class="display-6 text-primary">
+                    <i class="fas fa-industry me-3"></i>ROVANA
+                </h1>
+            </a>
 
-          <a href="{% url 'ourproject:project_list' %}" class="nav-item nav-link {% if active_page == 'ourproject' %}active-link{% endif %}">Our Project</a>
-          <a href="{% url 'contact:send_text' %}" class="nav-item nav-link {% if active_page == 'contact' %}active-link{% endif %}">Contact</a>
-                        </div>
-                    </div>
-                </nav>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav mx-auto py-0">
+                    <a href="{% url 'home:home' %}" class="nav-item nav-link {% if active_page == 'home' %}active-link{% endif %}">{% trans "Home" %}</a>
+                    <a href="{% url 'about:about' %}" class="nav-item nav-link {% if active_page == 'about' %}active-link{% endif %}">{% trans "About Us" %}</a>
+                    <a href="{% url 'certificates:certificates' %}" class="nav-item nav-link {% if active_page == 'certificates' %}active-link{% endif %}">{% trans "Certificates & Accreditations" %}</a>
+                    <a href="{% url 'ourpartner:ourpartner' %}" class="nav-item nav-link {% if active_page == 'ourpartner' %}active-link{% endif %}">{% trans "Our Partner" %}</a>
+                    <a href="{% url 'ourproject:project_list' %}" class="nav-item nav-link {% if active_page == 'ourproject' %}active-link{% endif %}">{% trans "Our Project" %}</a>
+                    <a href="{% url 'contact:send_text' %}" class="nav-item nav-link {% if active_page == 'contact' %}active-link{% endif %}">{% trans "Contact" %}</a>
+                </div>
+
+                <!-- 🔥 Language Switcher -->
+               <form action="{% url 'set_language' %}" method="post" class="d-flex ms-lg-3">
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{{ request.path|cut:'/ar'|cut:'/en' }}">
+
+    <select name="language" onchange="this.form.submit()" class="form-select form-select-sm lang-switcher">
+        <option value="en" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>🇬🇧 English</option>
+        <option value="ar" {% if LANGUAGE_CODE == 'ar' %}selected{% endif %}>🇪🇬 العربية</option>
+    </select>
+</form>
+
             </div>
-        </div>
+        </nav>
+    </div>
+</div>
 
-
-        <style>
-            .active-link {
-  color: #0d6efd !important;
-  font-weight: bold;
-  position: relative;
+<style>
+.active-link {
+    color: #0d6efd !important;
+    font-weight: bold;
+    position: relative;
 }
 
 .active-link::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background-color: #0d6efd;
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #0d6efd;
 }
 
-        </style>
+/* 🔥 شكل الـ language switcher */
+.lang-switcher {
+    border-radius: 20px;
+    padding: 4px 10px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    font-size: 14px;
+}
+</style>

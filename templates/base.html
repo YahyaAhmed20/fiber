@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-{% load static %}
+{% load i18n %}
 
-<head>
+{% load static %}
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{ LANGUAGE_CODE }}"
+      dir="{% if LANGUAGE_CODE == 'ar' %}rtl{% else %}ltr{% endif %}">
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y98WR1NFX9"></script>
     <script>
@@ -23,6 +26,13 @@
 <meta name="keywords" content="{% block meta_keywords %}
 ابل تري مصر, كابل ليدر مصر, كابل تري مجلفن, كابل ليدر مجلفن, حوامل كابلات كهرباء, شركة تصنيع كابل تري, شركة تصنيع كابل ليدر, أنظمة إدارة الكابلات, كابل تري مطلي إلكتروستاتيك, توريد كابل تري في مصر, توريد كابل ليدر في مصر, تركيب حوامل الكابلات, تصنيع حوامل كابلات مجلفنة, تريهات, تريه
 {% endblock %}">
+
+
+
+<link rel="alternate" hreflang="en" href="https://www.rovanatrade.com/en{{ request.path|cut:'/ar'|cut:'/en' }}" />
+<link rel="alternate" hreflang="ar" href="https://www.rovanatrade.com/ar{{ request.path|cut:'/ar'|cut:'/en' }}" />
+<link rel="alternate" hreflang="x-default" href="https://www.rovanatrade.com{{ request.path|cut:'/ar'|cut:'/en' }}" />
+<link rel="canonical" href="https://www.rovanatrade.com{{ request.path }}" />
     <!-- Open Graph Tags -->
     {% block og_tags %}
     <meta property="og:title" content="{% block og_title %}Rovana Trade Company{% endblock %}">

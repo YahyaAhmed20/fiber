@@ -1,24 +1,31 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}عن شركة روفانا تريد - تصنيع وتوريد الكابل تري والليدر في مصر{% endblock %}
+{% block title %}
+{% trans "Rovana Trade - Cable Tray & Ladder Manufacturing in Egypt" %}
+{% endblock %}
 
 {% block meta_description %}
-شركة روفانا تريد من رواد صناعة وتوريد أنظمة إدارة الكابلات في مصر. نقدم تصنيع كابل تري، كابل ليدر مجلفن ومطلي إلكتروستاتيك، حوامل كابلات كهرباء، مع خبرة طويلة وجودة عالية.
+{% trans "Rovana Trade is a leading Egyptian manufacturer specializing in cable trays, cable ladders, and electrical cable management systems in Egypt." %}
 {% endblock %}
 
 {% block meta_keywords %}
-كابل تري مصر, كابل ليدر مصر, كابل تري مجلفن, كابل ليدر مجلفن, كابل تري مطلي إلكتروستاتيك, حوامل كابلات كهرباء, أنظمة إدارة الكابلات, توريد كابل تري في مصر, توريد كابل ليدر في مصر, تركيب حوامل الكابلات, تصنيع حوامل كابلات مجلفنة, شركة تصنيع كابل تري, شركة تصنيع كابل ليدر, تريهات, تريه
+{% trans "cable tray Egypt, cable ladder Egypt, galvanized cable tray, cable management systems, electrical cable support, Rovana Trade" %}
 {% endblock %}
 
 {% block og_image %}
 {% static 'img/WhatsApp Image.jpg' %}
 {% endblock %}
 
-{% block og_title %}عن شركة روفانا تريد - رائدة في صناعة الكابل تري والليدر بمصر{% endblock %}
-{% block og_description %}
-تعرف على شركة روفانا تريد، خبرة في تصنيع وتوريد حوامل الكابلات (كابل تري وليدر) مجلفنة ومطلية إلكتروستاتيك، مع التزام بأعلى معايير الجودة.
+{% block og_title %}
+{% trans "Rovana Trade - Leading Cable Tray Manufacturer in Egypt" %}
 {% endblock %}
+
+{% block og_description %}
+{% trans "Discover Rovana Trade, experts in manufacturing cable trays and ladders with high quality and reliability across Egypt." %}
+{% endblock %}
+
 {% block body %}
 
 <!-- Animate.css Library -->
@@ -28,94 +35,132 @@
 <div class="container-fluid topbar bg-secondary d-none d-xl-block w-100 animate__animated animate__fadeInDown wow" data-wow-delay="0.2s">
   <div class="container">
     <div class="row gx-0 align-items-center" style="height: 45px;">
+      
       <div class="col-lg-6 text-center text-lg-start mb-lg-0">
         <div class="d-flex flex-wrap">
-         
 
           <a href="https://wa.me/201061166987" target="_blank" class="text-muted me-4">
-    <i class="fas fa-phone-alt text-primary me-2"></i>+01061166987
-    </a>
+            <i class="fas fa-phone-alt text-primary me-2"></i>
+            +01061166987
+          </a>
 
-        
-         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sara.galal@rovanatrade.com" target="_blank" class="text-muted me-0">
-    <i class="fas fa-envelope text-primary me-2"></i>sara.galal@rovanatrade.com
-</a>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sara.galal@rovanatrade.com" target="_blank" class="text-muted me-0">
+            <i class="fas fa-envelope text-primary me-2"></i>
+            sara.galal@rovanatrade.com
+          </a>
 
         </div>
       </div>
-   <div class="col-lg-6 text-center text-lg-end">
-    <div class="d-flex align-items-center justify-content-end gap-2">
-        <a href="https://www.facebook.com/RovanaTradeSteel" class="btn btn-light btn-sm-square rounded-circle">
+
+      <div class="col-lg-6 text-center text-lg-end">
+        <div class="d-flex align-items-center justify-content-end gap-2">
+
+          <a href="https://www.facebook.com/RovanaTradeSteel" class="btn btn-light btn-sm-square rounded-circle">
             <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://www.instagram.com/rovana_trade/?igsh=MWxhN2pvcXVoc3V6Ng%3D%3D#" class="btn btn-light btn-sm-square rounded-circle">
+          </a>
+
+          <a href="https://www.instagram.com/rovana_trade/" class="btn btn-light btn-sm-square rounded-circle">
             <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/rovana-trade-for-cable-tray-95a3aa321/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="btn btn-light btn-sm-square rounded-circle">
+          </a>
+
+          <a href="https://www.linkedin.com/" class="btn btn-light btn-sm-square rounded-circle">
             <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="https://www.tiktok.com/@rovana.trade.for?_t=ZS-8yk834j1jom&_r=1" class="btn btn-light btn-sm-square rounded-circle">
+          </a>
+
+          <a href="https://www.tiktok.com/" class="btn btn-light btn-sm-square rounded-circle">
             <i class="fab fa-tiktok"></i>
-        </a>
-    </div>
-</div>
+          </a>
+
+        </div>
+      </div>
 
     </div>
   </div>
 </div>
 <div id="userDataFormWrapper" class="bg-secondary p-4 rounded shadow-lg mb-4 text-white d-none">
-<h4 class="mb-3 custom-title">📋 بياناتك قبل الحساب</h4>
+
+  <h4 class="mb-3 custom-title">
+    📋 {% trans "Your Data Before Calculation" %}
+  </h4>
+
   <form id="userDataForm" class="row g-3">
-    <div class="col-md-6">
-      <label for="name" class="form-label">👤 الاسم</label>
-      <input id="name" type="text" name="name" placeholder="اكتب اسمك" class="form-control" required>
-    </div>
 
     <div class="col-md-6">
-      <label for="company" class="form-label">🏢 اسم الشركة</label>
-      <input id="company" type="text" name="company" placeholder="اسم شركتك" class="form-control" required>
-    </div>
-
-    <div class="col-md-6">
-      <label for="phone" class="form-label">📞 رقم الهاتف</label>
+      <label for="name" class="form-label">
+        👤 {% trans "Name" %}
+      </label>
       <input 
-        id="phone" 
-        type="tel" 
-        name="phone" 
-        placeholder="01xxxxxxxxx" 
-        pattern="^[0-9]{11}$" 
-        title="رقم الهاتف يجب أن يكون 11 رقم بالضبط" 
-        class="form-control" 
+        id="name"
+        type="text"
+        name="name"
+        placeholder="{% trans 'Enter your name' %}"
+        class="form-control"
         required
       >
     </div>
 
     <div class="col-md-6">
-      <label for="email" class="form-label">📧 الإيميل</label>
+      <label for="company" class="form-label">
+        🏢 {% trans "Company Name" %}
+      </label>
       <input 
-        id="email" 
-        type="email" 
-        name="email" 
-        placeholder="example@gmail.com" 
-        class="form-control" 
-        pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$" 
-        title="يجب إدخال إيميل صحيح ينتهي بـ @gmail.com" 
+        id="company"
+        type="text"
+        name="company"
+        placeholder="{% trans 'Enter your company name' %}"
+        class="form-control"
+        required
+      >
+    </div>
+
+    <div class="col-md-6">
+      <label for="phone" class="form-label">
+        📞 {% trans "Phone Number" %}
+      </label>
+      <input 
+        id="phone"
+        type="tel"
+        name="phone"
+        placeholder="01xxxxxxxxx"
+        pattern="^[0-9]{11}$"
+        title="{% trans 'Phone number must be exactly 11 digits' %}"
+        class="form-control"
+        required
+      >
+    </div>
+
+    <div class="col-md-6">
+      <label for="email" class="form-label">
+        📧 {% trans "Email" %}
+      </label>
+      <input 
+        id="email"
+        type="email"
+        name="email"
+        placeholder="example@gmail.com"
+        class="form-control"
+        pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$"
+        title="{% trans 'Enter a valid Gmail address' %}"
         required
       >
     </div>
 
     <div class="col-12">
-      <button type="submit" class="btn btn-warning w-100 fw-bold py-2">✅ حفظ ومتابعة</button>
+      <button type="submit" class="btn btn-warning w-100 fw-bold py-2">
+        ✅ {% trans "Save & Continue" %}
+      </button>
     </div>
+
   </form>
 </div>
 
-
 <!-- Background Image -->
-<img src="{% static 'img/WhatsApp Image.jpg' %}" 
-     class="img-fluid w-100" 
-     alt="لادر تراي وكابل ليدر مجلفن من شركة روفانا تريد" 
-     style="position: absolute; top: 0; left: 0; z-index: -1; height: 100%; object-fit: cover;">
+<img 
+  src="{% static 'img/WhatsApp Image.jpg' %}" 
+  class="img-fluid w-100"
+  alt="{% trans 'Cable tray and ladder products by Rovana Trade' %}"
+  style="position: absolute; top: 0; left: 0; z-index: -1; height: 100%; object-fit: cover;"
+>
 
 <!-- Main Container -->
 <div class="container py-4 position-relative">
@@ -124,89 +169,107 @@
     <!-- Form 1: Cable Cost -->
     <div class="col-lg-6">
       <div class="bg-secondary rounded p-4 shadow-lg h-100 animate__animated animate__fadeInLeft">
+
         <h4 class="text-white mb-4">
-          ⚡ <span class="fw-bold">CALCULATE CABLE COST</span> ⚙️
+          ⚡ <span class="fw-bold">{% trans "Calculate Cable Cost" %}</span> ⚙️
         </h4>
 
         <form id="manualTrayForm" class="row g-3 text-white">
+
           <div class="col-md-6">
-            <label class="form-label">📦 النوع</label>
+            <label class="form-label">📦 {% trans "Type" %}</label>
             <select class="form-select" name="category" id="category" required>
-              <option value="tray" selected>Tray Hot Dip Galvanized</option>
-              <option value="cold_tray">Tray Pre Galvanised</option>
-              <option value="ladder">Ladder</option>
+              <option value="tray" selected>{% trans "Tray Hot Dip Galvanized" %}</option>
+              <option value="cold_tray">{% trans "Tray Pre Galvanised" %}</option>
+              <option value="ladder">{% trans "Ladder" %}</option>
             </select>
           </div>
+
           <div class="col-md-6">
-            <label class="form-label">📏 العرض (سم)</label>
+            <label class="form-label">📏 {% trans "Width (cm)" %}</label>
             <input type="number" name="width" step="0.01" class="form-control" required>
           </div>
+
           <div class="col-md-6">
-            <label class="form-label">📐 الارتفاع (سم)</label>
+            <label class="form-label">📐 {% trans "Height (cm)" %}</label>
             <input type="number" name="height" step="0.01" class="form-control" required>
           </div>
+
           <div class="col-md-6 tray-inputs">
-            <label class="form-label">⚖️ التخانة (مم)</label>
+            <label class="form-label">⚖️ {% trans "Thickness (mm)" %}</label>
             <input type="number" name="thickness" step="0.01" class="form-control">
           </div>
+
           <div class="col-md-6 ladder-inputs d-none">
-            <label class="form-label">📏 تخانة الجانب (مم)</label>
+            <label class="form-label">📏 {% trans "Side Thickness (mm)" %}</label>
             <input type="number" name="thickness_side" step="0.01" class="form-control">
           </div>
+
           <div class="col-md-6 ladder-inputs d-none">
-            <label class="form-label">📏 تخانة العارض (مم)</label>
+            <label class="form-label">📏 {% trans "Cross Thickness (mm)" %}</label>
             <input type="number" name="thickness_drawer" step="0.01" class="form-control">
           </div>
+
           <div class="col-12">
             <button type="submit" class="btn btn-warning w-100 fw-bold py-2">
-              🧮 احسب يدويًا
+              🧮 {% trans "Calculate Manually" %}
             </button>
           </div>
+
         </form>
 
         <div id="manualResult" class="alert alert-info mt-3 d-none"></div>
+
       </div>
     </div>
 
-    <!-- Form 2: Cover Cost -->
-    <div class="col-lg-6">
-      <div class="bg-secondary rounded p-4 shadow-lg h-100 animate__animated animate__fadeInRight">
-        <h4 class="text-white mb-4">
-          🛡 <span class="fw-bold">CALCULATE COVER COST</span>
-        </h4>
+<!-- Form 2: Cover Cost -->
+<div class="col-lg-6">
+  <div class="bg-secondary rounded p-4 shadow-lg h-100 animate__animated animate__fadeInRight">
 
-        <form id="coverCostForm" class="row g-3 text-white">
-          <div class="col-md-6">
-            <label class="form-label">🧾 نوع الغطا</label>
-            <select class="form-select" name="cover_type" required>
-              <option value="hot_cover" selected>Hot Cover Tray</option>
-              <option value="cold_cover">Cold Cover Tray</option>
-            </select>
-          </div>
-          <div class="col-md-6">
-            <label class="form-label">📏 عرض الغطا (سم)</label>
-            <input type="number" name="cover_width" step="0.01" class="form-control" required>
-          </div>
-          <div class="col-md-6">
-            <label class="form-label">📐 ارتفاع الجانب (سم) - ثابت</label>
-            <input type="number" name="side_height" value="1.5" step="0.01" class="form-control" readonly>
-          </div>
-          <div class="col-md-6">
-            <label class="form-label">⚖️ التخانة (مم)</label>
-            <input type="number" name="thickness" step="0.01" class="form-control" required>
-          </div>
-          <div class="col-12">
-            <button type="submit" class="btn btn-warning w-100 fw-bold py-2">
-              🧮 احسب الغطا
-            </button>
-          </div>
-        </form>
+    <h4 class="text-white mb-4">
+      🛡 <span class="fw-bold">{% trans "Calculate Cover Cost" %}</span>
+    </h4>
 
-        <div id="coverResult" class="alert alert-info mt-3 d-none"></div>
+    <form id="coverCostForm" class="row g-3 text-white">
+
+      <div class="col-md-6">
+        <label class="form-label">🧾 {% trans "Cover Type" %}</label>
+        <select class="form-select" name="cover_type" required>
+          <option value="hot_cover" selected>{% trans "Hot Cover Tray" %}</option>
+          <option value="cold_cover">{% trans "Cold Cover Tray" %}</option>
+        </select>
       </div>
-    </div>
+
+      <div class="col-md-6">
+        <label class="form-label">📏 {% trans "Cover Width (cm)" %}</label>
+        <input type="number" name="cover_width" step="0.01" class="form-control" required>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">📐 {% trans "Side Height (cm) - fixed" %}</label>
+        <input type="number" name="side_height" value="1.5" step="0.01" class="form-control" readonly>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">⚖️ {% trans "Thickness (mm)" %}</label>
+        <input type="number" name="thickness" step="0.01" class="form-control" required>
+      </div>
+
+      <div class="col-12">
+        <button type="submit" class="btn btn-warning w-100 fw-bold py-2">
+          🧮 {% trans "Calculate Cover" %}
+        </button>
+      </div>
+
+    </form>
+
+    <div id="coverResult" class="alert alert-info mt-3 d-none"></div>
 
   </div>
+</div>
+
+</div>
 </div>
 
 
@@ -219,6 +282,11 @@
 
 let pendingForm = null; 
 let skipCheck = false; 
+
+// 🔥 Translations from Django
+const totalText = "{% trans 'Total per meter:' %}";
+const errorText = "{% trans 'An error occurred during calculation.' %}";
+const currencyText = "{% trans 'EGP' %}";
 
 function checkUserData(formId) {
   if (!localStorage.getItem("userData") && !skipCheck) {
@@ -240,12 +308,11 @@ document.getElementById("userDataForm").addEventListener("submit", function (e) 
     email: this.email.value
   };
 
-  // حفظ في قاعدة البيانات عبر AJAX
   fetch("/save-user-data/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "X-CSRFToken": getCookie("csrftoken") // لو الفورم محمي
+      "X-CSRFToken": getCookie("csrftoken")
     },
     body: JSON.stringify(formData)
   })
@@ -263,17 +330,16 @@ document.getElementById("userDataForm").addEventListener("submit", function (e) 
       }
     }
   });
-
 });
 
-// دالة للحصول على CSRF
+// CSRF Helper
 function getCookie(name) {
   let cookieValue = null;
   if (document.cookie && document.cookie !== "") {
     const cookies = document.cookie.split(";");
-    for (let i = 0; i < cookies.length; i++) {
-      const cookie = cookies[i].trim();
-      if (cookie.substring(0, name.length + 1) === (name + "=")) {
+    for (let cookie of cookies) {
+      cookie = cookie.trim();
+      if (cookie.startsWith(name + "=")) {
         cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
         break;
       }
@@ -281,75 +347,69 @@ function getCookie(name) {
   }
   return cookieValue;
 }
-  // Toggle between Tray and Ladder fields
-  document.getElementById("category").addEventListener("change", function() {
-    const isLadder = this.value === "ladder";
-    const isTrayType = this.value === "tray" || this.value === "cold_tray";
 
-    document.querySelectorAll(".ladder-inputs").forEach(el => el.classList.toggle("d-none", !isLadder));
-    document.querySelectorAll(".tray-inputs").forEach(el => el.classList.toggle("d-none", !isTrayType));
-  });
+// Toggle fields
+document.getElementById("category").addEventListener("change", function() {
+  const isLadder = this.value === "ladder";
+  const isTrayType = this.value === "tray" || this.value === "cold_tray";
 
-  // Manual Calculation Form Submission
-  document.getElementById("manualTrayForm").addEventListener("submit", function(e) {
+  document.querySelectorAll(".ladder-inputs")
+    .forEach(el => el.classList.toggle("d-none", !isLadder));
+
+  document.querySelectorAll(".tray-inputs")
+    .forEach(el => el.classList.toggle("d-none", !isTrayType));
+});
+
+// Manual Calculation
+document.getElementById("manualTrayForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
-  if (!checkUserData("manualTrayForm")) return; // 🚀 هنا بيجبر على التسجيل الأول
+  if (!checkUserData("manualTrayForm")) return;
 
   const formData = new FormData(this);
 
+  fetch("/calculate_manual_combined/", {
+    method: "POST",
+    headers: {
+      "X-CSRFToken": "{{ csrf_token }}"
+    },
+    body: formData
+  })
+  .then(res => res.json())
+  .then(data => {
+    const resultDiv = document.getElementById("manualResult");
+    resultDiv.classList.remove("d-none");
 
-    fetch("/calculate_manual_combined/", {
-      method: "POST",
-      headers: {
-        "X-CSRFToken": "{{ csrf_token }}"
-      },
-      body: formData
-    })
-    .then(res => res.json())
-    .then(data => {
-      const resultDiv = document.getElementById("manualResult");
-      resultDiv.classList.remove("d-none");
-      if (data.total_price) {
-        resultDiv.innerHTML = `✅ <strong>الإجمالي للمتر:</strong> ${data.total_price} جنيه`;
-      } else {
-        resultDiv.innerHTML = `<span class="text-danger">${data.error || 'حدث خطأ أثناء الحساب.'}</span>`;
-      }
-    })
-    .catch(error => {
-      const resultDiv = document.getElementById("manualResult");
-      resultDiv.classList.remove("d-none");
-      resultDiv.innerHTML = `<span class="text-danger">Error: ${error}</span>`;
-    });
+    if (data.total_price) {
+      resultDiv.innerHTML = `✅ <strong>${totalText}</strong> ${data.total_price} ${currencyText}`;
+    } else {
+      resultDiv.innerHTML = `<span class="text-danger">${data.error || errorText}</span>`;
+    }
+  })
+  .catch(error => {
+    const resultDiv = document.getElementById("manualResult");
+    resultDiv.classList.remove("d-none");
+    resultDiv.innerHTML = `<span class="text-danger">Error: ${error}</span>`;
   });
+});
 
-
-
-  {% comment %} Cover {% endcomment %}
-
-
-  
-// عند تغيير نوع الغطا نمسح القيم المدخلة فقط
-// عند تغيير نوع الغطا نمسح القيم المدخلة فقط
+// Cover reset
 document.querySelector('select[name="cover_type"]').addEventListener("change", function () {
-  // مسح عرض الغطا
   document.querySelector('input[name="cover_width"]').value = "";
-  // مسح التخانة
   document.querySelector('input[name="thickness"]').value = "";
-  // مسح النتيجة
+
   const resultDiv = document.getElementById("coverResult");
   resultDiv.classList.add("d-none");
   resultDiv.innerHTML = "";
 });
 
-
+// Cover Calculation
 document.getElementById("coverCostForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
-  if (!checkUserData("coverCostForm")) return; // 🚀 برضو يجبر على التسجيل
+  if (!checkUserData("coverCostForm")) return;
 
   const formData = new FormData(this);
-
 
   fetch("/calculate_cover_cost/", {
     method: "POST",
@@ -362,10 +422,11 @@ document.getElementById("coverCostForm").addEventListener("submit", function(e) 
   .then(data => {
     const resultDiv = document.getElementById("coverResult");
     resultDiv.classList.remove("d-none");
+
     if (data.total_price) {
-      resultDiv.innerHTML = `✅ <strong>الإجمالي للمتر:</strong> ${data.total_price} جنيه`;
+      resultDiv.innerHTML = `✅ <strong>${totalText}</strong> ${data.total_price} ${currencyText}`;
     } else {
-      resultDiv.innerHTML = `<span class="text-danger">${data.error || 'حدث خطأ أثناء الحساب.'}</span>`;
+      resultDiv.innerHTML = `<span class="text-danger">${data.error || errorText}</span>`;
     }
   })
   .catch(error => {
@@ -409,148 +470,206 @@ document.getElementById("coverCostForm").addEventListener("submit", function(e) 
 <!-- Why Choose Our Products Section -->
 <div class="container-fluid bg-light py-5">
   <div class="container py-5">
+
     <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 750px;">
+      
       <h2 class="fw-bold text-uppercase text-dark mb-3">
-        WHY <span class="text-primary">ROVANA TRADE?</span>
+        {% trans "Why" %} <span class="text-primary">{% trans "Rovana Trade?" %}</span>
       </h2>
+
       <p class="text-muted">
+        {% blocktrans %}
         Rovana Trade is characterized by high efficiency and distinguished quality in the products we supply. We offer excellent prices and have a strong track record in the field of electrical supplies.
+        {% endblocktrans %}
       </p>
+
     </div>
+
     <div class="row g-5 align-items-center">
+
+      <!-- Left -->
       <div class="col-xl-4">
+
         <div class="d-flex mb-4 wow fadeInLeft" data-wow-delay="0.3s">
           <div style="width:110px; height:60px; background:#dc143c; display:flex; align-items:center; justify-content:center; border-radius:50%; margin-right: 16px;">
             <i class="fa fa-cogs fa-2x text-white"></i>
           </div>
           <div>
-            <h5 class="fw-bold mb-2">High Efficiency</h5>
-            <p class="mb-0 text-muted">Our company is known for its operational efficiency, ensuring timely and reliable service for all your electrical supply needs.</p>
+            <h5 class="fw-bold mb-2">{% trans "High Efficiency" %}</h5>
+            <p class="mb-0 text-muted">
+              {% blocktrans %}
+              Our company is known for its operational efficiency, ensuring timely and reliable service for all your electrical supply needs.
+              {% endblocktrans %}
+            </p>
           </div>
         </div>
+
         <div class="d-flex mb-4 wow fadeInLeft" data-wow-delay="0.5s">
           <div style="width:110px; height:60px; background:#dc143c; display:flex; align-items:center; justify-content:center; border-radius:50%; margin-right: 16px;">
             <i class="fa fa-star fa-2x text-white"></i>
           </div>
           <div>
-            <h5 class="fw-bold mb-2">Distinguished Quality</h5>
-            <p class="mb-0 text-muted">We are committed to providing products of the highest quality, meeting international standards and exceeding customer expectations.</p>
+            <h5 class="fw-bold mb-2">{% trans "Distinguished Quality" %}</h5>
+            <p class="mb-0 text-muted">
+              {% blocktrans %}
+              We are committed to providing products of the highest quality, meeting international standards and exceeding customer expectations.
+              {% endblocktrans %}
+            </p>
           </div>
         </div>
+
       </div>
+
+      <!-- Center -->
       <div class="col-xl-4 text-center wow zoomIn" data-wow-delay="0.7s">
-        <!-- يمكن إضافة صورة أو محتوى هنا -->
+        <!-- ممكن تضيف صورة هنا -->
       </div>
+
+      <!-- Right -->
       <div class="col-xl-4">
+
         <div class="d-flex mb-4 wow fadeInRight" data-wow-delay="0.3s">
           <div style="width:110px; height:60px; background:#dc143c; display:flex; align-items:center; justify-content:center; border-radius:50%; margin-right: 16px;">
             <i class="fa fa-tags fa-2x text-white"></i>
           </div>
           <div>
-            <h5 class="fw-bold mb-2">Excellent Prices</h5>
-            <p class="mb-0 text-muted">We provide competitive pricing without compromising on quality, ensuring the best value for our clients.</p>
+            <h5 class="fw-bold mb-2">{% trans "Excellent Prices" %}</h5>
+            <p class="mb-0 text-muted">
+              {% blocktrans %}
+              We provide competitive pricing without compromising on quality, ensuring the best value for our clients.
+              {% endblocktrans %}
+            </p>
           </div>
         </div>
+
         <div class="d-flex mb-4 wow fadeInRight" data-wow-delay="0.5s">
           <div style="width:110px; height:60px; background:#dc143c; display:flex; align-items:center; justify-content:center; border-radius:50%; margin-right: 16px;">
             <i class="fa fa-history fa-2x text-white"></i>
           </div>
           <div>
-            <h5 class="fw-bold mb-2">Proven Track Record</h5>
-            <p class="mb-0 text-muted">With a great precedent in the field of electrical supplies, Rovana Trade is a trusted partner for your projects.</p>
+            <h5 class="fw-bold mb-2">{% trans "Proven Track Record" %}</h5>
+            <p class="mb-0 text-muted">
+              {% blocktrans %}
+              With a great precedent in the field of electrical supplies, Rovana Trade is a trusted partner for your projects.
+              {% endblocktrans %}
+            </p>
           </div>
         </div>
+
       </div>
+
     </div>
+
   </div>
 </div>
 
 <!-- Counter Section -->
+
 <div class="container-fluid counter bg-secondary py-5">
   <div class="container py-5">
 
     <!-- Section Heading -->
     <header class="text-center mb-4">
+
       <h2 class="text-white fw-bold">
-        إنجازات شركة روفانا تريد في تصنيع وتوريد الكابل تري والليدر في مصر
+        {% trans "Rovana Trade Achievements in Cable Tray & Ladder Manufacturing in Egypt" %}
       </h2>
+
       <p class="text-light">
-        نحن متخصصون في <strong>كابل تري مصر</strong> و<strong>كابل ليدر مصر</strong> 
-        و<strong>كابل تري مجلفن</strong> و<strong>كابل ليدر مجلفن</strong>، 
-        كما نقدم حلول <strong>حوامل كابلات كهرباء</strong> و<strong>أنظمة إدارة الكابلات</strong> 
-        مع خدمات <strong>توريد وتركيب</strong> شاملة في مصر.
+        {% blocktrans %}
+        We specialize in <strong>cable trays in Egypt</strong>, <strong>cable ladders in Egypt</strong>,
+        <strong>galvanized cable trays</strong>, and <strong>galvanized cable ladders</strong>.
+        We also provide <strong>electrical cable support systems</strong> and
+        <strong>cable management solutions</strong> with complete supply and installation services across Egypt.
+        {% endblocktrans %}
       </p>
+
       <p class="text-light">
-        <em>Rovana Trade Company achievements in manufacturing and supplying 
-        Cable Trays, Cable Ladders, and Electrical Cable Management Systems in Egypt.</em>
+        <em>
+          {% trans "Rovana Trade Company achievements in manufacturing and supplying Cable Trays, Cable Ladders, and Electrical Cable Management Systems in Egypt." %}
+        </em>
       </p>
+
     </header>
 
-    <!-- Counters -->
-    <div class="row g-5">
-      <!-- Customers -->
-      <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="counter-item text-center">
-          <div class="counter-item-icon mx-auto" aria-label="عملاء راضون">
-            <i class="fas fa-users fa-2x"></i>
-          </div>
-          <div class="counter-counting my-3">
-            <span class="text-white fs-2 fw-bold" data-toggle="counter-up">1200</span>
-            <span class="h1 fw-bold text-white">+</span>
-          </div>
-          <h3 class="text-white mb-0">عملاء راضون</h3>
-          <small class="d-block text-light">Satisfied Customers</small>
-        </div>
+<!-- Counters -->
+<div class="row g-5">
+
+  <!-- Customers -->
+  <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="counter-item text-center">
+
+      <div class="counter-item-icon mx-auto" aria-label="{% trans 'Satisfied Customers' %}">
+        <i class="fas fa-users fa-2x"></i>
       </div>
 
-      <!-- Products -->
-      <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
-        <div class="counter-item text-center">
-          <div class="counter-item-icon mx-auto" aria-label="منتجات مباعة">
-            <i class="fas fa-box fa-2x"></i>
-          </div>
-          <div class="counter-counting my-3">
-            <span class="text-white fs-2 fw-bold" data-toggle="counter-up">500</span>
-            <span class="h1 fw-bold text-white">+</span>
-          </div>
-          <h3 class="text-white mb-0">منتجات مباعة</h3>
-          <small class="d-block text-light">Products Sold</small>
-        </div>
+      <div class="counter-counting my-3">
+        <span class="text-white fs-2 fw-bold" data-toggle="counter-up">1200</span>
+        <span class="h1 fw-bold text-white">+</span>
       </div>
 
-      <!-- Factories -->
-      <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
-        <div class="counter-item text-center">
-          <div class="counter-item-icon mx-auto" aria-label="منافذ مصانع">
-            <i class="fas fa-industry fa-2x"></i>
-          </div>
-          <div class="counter-counting my-3">
-            <span class="text-white fs-2 fw-bold" data-toggle="counter-up">50</span>
-            <span class="h1 fw-bold text-white">+</span>
-          </div>
-          <h3 class="text-white mb-0">منافذ مصانع</h3>
-          <small class="d-block text-light">Factory Outlets</small>
-        </div>
-      </div>
+      <h3 class="text-white mb-0">{% trans "Satisfied Customers" %}</h3>
 
-      <!-- Projects -->
-      <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
-        <div class="counter-item text-center">
-          <div class="counter-item-icon mx-auto" aria-label="مشروعات مكتملة">
-            <i class="fas fa-project-diagram fa-2x"></i>
-          </div>
-          <div class="counter-counting my-3">
-            <span class="text-white fs-2 fw-bold" data-toggle="counter-up">250</span>
-            <span class="h1 fw-bold text-white">+</span>
-          </div>
-          <h3 class="text-white mb-0">مشروعات مكتملة</h3>
-          <small class="d-block text-light">Projects Completed</small>
-        </div>
-      </div>
     </div>
+  </div>
+
+  <!-- Products -->
+  <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+    <div class="counter-item text-center">
+
+      <div class="counter-item-icon mx-auto" aria-label="{% trans 'Products Sold' %}">
+        <i class="fas fa-box fa-2x"></i>
+      </div>
+
+      <div class="counter-counting my-3">
+        <span class="text-white fs-2 fw-bold" data-toggle="counter-up">500</span>
+        <span class="h1 fw-bold text-white">+</span>
+      </div>
+
+      <h3 class="text-white mb-0">{% trans "Products Sold" %}</h3>
+
+    </div>
+  </div>
+
+<!-- Factories -->
+<div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
+  <div class="counter-item text-center">
+
+    <div class="counter-item-icon mx-auto" aria-label="{% trans 'Factory Outlets' %}">
+      <i class="fas fa-industry fa-2x"></i>
+    </div>
+
+    <div class="counter-counting my-3">
+      <span class="text-white fs-2 fw-bold" data-toggle="counter-up">50</span>
+      <span class="h1 fw-bold text-white">+</span>
+    </div>
+
+    <h3 class="text-white mb-0">{% trans "Factory Outlets" %}</h3>
+
   </div>
 </div>
 
+<!-- Projects -->
+<div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
+  <div class="counter-item text-center">
+
+    <div class="counter-item-icon mx-auto" aria-label="{% trans 'Projects Completed' %}">
+      <i class="fas fa-project-diagram fa-2x"></i>
+    </div>
+
+    <div class="counter-counting my-3">
+      <span class="text-white fs-2 fw-bold" data-toggle="counter-up">250</span>
+      <span class="h1 fw-bold text-white">+</span>
+    </div>
+
+    <h3 class="text-white mb-0">{% trans "Projects Completed" %}</h3>
+
+  </div>
+</div>
+
+</div>
+</div>
+</div>
 <!-- Schema for SEO -->
 <script type="application/ld+json">
 {
@@ -558,95 +677,32 @@ document.getElementById("coverCostForm").addEventListener("submit", function(e) 
   "@type": "Organization",
   "name": "Rovana Trade Company",
   "url": "https://www.rovanatrade.com",
-  "description": "إنجازات شركة روفانا تريد في تصنيع وتوريد الكابل تري والليدر في مصر.",
+
+  "description": "{% trans 'Rovana Trade Company achievements in manufacturing and supplying cable trays and ladders in Egypt.' %}",
+
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
     "reviewCount": "1200"
   },
-  "knowsAbout": ["كابل تري", "ليدر كابلات", "حوامل كابلات كهرباء"],
+
+  "knowsAbout": [
+    "{% trans 'Cable Trays' %}",
+    "{% trans 'Cable Ladders' %}",
+    "{% trans 'Electrical Cable Support Systems' %}"
+  ],
+
   "numberOfEmployees": "50",
+
   "department": [
-    { "@type": "Organization", "name": "منافذ المصانع", "employee": "50+" }
+    {
+      "@type": "Organization",
+      "name": "{% trans 'Factory Outlets' %}",
+      "employee": "50+"
+    }
   ]
 }
 </script>
-
-<!-- Team Section -->
-{% comment %} <div class="container-fluid team pb-5">
-  <div class="container pb-5">
-    <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
-      <h1 class="display-5 text-capitalize mb-3">Customer <span class="text-primary">Support</span> Team</h1>
-      <p class="mb-0">Our dedicated team is here to assist you with all your cable-related queries.</p>
-    </div>
-    <div class="row g-4">
-      {% for member in team_members %}
-      <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.{{ forloop.counter }}s">
-        <div class="team-item p-4 pt-0">
-          <div class="team-img">
-            <img src="{{ member.image.url }}" class="img-fluid rounded w-100" alt="{{ member.name }}">
-          </div>
-          <div class="team-content pt-4">
-            <h4>{{ member.name }}</h4>
-            <p>{{ member.role }}</p>
-            <div class="team-icon d-flex justify-content-center">
-              {% if member.facebook %}
-              <a class="btn btn-square btn-light rounded-circle mx-1" href="{{ member.facebook }}"><i class="fab fa-facebook-f"></i></a>
-              {% endif %}
-              {% if member.twitter %}
-              <a class="btn btn-square btn-light rounded-circle mx-1" href="{{ member.twitter }}"><i class="fab fa-twitter"></i></a>
-              {% endif %}
-              {% if member.instagram %}
-              <a class="btn btn-square btn-light rounded-circle mx-1" href="{{ member.instagram }}"><i class="fab fa-instagram"></i></a>
-              {% endif %}
-              {% if member.linkedin %}
-              <a class="btn btn-square btn-light rounded-circle mx-1" href="{{ member.linkedin }}"><i class="fab fa-linkedin-in"></i></a>
-              {% endif %}
-            </div>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</div> {% endcomment %}
-
-<!-- Reviews Section -->
-{% comment %} <div class="container-fluid testimonial pb-5">
-  <div class="container pb-5">
-    <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
-      <h1 class="display-5 text-capitalize mb-3">Our Clients<span class="text-primary">Reviews</span></h1>
-      <p class="mb-0">Hear from our valued customers about their experience with our cables.</p>
-    </div>
-    <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-      {% for review in reviews %}
-      <div class="testimonial-item">
-        <div class="testimonial-quote"><i class="fa fa-quote-right fa-2x"></i></div>
-        <div class="testimonial-inner p-4">
-          <img src="{{ review.image.url }}" class="img-fluid rounded" alt="{{ review.name }}">
-          <div class="ms-4">
-            <h4>{{ review.name }}</h4>
-            <p>{{ review.job_title }}</p>
-            <div class="d-flex text-primary">
-              {% for i in "12345"|slice:":review.rating"|make_list %}
-                <i class="fas fa-star"></i>
-              {% endfor %}
-             
-            </div>
-          </div>
-        </div>
-        <div class="border-top rounded-bottom p-4">
-          <p class="mb-0">{{ review.comment }}</p>
-        </div>
-      </div>
-      {% empty %}
-      <div class="text-center text-muted">
-        <p>No reviews available yet.</p>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</div> {% endcomment %}
 
 <!-- WOW.js Initialization -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
