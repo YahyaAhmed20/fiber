@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-25 22:23+0200\n"
+"POT-Creation-Date: 2026-03-25 22:35+0200\n"
 "PO-Revision-Date: 2026-03-25 20:00+0200\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -624,6 +624,7 @@ msgstr "سلالم الكابلات"
 #: .\home\templates\home\home.html:693
 msgid "Electrical Cable Support Systems"
 msgstr "أنظمة دعم الكابلات الكهربائية"
+
 #: .\ourpartner\templates\ourpartner\ourpartner.html:6
 #, fuzzy
 #| msgid "Certificates & Accreditations - Rovana Trade Egypt"
@@ -631,8 +632,12 @@ msgid "Our Partners - Rovana Trade Egypt"
 msgstr "شركاؤنا - روفانا تريد مصر"
 
 #: .\ourpartner\templates\ourpartner\ourpartner.html:10
-msgid "Discover Rovana Trade partners and collaborations with leading companies in electrical and industrial sectors across Egypt and the Middle East."
-msgstr "اكتشف شركاء روفانا تريد وتعاوننا مع الشركات الرائدة في القطاعات الكهربائية والصناعية في مصر والشرق الأوسط."
+msgid ""
+"Discover Rovana Trade partners and collaborations with leading companies in "
+"electrical and industrial sectors across Egypt and the Middle East."
+msgstr ""
+"اكتشف شركاء روفانا تريد وتعاوننا مع الشركات الرائدة في القطاعات الكهربائية "
+"والصناعية في مصر والشرق الأوسط."
 
 #: .\ourpartner\templates\ourpartner\ourpartner.html:14
 #, fuzzy
@@ -642,19 +647,47 @@ msgstr "شركاؤنا - روفانا تريد"
 
 #: .\ourpartner\templates\ourpartner\ourpartner.html:18
 #, fuzzy
-#| msgid "Discover Rovana Trade, experts in manufacturing cable trays and ladders with high quality and reliability across Egypt."
-msgid "Rovana Trade is proud of its trusted partners who support our vision in delivering high-quality cable management solutions."
-msgstr "تفخر روفانا تريد بشركائها الموثوقين الذين يدعمون رؤيتنا في تقديم حلول إدارة الكابلات عالية الجودة."
+#| msgid ""
+#| "Discover Rovana Trade, experts in manufacturing cable trays and ladders "
+#| "with high quality and reliability across Egypt."
+msgid ""
+"Rovana Trade is proud of its trusted partners who support our vision in "
+"delivering high-quality cable management solutions."
+msgstr ""
+"تفخر روفانا تريد بشركائها الموثوقين الذين يدعمون رؤيتنا في تقديم حلول إدارة "
+"الكابلات عالية الجودة."
 
 #: .\ourpartner\templates\ourpartner\ourpartner.html:26
 msgid "Our Partners"
 msgstr "شركاؤنا"
 
 #: .\ourpartner\templates\ourpartner\ourpartner.html:30
+msgid ""
+"\n"
+"نفخر بالتعاون مع شركائنا الموثوقين الذين يساهمون في تقديم حلول إدارة "
+"الكابلات عالية الجودة في مصر والشرق الأوسط.\n"
+msgstr ""
+#: .\ourproject\templates\ourproject\project_list.html:6
 #, fuzzy
-#| msgid "Discover Rovana Trade, experts in manufacturing cable trays and ladders with high quality and reliability across Egypt."
-msgid "We are proud to collaborate with our trusted partners who contribute to delivering high-quality cable management solutions across Egypt and the Middle East."
-msgstr "نفخر بالتعاون مع شركائنا الموثوقين الذين يساهمون في تقديم حلول إدارة الكابلات عالية الجودة في مصر والشرق الأوسط."
+#| msgid "Certificates & Accreditations - Rovana Trade Egypt"
+msgid "Our Projects - Rovana Trade Egypt"
+msgstr "مشروعاتنا - روفانا تريد مصر"
+
+#: .\ourproject\templates\ourproject\project_list.html:10
+msgid "Explore Rovana Trade projects in cable trays and ladders across Egypt. Discover our latest electrical and industrial installations."
+msgstr "استكشف مشروعات روفانا تريد في حوامل وسلالم الكابلات في جميع أنحاء مصر. اكتشف أحدث التركيبات الكهربائية والصناعية لدينا."
+
+#: .\ourproject\templates\ourproject\project_list.html:18
+msgid "Our Projects"
+msgstr "مشروعاتنا"
+
+#: .\ourproject\templates\ourproject\project_list.html:22
+msgid "Explore our latest cable tray and ladder projects across Egypt and the Middle East."
+msgstr "استكشف أحدث مشروعاتنا في حوامل وسلالم الكابلات في مصر والشرق الأوسط."
+
+#: .\ourproject\templates\ourproject\project_list.html:51
+msgid "No image available"
+msgstr "لا توجد صورة متاحة"
 
 #: .\project\settings.py:167
 msgid "English"
@@ -737,3 +770,15 @@ msgstr "جميع الحقوق محفوظة"
 #: .\templates\parts\footer.html:81
 msgid "Designed and developed by"
 msgstr "تم التصميم والتطوير بواسطة"
+
+#, fuzzy
+#~| msgid ""
+#~| "Discover Rovana Trade, experts in manufacturing cable trays and ladders "
+#~| "with high quality and reliability across Egypt."
+#~ msgid ""
+#~ "We are proud to collaborate with our trusted partners who contribute to "
+#~ "delivering high-quality cable management solutions across Egypt and the "
+#~ "Middle East."
+#~ msgstr ""
+#~ "نفخر بالتعاون مع شركائنا الموثوقين الذين يساهمون في تقديم حلول إدارة "
+#~ "الكابلات عالية الجودة في مصر والشرق الأوسط."
