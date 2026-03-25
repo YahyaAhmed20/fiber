@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-25 21:45+0200\n"
+"POT-Creation-Date: 2026-03-25 22:02+0200\n"
 "PO-Revision-Date: 2026-03-25 20:00+0200\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -40,8 +40,8 @@ msgid ""
 "Discover Rovana Trade, Egypt's trusted supplier of cable trays and ladders, "
 "delivering innovative and reliable cable management solutions."
 msgstr ""
-"اكتشف روفانا تريد، المورد الموثوق في مصر لحوامل وسلالم الكابلات، "
-"ونقدم حلول مبتكرة وموثوقة لإدارة الكابلات."
+"اكتشف روفانا تريد، المورد الموثوق في مصر لحوامل وسلالم الكابلات، ونقدم حلول "
+"مبتكرة وموثوقة لإدارة الكابلات."
 
 #: .\about\templates\about\about.html:24
 #, fuzzy
@@ -76,8 +76,10 @@ msgid ""
 "      "
 msgstr ""
 "\n"
-"      شركة روفانا تريد، تأسست عام 2019، وهي رائدة موثوقة في أنظمة دعم الكابلات، ومتخصصة في حوامل وسلالم الكابلات عالية الجودة.\n"
-"      بنقدم حلول متينة ومخصصة حسب احتياجات القطاعات الكهربائية والصناعية، وبنضمن الموثوقية والكفاءة في كل مشروع في مصر والشرق الأوسط.\n"
+"      شركة روفانا تريد، تأسست عام 2019، وهي رائدة موثوقة في أنظمة دعم "
+"الكابلات، ومتخصصة في حوامل وسلالم الكابلات عالية الجودة.\n"
+"      بنقدم حلول متينة ومخصصة حسب احتياجات القطاعات الكهربائية والصناعية، "
+"وبنضمن الموثوقية والكفاءة في كل مشروع في مصر والشرق الأوسط.\n"
 "      "
 
 #: .\about\templates\about\about.html:47
@@ -136,8 +138,10 @@ msgid ""
 "    "
 msgstr ""
 "\n"
-"    تأسست روفانا تريد عام 2019، عشان نلبي الطلب المتزايد على التوريدات الكهربائية وأنظمة إدارة الكابلات عالية الجودة في مصر.\n"
-"    التزامنا بالتميز والابتكار خلى مكانتنا شريك موثوق للمشروعات الصناعية والتجارية.\n"
+"    تأسست روفانا تريد عام 2019، عشان نلبي الطلب المتزايد على التوريدات "
+"الكهربائية وأنظمة إدارة الكابلات عالية الجودة في مصر.\n"
+"    التزامنا بالتميز والابتكار خلى مكانتنا شريك موثوق للمشروعات الصناعية "
+"والتجارية.\n"
 "    "
 
 #: .\about\templates\about\about.html:104
@@ -241,7 +245,8 @@ msgid ""
 "    "
 msgstr ""
 "\n"
-"    الريادة في المنطقة كأول مقدم لحلول دعم كابلات مبتكرة وعالية الجودة وموثوقة، وبنحقق التميز في كل مشروع بنشتغل فيه.\n"
+"    الريادة في المنطقة كأول مقدم لحلول دعم كابلات مبتكرة وعالية الجودة "
+"وموثوقة، وبنحقق التميز في كل مشروع بنشتغل فيه.\n"
 "    "
 
 #: .\about\templates\about\about.html:230
@@ -261,6 +266,33 @@ msgstr "شوف مشروعاتنا"
 #: .\about\templates\about\about.html:239
 msgid "to see how we can support your next project."
 msgstr "عشان تشوف إزاي نقدر ندعم مشروعك الجاي."
+#: .\certificates\templates\certificates\certificates.html:6
+msgid "Certificates & Accreditations - Rovana Trade Egypt"
+msgstr "الشهادات والاعتمادات - روفانا تريد مصر"
+
+#: .\certificates\templates\certificates\certificates.html:10
+msgid "Explore the official certifications and accreditations of Rovana Trade in Egypt. We provide high-quality cable trays and ladders with full compliance to international standards."
+msgstr "استعرض الشهادات والاعتمادات الرسمية لشركة روفانا تريد في مصر. نحن نوفر حوامل وسلالم كابلات عالية الجودة ومتوافقة بالكامل مع المعايير الدولية."
+
+#: .\certificates\templates\certificates\certificates.html:14
+msgid "Certificates & Accreditations - Rovana Trade"
+msgstr "الشهادات والاعتمادات - روفانا تريد"
+
+#: .\certificates\templates\certificates\certificates.html:18
+msgid "Rovana Trade holds international certifications ensuring the highest quality standards in manufacturing and supplying cable trays and ladders in Egypt."
+msgstr "تحمل شركة روفانا تريد شهادات دولية تضمن أعلى معايير الجودة في تصنيع وتوريد حوامل وسلالم الكابلات في مصر."
+
+#: .\certificates\templates\certificates\certificates.html:27
+msgid "Certificates & Accreditations"
+msgstr "الشهادات والاعتمادات"
+
+#: .\certificates\templates\certificates\certificates.html:31
+msgid "Explore our official certifications and accreditations that reflect our commitment to quality and excellence."
+msgstr "استعرض شهاداتنا واعتماداتنا الرسمية التي تعكس التزامنا بالجودة والتميز."
+
+#: .\certificates\templates\certificates\certificates.html:50
+msgid "Rovana Trade ISO Certification"
+msgstr "شهادات الأيزو - روفانا تريد"
 
 #: .\home\templates\home\home.html:6
 msgid "Rovana Trade - Cable Tray & Ladder Manufacturing in Egypt"
@@ -616,10 +648,6 @@ msgstr "روابط سريعة"
 #: .\templates\parts\footer.html:25 .\templates\parts\navbar.html:21
 msgid "Home"
 msgstr "الرئيسية"
-
-#: .\templates\parts\footer.html:27 .\templates\parts\navbar.html:23
-msgid "Certificates & Accreditations"
-msgstr "الشهادات والاعتمادات"
 
 #: .\templates\parts\footer.html:28 .\templates\parts\navbar.html:24
 msgid "Our Partner"
