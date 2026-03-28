@@ -434,8 +434,7 @@ msgid "Phone number must be exactly 11 digits"
 msgstr "رقم الموبايل لازم يكون 11 رقم بالظبط"
 
 #: .\contact\models.py:10
-#, fuzzy
-#| msgid "Our Cable Solutions"
+
 msgid "Custom Cable Solutions"
 msgstr "حلول كابلات مخصصة"
 

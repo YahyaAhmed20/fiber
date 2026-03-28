@@ -1,10 +1,12 @@
 from django import forms
-from django.utils.translation import gettext_lazy as _  # ✅ مهم للترجمة
+from django.utils.translation import gettext_lazy as _
 from .models import ContactInquiry
 
 
 class ContactInquiryForm(forms.ModelForm):
-    # ✅ تعريف الحقول بشكل صريح عشان نضيف labels و placeholders قابلة للترجمة
+    # ✅ نعرّف الحقول اللي محتاجين نعدل الـ widget بتاعها بس
+    # ✅ حقل inquiry_type هياخد الـ choices أوتوماتيك من المودل
+    
     name = forms.CharField(
         label=_("Your Name"),
         max_length=255,
@@ -39,16 +41,11 @@ class ContactInquiryForm(forms.ModelForm):
         })
     )
     
+    # ✅ حقل inquiry_type: نسيبه ياخد الخيارات من المودل أوتوماتيك
+    # ✅ بس نعدل الـ widget عشان يضيف الـ class والـ ID
     inquiry_type = forms.ChoiceField(
         label=_("Inquiry Type"),
-        choices=[
-            ('', _('Select inquiry type')),  # ✅ الخيار الأول فاضي عشان يختار
-            ('quote', _('Request a Quote')),
-            ('technical', _('Technical Support')),
-            ('partnership', _('Partnership Inquiry')),
-            ('general', _('General Inquiry')),
-            ('other', _('Other')),
-        ],
+        # ✅ مفيش choices هنا! هتاخد من المودل أوتوماتيك
         widget=forms.Select(attrs={
             'class': 'form-control',
             'id': 'inquiry_type',
@@ -82,6 +79,17 @@ class ContactInquiryForm(forms.ModelForm):
     class Meta:
         model = ContactInquiry
         fields = ['name', 'email', 'phone', 'inquiry_type', 'subject', 'message']
+        
+        # ✅ نضيف الخيار الفاضي يدوياً عشان يظهر أول حاجة في الـ dropdown
+        # (ده هيشتغل مع الـ widget فوق)
+        
+    # ✅ دالة لتعديل الـ queryset أو الخيارات بعد التحميل (اختياري)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # ✅ نضيف خيار "اختر نوع الاستفسار" كأول عنصر
+        self.fields['inquiry_type'].choices = [
+            ('', _('Select inquiry type')),
+        ] + list(ContactInquiry.INQUIRY_TYPES)
         
     # ✅ تنظيف رقم التليفون (للتحقق من أنه 11 رقم)
     def clean_phone(self):
