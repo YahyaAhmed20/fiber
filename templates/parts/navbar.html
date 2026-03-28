@@ -27,9 +27,9 @@
                 </div>
 
                 <!-- 🔥 Language Switcher -->
-          <form action="{% url 'set_language' %}" method="post" class="d-flex ms-lg-3">
+               <form action="{% url 'set_language' %}" method="post" class="d-flex ms-lg-3">
     {% csrf_token %}
-    <input type="hidden" name="next" value="{{ request.path }}">
+    <input type="hidden" name="next" value="{{ request.path|cut:'/ar'|cut:'/en' }}">
 
     <select name="language" onchange="this.form.submit()" class="form-select form-select-sm lang-switcher">
         <option value="en" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>🇬🇧 English</option>
