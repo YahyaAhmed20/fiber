@@ -210,14 +210,12 @@ STATICFILES_DIRS=[
 # DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 from decouple import config
 
-# Cloudinary
-cloudinary_url  = config('CLOUDINARY_URL')
 cloudinary.config(
-    cloud_name = cloudinary_url.split('@')[1],  # بعد الـ @
-    api_key = cloudinary_url.split('//')[1].split(':')[0],  # قبل :
-    api_secret = cloudinary_url.split(':')[1].split('@')[0]  # بين : و @
+    cloud_name="dxmzxtbdg",          # ده اللي بعد @
+    api_key="562512275641974",
+    api_secret="_qRjrAzI2zrhXwbMdrzqhKlNg-I",
+    secure=True
 )
-
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
