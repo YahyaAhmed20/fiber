@@ -73,20 +73,18 @@ INSTALLED_APPS = [
 
 ]
 SITE_ID = 1  # لو لم تستخدم django.contrib.sites
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 
     'django.contrib.sessions.middleware.SessionMiddleware',
 
+    # ✅ الترجمة
+    'django.middleware.locale.LocaleMiddleware',
+
     'django.middleware.common.CommonMiddleware',
 
-    # ✅ CSRF قبل Locale
     'django.middleware.csrf.CsrfViewMiddleware',
-
-    # ✅ Locale بعد CSRF
-    'django.middleware.locale.LocaleMiddleware',
 
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',

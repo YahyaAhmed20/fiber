@@ -1,0 +1,907 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-11 21:37+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\about\templates\about\about.html:6 .\about\templates\about\about.html:12
+msgid "About Rovana Trade - Leading Cable Tray Manufacturer in Egypt"
+msgstr ""
+
+#: .\about\templates\about\about.html:9
+msgid ""
+"Learn about Rovana Trade, Egypt's premier manufacturer of cable trays and "
+"ladders, offering high-quality Hot Dip Galvanized and Electrostatic Painted "
+"solutions for industrial and electrical projects."
+msgstr ""
+
+#: .\about\templates\about\about.html:13
+msgid ""
+"Discover Rovana Trade, Egypt's trusted supplier of cable trays and ladders, "
+"delivering innovative and reliable cable management solutions."
+msgstr ""
+
+#: .\about\templates\about\about.html:24
+msgid "About"
+msgstr ""
+
+#: .\about\templates\about\about.html:24
+msgid "Rovana Trade Company"
+msgstr ""
+
+#: .\about\templates\about\about.html:27
+msgid ""
+"Premier Manufacturer of Cable Support Systems in Egypt and the Middle East"
+msgstr ""
+
+#: .\about\templates\about\about.html:37
+msgid "Who We Are"
+msgstr ""
+
+#: .\about\templates\about\about.html:41
+msgid ""
+"\n"
+"      Rovana Trade Company, established in 2019, is a trusted leader in "
+"cable support systems, specializing in high-quality cable trays and "
+"ladders. \n"
+"      We deliver durable, customized solutions tailored to the needs of the "
+"electrical and industrial sectors, ensuring reliability and efficiency in "
+"every project across Egypt and the Middle East.\n"
+"      "
+msgstr ""
+
+#: .\about\templates\about\about.html:47
+msgid "innovative cable management solutions"
+msgstr ""
+
+#: .\about\templates\about\about.html:50
+msgid ""
+"\n"
+"      are designed to meet ISO 9001 standards.\n"
+"      "
+msgstr ""
+
+#: .\about\templates\about\about.html:59
+msgid "Experts in cable tray and ladder systems"
+msgstr ""
+
+#: .\about\templates\about\about.html:64
+msgid "State-of-the-art manufacturing facility"
+msgstr ""
+
+#: .\about\templates\about\about.html:69
+msgid "Customizable dimensions and finishes"
+msgstr ""
+
+#: .\about\templates\about\about.html:74
+msgid "Nationwide delivery across all governorates"
+msgstr ""
+
+#: .\about\templates\about\about.html:80
+msgid "Contact Us"
+msgstr ""
+
+#: .\about\templates\about\about.html:89
+msgid "Rovana Trade"
+msgstr ""
+
+#: .\about\templates\about\about.html:93
+msgid "About the Company"
+msgstr ""
+
+#: .\about\templates\about\about.html:98
+msgid ""
+"\n"
+"    Founded in 2019, Rovana Trade was created to meet the growing demand for "
+"high-quality electrical supplies and cable management systems in Egypt.\n"
+"    Our commitment to excellence and innovation has positioned us as a "
+"trusted partner for industrial and commercial projects.\n"
+"    "
+msgstr ""
+
+#: .\about\templates\about\about.html:104
+msgid "ISO certifications"
+msgstr ""
+
+#: .\about\templates\about\about.html:107
+msgid ""
+"\n"
+"    Learn more about our.\n"
+"    "
+msgstr ""
+
+#: .\about\templates\about\about.html:114
+msgid "Our Products:"
+msgstr ""
+
+#: .\about\templates\about\about.html:121
+msgid "Cable Tray"
+msgstr ""
+
+#: .\about\templates\about\about.html:126
+msgid "Cable Trunk"
+msgstr ""
+
+#: .\about\templates\about\about.html:131
+msgid "Cable Ladder"
+msgstr ""
+
+#: .\about\templates\about\about.html:136
+msgid "Wire Mesh"
+msgstr ""
+
+#: .\about\templates\about\about.html:141
+msgid "EMT Tube"
+msgstr ""
+
+#: .\about\templates\about\about.html:146
+msgid "Accessories Tray"
+msgstr ""
+
+#: .\about\templates\about\about.html:151
+msgid "Accessories EMT"
+msgstr ""
+
+#: .\about\templates\about\about.html:156
+msgid "Accessories Ladder"
+msgstr ""
+
+#: .\about\templates\about\about.html:161
+msgid "Lampposts"
+msgstr ""
+
+#: .\about\templates\about\about.html:173
+msgid "Rovana Trade cable tray manufacturing facility"
+msgstr ""
+
+#: .\about\templates\about\about.html:182
+msgid "Our Manufacturing Facility"
+msgstr ""
+
+#: .\about\templates\about\about.html:191
+msgid "Rovana Trade manufacturing facility"
+msgstr ""
+
+#: .\about\templates\about\about.html:200
+msgid "Our Cable Solutions"
+msgstr ""
+
+#: .\about\templates\about\about.html:209
+msgid "Rovana Trade cable tray and ladder solutions"
+msgstr ""
+
+#: .\about\templates\about\about.html:220
+msgid "Our Vision"
+msgstr ""
+
+#: .\about\templates\about\about.html:225
+msgid ""
+"\n"
+"    To lead the region as the premier provider of innovative, high-quality, "
+"and reliable cable support solutions, driving excellence in every project we "
+"undertake.\n"
+"    "
+msgstr ""
+
+#: .\about\templates\about\about.html:230
+msgid "Explore our products"
+msgstr ""
+
+#: .\about\templates\about\about.html:233
+msgid "or"
+msgstr ""
+
+#: .\about\templates\about\about.html:236
+msgid "view our projects"
+msgstr ""
+
+#: .\about\templates\about\about.html:239
+msgid "to see how we can support your next project."
+msgstr ""
+
+#: .\certificates\templates\certificates\certificates.html:6
+msgid "Certificates & Accreditations - Rovana Trade Egypt"
+msgstr ""
+
+#: .\certificates\templates\certificates\certificates.html:10
+msgid ""
+"Explore the official certifications and accreditations of Rovana Trade in "
+"Egypt. We provide high-quality cable trays and ladders with full compliance "
+"to international standards."
+msgstr ""
+
+#: .\certificates\templates\certificates\certificates.html:14
+msgid "Certificates & Accreditations - Rovana Trade"
+msgstr ""
+
+#: .\certificates\templates\certificates\certificates.html:18
+msgid ""
+"Rovana Trade holds international certifications ensuring the highest quality "
+"standards in manufacturing and supplying cable trays and ladders in Egypt."
+msgstr ""
+
+#: .\certificates\templates\certificates\certificates.html:27
+#: .\templates\parts\footer.html:27 .\templates\parts\navbar.html:23
+msgid "Certificates & Accreditations"
+msgstr ""
+
+#: .\certificates\templates\certificates\certificates.html:31
+msgid ""
+"Explore our official certifications and accreditations that reflect our "
+"commitment to quality and excellence."
+msgstr ""
+
+#: .\certificates\templates\certificates\certificates.html:48
+msgid "Rovana Trade ISO Certification"
+msgstr ""
+
+#: .\contact\admin.py:31
+msgid "Contact Information"
+msgstr ""
+
+#: .\contact\admin.py:32
+msgid "Customer contact details"
+msgstr ""
+
+#: .\contact\admin.py:35
+msgid "Inquiry Details"
+msgstr ""
+
+#: .\contact\admin.py:36
+msgid "Details about the customer inquiry"
+msgstr ""
+
+#: .\contact\admin.py:39
+msgid "System Information"
+msgstr ""
+
+#: .\contact\admin.py:40
+msgid "Automatically generated information"
+msgstr ""
+
+#: .\contact\admin.py:54 .\contact\models.py:55
+msgid "Read Status"
+msgstr ""
+
+#: .\contact\admin.py:59
+msgid "Manage all contact inquiries"
+msgstr ""
+
+#: .\contact\admin.py:77
+#, python-brace-format
+msgid "Inquiry from {name} has been deleted."
+msgstr ""
+
+#: .\contact\forms.py:11 .\contact\templates\contact\contact.html:124
+msgid "Your Name"
+msgstr ""
+
+#: .\contact\forms.py:15 .\contact\models.py:20
+msgid "Enter your full name"
+msgstr ""
+
+#: .\contact\forms.py:22 .\contact\templates\contact\contact.html:135
+msgid "Your Email"
+msgstr ""
+
+#: .\contact\forms.py:25
+msgid "Enter your email address"
+msgstr ""
+
+#: .\contact\forms.py:32 .\contact\templates\contact\contact.html:146
+msgid "Your Phone"
+msgstr ""
+
+#: .\contact\forms.py:36
+msgid "Enter your phone number (e.g., 01012345678)"
+msgstr ""
+
+#: .\contact\forms.py:40
+msgid "Phone number must be 11 digits"
+msgstr ""
+
+#: .\contact\forms.py:47 .\contact\models.py:35
+#: .\contact\templates\contact\contact.html:157
+msgid "Inquiry Type"
+msgstr ""
+
+#: .\contact\forms.py:57 .\contact\models.py:40
+#: .\contact\templates\contact\contact.html:169
+msgid "Subject"
+msgstr ""
+
+#: .\contact\forms.py:61 .\contact\templates\contact\contact.html:170
+msgid "e.g., Tray Cable Specifications"
+msgstr ""
+
+#: .\contact\forms.py:68 .\contact\models.py:44
+#: .\contact\templates\contact\contact.html:183
+msgid "Message"
+msgstr ""
+
+#: .\contact\forms.py:71
+msgid "Describe your requirements (cable type, quantity, specifications, etc.)"
+msgstr ""
+
+#: .\contact\forms.py:91
+msgid "Select inquiry type"
+msgstr ""
+
+#: .\contact\forms.py:98 .\home\templates\home\home.html:126
+msgid "Phone number must be exactly 11 digits"
+msgstr ""
+
+#: .\contact\models.py:9
+msgid "Request a Quote"
+msgstr ""
+
+#: .\contact\models.py:10
+msgid "Technical Support"
+msgstr ""
+
+#: .\contact\models.py:11
+msgid "Custom Cable Solutions"
+msgstr ""
+
+#: .\contact\models.py:12
+msgid "Partnership Inquiry"
+msgstr ""
+
+#: .\contact\models.py:13
+msgid "General Inquiry"
+msgstr ""
+
+#: .\contact\models.py:14
+msgid "Other"
+msgstr ""
+
+#: .\contact\models.py:19 .\home\templates\home\home.html:90
+msgid "Name"
+msgstr ""
+
+#: .\contact\models.py:23 .\home\templates\home\home.html:134
+msgid "Email"
+msgstr ""
+
+#: .\contact\models.py:24
+msgid "Enter a valid email address"
+msgstr ""
+
+#: .\contact\models.py:29 .\contact\templates\contact\contact.html:91
+msgid "Phone"
+msgstr ""
+
+#: .\contact\models.py:30
+msgid "Enter your phone number (optional)"
+msgstr ""
+
+#: .\contact\models.py:36
+msgid "Select the type of your inquiry"
+msgstr ""
+
+#: .\contact\models.py:41
+msgid "Brief description of your inquiry"
+msgstr ""
+
+#: .\contact\models.py:45
+msgid "Describe your requirements in detail"
+msgstr ""
+
+#: .\contact\models.py:49
+msgid "Created At"
+msgstr ""
+
+#: .\contact\models.py:56
+msgid "Mark as read when you review this inquiry"
+msgstr ""
+
+#: .\contact\models.py:61
+msgid "Contact Inquiry"
+msgstr ""
+
+#: .\contact\models.py:62
+msgid "Contact Inquiries"
+msgstr ""
+
+#: .\contact\templates\contact\contact.html:5
+msgid "Contact Rovana Trade - Cable Tray & Ladder Solutions"
+msgstr ""
+
+#: .\contact\templates\contact\contact.html:8
+msgid ""
+"تواصل مع فريق روفانا تريد للحصول على استفسارات حول كابل التري والليدر، أو "
+"طلب عروض أسعار مخصصة. الدعم السريع لحلول إدارة الكابلات في مصر."
+msgstr ""
+
+#: .\contact\templates\contact\contact.html:12
+msgid ""
+"اتصل بروفانا تريد, كابل تري, كابل ليدر, استفسارات الكابل, عروض أسعار, مصر, "
+"حلول إدارة الكابلات"
+msgstr ""
+
+#: .\contact\templates\contact\contact.html:15
+msgid "Contact Rovana Trade"
+msgstr ""
+
+#: .\contact\templates\contact\contact.html:16
+msgid ""
+"للحصول على استفسارات أو طلب عروض أسعار لكابل التري والليدر، تواصل مع فريق "
+"روفانا تريد بسهولة وسرعة."
+msgstr ""
+
+#: .\contact\templates\contact\contact.html:25
+msgid "Contact Rovana"
+msgstr ""
+
+#: .\contact\templates\contact\contact.html:29 .\templates\parts\footer.html:30
+#: .\templates\parts\navbar.html:26
+msgid "Contact"
+msgstr ""
+
+#: .\contact\templates\contact\contact.html:41
+msgid "Get in Touch"
+msgstr ""
+
+#: .\contact\templates\contact\contact.html:44
+msgid ""
+"\n"
+"                        Have questions about our tray and ladder cables or "
+"need a custom solution? \n"
+"                        Fill out the form below, and our team at Rovana will "
+"get back to you promptly. \n"
+"                        For immediate assistance, call us or email our "
+"support team.\n"
+"                        "
+msgstr ""
+
+#: .\contact\templates\contact\contact.html:61
+msgid "Head Office"
+msgstr ""
+
+#: .\contact\templates\contact\contact.html:74
+msgid "Email Us"
+msgstr ""
+
+#: .\contact\templates\contact\contact.html:105
+msgid "Request a Quote or Inquiry"
+msgstr ""
+
+#: .\contact\templates\contact\contact.html:184
+msgid "e.g., Cable type, quantity, or specifications"
+msgstr ""
+
+#: .\contact\templates\contact\contact.html:195
+msgid "Submit Inquiry"
+msgstr ""
+
+#: .\contact\templates\contact\contact.html:225
+msgid "Giza Branch"
+msgstr ""
+
+#: .\contact\templates\contact\contact.html:228
+msgid "Address:"
+msgstr ""
+
+#: .\contact\templates\contact\contact.html:235
+msgid "Telephone:"
+msgstr ""
+
+#: .\contact\templates\contact\contact.html:248
+msgid "Rovana Trade Location on Google Maps"
+msgstr ""
+
+#: .\contact\views.py:18
+msgid ""
+"Thank you! Your inquiry has been submitted successfully. Our team will "
+"contact you soon."
+msgstr ""
+
+#: .\contact\views.py:25
+msgid "Please correct the errors below and try again."
+msgstr ""
+
+#: .\home\templates\home\home.html:6
+msgid "Rovana Trade - Cable Tray & Ladder Manufacturing in Egypt"
+msgstr ""
+
+#: .\home\templates\home\home.html:10
+msgid ""
+"Rovana Trade is a leading Egyptian manufacturer specializing in cable trays, "
+"cable ladders, and electrical cable management systems in Egypt."
+msgstr ""
+
+#: .\home\templates\home\home.html:14
+msgid ""
+"cable tray Egypt, cable ladder Egypt, galvanized cable tray, cable "
+"management systems, electrical cable support, Rovana Trade"
+msgstr ""
+
+#: .\home\templates\home\home.html:22
+msgid "Rovana Trade - Leading Cable Tray Manufacturer in Egypt"
+msgstr ""
+
+#: .\home\templates\home\home.html:26
+msgid ""
+"Discover Rovana Trade, experts in manufacturing cable trays and ladders with "
+"high quality and reliability across Egypt."
+msgstr ""
+
+#: .\home\templates\home\home.html:83
+msgid "Your Data Before Calculation"
+msgstr ""
+
+#: .\home\templates\home\home.html:96
+msgid "Enter your name"
+msgstr ""
+
+#: .\home\templates\home\home.html:104
+msgid "Company Name"
+msgstr ""
+
+#: .\home\templates\home\home.html:110
+msgid "Enter your company name"
+msgstr ""
+
+#: .\home\templates\home\home.html:118
+msgid "Phone Number"
+msgstr ""
+
+#: .\home\templates\home\home.html:143
+msgid "Enter a valid Gmail address"
+msgstr ""
+
+#: .\home\templates\home\home.html:150
+msgid "Save & Continue"
+msgstr ""
+
+#: .\home\templates\home\home.html:161
+msgid "Cable tray and ladder products by Rovana Trade"
+msgstr ""
+
+#: .\home\templates\home\home.html:174
+msgid "Calculate Cable Cost"
+msgstr ""
+
+#: .\home\templates\home\home.html:180
+msgid "Type"
+msgstr ""
+
+#: .\home\templates\home\home.html:182
+msgid "Tray Hot Dip Galvanized"
+msgstr ""
+
+#: .\home\templates\home\home.html:183
+msgid "Tray Pre Galvanised"
+msgstr ""
+
+#: .\home\templates\home\home.html:184
+msgid "Ladder"
+msgstr ""
+
+#: .\home\templates\home\home.html:189
+msgid "Width (cm)"
+msgstr ""
+
+#: .\home\templates\home\home.html:194
+msgid "Height (cm)"
+msgstr ""
+
+#: .\home\templates\home\home.html:199 .\home\templates\home\home.html:255
+msgid "Thickness (mm)"
+msgstr ""
+
+#: .\home\templates\home\home.html:204
+msgid "Side Thickness (mm)"
+msgstr ""
+
+#: .\home\templates\home\home.html:209
+msgid "Cross Thickness (mm)"
+msgstr ""
+
+#: .\home\templates\home\home.html:215
+msgid "Calculate Manually"
+msgstr ""
+
+#: .\home\templates\home\home.html:231
+msgid "Calculate Cover Cost"
+msgstr ""
+
+#: .\home\templates\home\home.html:237
+msgid "Cover Type"
+msgstr ""
+
+#: .\home\templates\home\home.html:239
+msgid "Hot Cover Tray"
+msgstr ""
+
+#: .\home\templates\home\home.html:240
+msgid "Cold Cover Tray"
+msgstr ""
+
+#: .\home\templates\home\home.html:245
+msgid "Cover Width (cm)"
+msgstr ""
+
+#: .\home\templates\home\home.html:250
+msgid "Side Height (cm) - fixed"
+msgstr ""
+
+#: .\home\templates\home\home.html:261
+msgid "Calculate Cover"
+msgstr ""
+
+#: .\home\templates\home\home.html:288
+msgid "Total per meter:"
+msgstr ""
+
+#: .\home\templates\home\home.html:289
+msgid "An error occurred during calculation."
+msgstr ""
+
+#: .\home\templates\home\home.html:290
+msgid "EGP"
+msgstr ""
+
+#: .\home\templates\home\home.html:478
+msgid "Why"
+msgstr ""
+
+#: .\home\templates\home\home.html:478
+msgid "Rovana Trade?"
+msgstr ""
+
+#: .\home\templates\home\home.html:482
+msgid ""
+"\n"
+"        Rovana Trade is characterized by high efficiency and distinguished "
+"quality in the products we supply. We offer excellent prices and have a "
+"strong track record in the field of electrical supplies.\n"
+"        "
+msgstr ""
+
+#: .\home\templates\home\home.html:499
+msgid "High Efficiency"
+msgstr ""
+
+#: .\home\templates\home\home.html:501
+msgid ""
+"\n"
+"              Our company is known for its operational efficiency, ensuring "
+"timely and reliable service for all your electrical supply needs.\n"
+"              "
+msgstr ""
+
+#: .\home\templates\home\home.html:513
+msgid "Distinguished Quality"
+msgstr ""
+
+#: .\home\templates\home\home.html:515
+msgid ""
+"\n"
+"              We are committed to providing products of the highest quality, "
+"meeting international standards and exceeding customer expectations.\n"
+"              "
+msgstr ""
+
+#: .\home\templates\home\home.html:537
+msgid "Excellent Prices"
+msgstr ""
+
+#: .\home\templates\home\home.html:539
+msgid ""
+"\n"
+"              We provide competitive pricing without compromising on "
+"quality, ensuring the best value for our clients.\n"
+"              "
+msgstr ""
+
+#: .\home\templates\home\home.html:551
+msgid "Proven Track Record"
+msgstr ""
+
+#: .\home\templates\home\home.html:553
+msgid ""
+"\n"
+"              With a great precedent in the field of electrical supplies, "
+"Rovana Trade is a trusted partner for your projects.\n"
+"              "
+msgstr ""
+
+#: .\home\templates\home\home.html:576
+msgid "Rovana Trade Achievements in Cable Tray & Ladder Manufacturing in Egypt"
+msgstr ""
+
+#: .\home\templates\home\home.html:580
+msgid ""
+"\n"
+"        We specialize in <strong>cable trays in Egypt</strong>, "
+"<strong>cable ladders in Egypt</strong>,\n"
+"        <strong>galvanized cable trays</strong>, and <strong>galvanized "
+"cable ladders</strong>.\n"
+"        We also provide <strong>electrical cable support systems</strong> "
+"and\n"
+"        <strong>cable management solutions</strong> with complete supply and "
+"installation services across Egypt.\n"
+"        "
+msgstr ""
+
+#: .\home\templates\home\home.html:590
+msgid ""
+"Rovana Trade Company achievements in manufacturing and supplying Cable "
+"Trays, Cable Ladders, and Electrical Cable Management Systems in Egypt."
+msgstr ""
+
+#: .\home\templates\home\home.html:603 .\home\templates\home\home.html:612
+msgid "Satisfied Customers"
+msgstr ""
+
+#: .\home\templates\home\home.html:621 .\home\templates\home\home.html:630
+msgid "Products Sold"
+msgstr ""
+
+#: .\home\templates\home\home.html:639 .\home\templates\home\home.html:648
+#: .\home\templates\home\home.html:701
+msgid "Factory Outlets"
+msgstr ""
+
+#: .\home\templates\home\home.html:657 .\home\templates\home\home.html:666
+msgid "Projects Completed"
+msgstr ""
+
+#: .\home\templates\home\home.html:682
+msgid ""
+"Rovana Trade Company achievements in manufacturing and supplying cable trays "
+"and ladders in Egypt."
+msgstr ""
+
+#: .\home\templates\home\home.html:691
+msgid "Cable Trays"
+msgstr ""
+
+#: .\home\templates\home\home.html:692
+msgid "Cable Ladders"
+msgstr ""
+
+#: .\home\templates\home\home.html:693
+msgid "Electrical Cable Support Systems"
+msgstr ""
+
+#: .\ourpartner\templates\ourpartner\ourpartner.html:6
+msgid "Our Partners - Rovana Trade Egypt"
+msgstr ""
+
+#: .\ourpartner\templates\ourpartner\ourpartner.html:10
+msgid ""
+"Discover Rovana Trade partners and collaborations with leading companies in "
+"electrical and industrial sectors across Egypt and the Middle East."
+msgstr ""
+
+#: .\ourpartner\templates\ourpartner\ourpartner.html:14
+msgid "Our Partners - Rovana Trade"
+msgstr ""
+
+#: .\ourpartner\templates\ourpartner\ourpartner.html:18
+msgid ""
+"Rovana Trade is proud of its trusted partners who support our vision in "
+"delivering high-quality cable management solutions."
+msgstr ""
+
+#: .\ourpartner\templates\ourpartner\ourpartner.html:26
+msgid "Our Partners"
+msgstr ""
+
+#: .\ourpartner\templates\ourpartner\ourpartner.html:29
+msgid ""
+"نفخر بالتعاون مع شركائنا الموثوقين الذين يساهمون في تقديم حلول إدارة "
+"الكابلات عالية الجودة في مصر والشرق الأوسط."
+msgstr ""
+
+#: .\ourproject\templates\ourproject\project_list.html:6
+msgid "Our Projects - Rovana Trade Egypt"
+msgstr ""
+
+#: .\ourproject\templates\ourproject\project_list.html:10
+msgid ""
+"Explore Rovana Trade projects in cable trays and ladders across Egypt. "
+"Discover our latest electrical and industrial installations."
+msgstr ""
+
+#: .\ourproject\templates\ourproject\project_list.html:18
+msgid "Our Projects"
+msgstr ""
+
+#: .\ourproject\templates\ourproject\project_list.html:22
+msgid ""
+"Explore our latest cable tray and ladder projects across Egypt and the "
+"Middle East."
+msgstr ""
+
+#: .\ourproject\templates\ourproject\project_list.html:48
+msgid "No image available"
+msgstr ""
+
+#: .\project\settings.py:183
+msgid "English"
+msgstr ""
+
+#: .\project\settings.py:184
+msgid "Arabic"
+msgstr ""
+
+#: .\templates\parts\footer.html:10 .\templates\parts\footer.html:26
+#: .\templates\parts\navbar.html:22
+msgid "About Us"
+msgstr ""
+
+#: .\templates\parts\footer.html:13
+msgid ""
+"\n"
+"                        ROVANA TRADE COMPANY is a leading Egyptian "
+"manufacturer specializing in high-quality cable support systems, including "
+"cable trays and ladders. With a fully equipped factory and expert team, we "
+"deliver durable, customized, and reliable solutions for electrical and "
+"industrial infrastructure across Egypt and the Middle East.\n"
+"                        "
+msgstr ""
+
+#: .\templates\parts\footer.html:23
+msgid "Quick Links"
+msgstr ""
+
+#: .\templates\parts\footer.html:25 .\templates\parts\navbar.html:21
+msgid "Home"
+msgstr ""
+
+#: .\templates\parts\footer.html:28 .\templates\parts\navbar.html:24
+msgid "Our Partner"
+msgstr ""
+
+#: .\templates\parts\footer.html:29 .\templates\parts\navbar.html:25
+msgid "Our Project"
+msgstr ""
+
+#: .\templates\parts\footer.html:37
+msgid "Business Hours"
+msgstr ""
+
+#: .\templates\parts\footer.html:40
+msgid "Every day except Friday:"
+msgstr ""
+
+#: .\templates\parts\footer.html:41
+msgid "09:00 AM to 06:00 PM"
+msgstr ""
+
+#: .\templates\parts\footer.html:45
+msgid "Friday:"
+msgstr ""
+
+#: .\templates\parts\footer.html:46
+msgid "Closed"
+msgstr ""
+
+#: .\templates\parts\footer.html:54
+msgid "Contact Info"
+msgstr ""
+
+#: .\templates\parts\footer.html:80
+msgid "All rights reserved"
+msgstr ""
+
+#: .\templates\parts\footer.html:81
+msgid "Designed and developed by"
+msgstr ""
