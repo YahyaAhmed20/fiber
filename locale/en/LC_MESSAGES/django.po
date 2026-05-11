@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-11 21:37+0300\n"
+"POT-Creation-Date: 2026-05-11 22:03+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -804,10 +804,11 @@ msgstr ""
 msgid "Our Partners"
 msgstr ""
 
-#: .\ourpartner\templates\ourpartner\ourpartner.html:29
+#: .\ourpartner\templates\ourpartner\ourpartner.html:30
 msgid ""
-"نفخر بالتعاون مع شركائنا الموثوقين الذين يساهمون في تقديم حلول إدارة "
-"الكابلات عالية الجودة في مصر والشرق الأوسط."
+"We are proud to collaborate with our trusted partners who contribute to "
+"delivering high-quality cable management solutions across Egypt and the "
+"Middle East."
 msgstr ""
 
 #: .\ourproject\templates\ourproject\project_list.html:6

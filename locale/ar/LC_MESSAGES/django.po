@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-28 13:42+0200\n"
+"POT-Creation-Date: 2026-05-11 22:03+0300\n"
 "PO-Revision-Date: 2026-03-25 20:00+0200\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -334,7 +334,7 @@ msgstr ""
 msgid "Automatically generated information"
 msgstr ""
 
-#: .\contact\admin.py:54 .\contact\models.py:52
+#: .\contact\admin.py:54 .\contact\models.py:55
 msgid "Read Status"
 msgstr ""
 
@@ -347,146 +347,142 @@ msgstr ""
 msgid "Inquiry from {name} has been deleted."
 msgstr ""
 
-#: .\contact\forms.py:9 .\contact\templates\contact\contact.html:124
-
+#: .\contact\forms.py:11 .\contact\templates\contact\contact.html:124
 msgid "Your Name"
 msgstr "اسمك"
 
-#: .\contact\forms.py:13 .\contact\models.py:17
-
+#: .\contact\forms.py:15 .\contact\models.py:20
 msgid "Enter your full name"
 msgstr "ادخل اسمك الكامل"
 
-#: .\contact\forms.py:20 .\contact\templates\contact\contact.html:135
-
+#: .\contact\forms.py:22 .\contact\templates\contact\contact.html:135
 msgid "Your Email"
 msgstr "بريدك الإلكتروني"
 
-#: .\contact\forms.py:23
+#: .\contact\forms.py:25
 #, fuzzy
 #| msgid "Enter a valid Gmail address"
 msgid "Enter your email address"
 msgstr "ادخل بريدك الإلكتروني"
 
-#: .\contact\forms.py:30 .\contact\templates\contact\contact.html:146
+#: .\contact\forms.py:32 .\contact\templates\contact\contact.html:146
 msgid "Your Phone"
 msgstr "رقم موبايلك"
 
-#: .\contact\forms.py:34
+#: .\contact\forms.py:36
 msgid "Enter your phone number (e.g., 01012345678)"
 msgstr "ادخل رقم موبايلك (مثال: 01012345678)"
 
-#: .\contact\forms.py:38
+#: .\contact\forms.py:40
 #, fuzzy
 #| msgid "Phone number must be exactly 11 digits"
 msgid "Phone number must be 11 digits"
 msgstr "رقم الموبايل لازم يكون 11 رقم بالظبط"
 
-#: .\contact\forms.py:43 .\contact\models.py:32
+#: .\contact\forms.py:47 .\contact\models.py:35
 #: .\contact\templates\contact\contact.html:157
 msgid "Inquiry Type"
 msgstr "نوع الاستفسار"
 
-#: .\contact\forms.py:45
-msgid "Select inquiry type"
-msgstr "اختر نوع الاستفسار"
-
-#: .\contact\forms.py:46 .\contact\models.py:8
-msgid "Request a Quote"
-msgstr "طلب عرض سعر"
-
-#: .\contact\forms.py:47 .\contact\models.py:9
-msgid "Technical Support"
-msgstr "دعم فني"
-
-#: .\contact\forms.py:48
-msgid "Partnership Inquiry"
-msgstr "استفسار شراكة"
-
-#: .\contact\forms.py:49
-msgid "General Inquiry"
-msgstr "استفسار عام"
-
-#: .\contact\forms.py:50 .\contact\models.py:11
-msgid "Other"
-msgstr "أخرى"
-
-#: .\contact\forms.py:60 .\contact\models.py:37
+#: .\contact\forms.py:57 .\contact\models.py:40
 #: .\contact\templates\contact\contact.html:169
 msgid "Subject"
 msgstr "الموضوع"
 
-#: .\contact\forms.py:64 .\contact\templates\contact\contact.html:170
+#: .\contact\forms.py:61 .\contact\templates\contact\contact.html:170
 msgid "e.g., Tray Cable Specifications"
 msgstr "مثال: مواصفات حامل الكابلات"
 
-#: .\contact\forms.py:71 .\contact\models.py:41
+#: .\contact\forms.py:68 .\contact\models.py:44
 #: .\contact\templates\contact\contact.html:183
 msgid "Message"
 msgstr "الرسالة"
 
-#: .\contact\forms.py:74
+#: .\contact\forms.py:71
 msgid "Describe your requirements (cable type, quantity, specifications, etc.)"
 msgstr "اكتب متطلباتك (نوع الكابل، الكمية، المواصفات، إلخ)"
 
-#: .\contact\forms.py:90 .\home\templates\home\home.html:126
+#: .\contact\forms.py:91
+msgid "Select inquiry type"
+msgstr "اختر نوع الاستفسار"
+
+#: .\contact\forms.py:98 .\home\templates\home\home.html:126
 msgid "Phone number must be exactly 11 digits"
 msgstr "رقم الموبايل لازم يكون 11 رقم بالظبط"
 
-#: .\contact\models.py:10
+#: .\contact\models.py:9
+msgid "Request a Quote"
+msgstr "طلب عرض سعر"
 
+#: .\contact\models.py:10
+msgid "Technical Support"
+msgstr "دعم فني"
+
+#: .\contact\models.py:11
 msgid "Custom Cable Solutions"
 msgstr "حلول كابلات مخصصة"
 
-#: .\contact\models.py:16 .\home\templates\home\home.html:90
+#: .\contact\models.py:12
+msgid "Partnership Inquiry"
+msgstr "استفسار شراكة"
+
+#: .\contact\models.py:13
+msgid "General Inquiry"
+msgstr "استفسار عام"
+
+#: .\contact\models.py:14
+msgid "Other"
+msgstr "أخرى"
+
+#: .\contact\models.py:19 .\home\templates\home\home.html:90
 msgid "Name"
 msgstr "الاسم"
 
-#: .\contact\models.py:20 .\home\templates\home\home.html:134
+#: .\contact\models.py:23 .\home\templates\home\home.html:134
 msgid "Email"
 msgstr "البريد الإلكتروني"
 
-#: .\contact\models.py:21
+#: .\contact\models.py:24
 #, fuzzy
 #| msgid "Enter a valid Gmail address"
 msgid "Enter a valid email address"
 msgstr "ادخل بريد إلكتروني صحيح"
 
-#: .\contact\models.py:26 .\contact\templates\contact\contact.html:91
+#: .\contact\models.py:29 .\contact\templates\contact\contact.html:91
 msgid "Phone"
 msgstr "التليفون"
 
-#: .\contact\models.py:27
+#: .\contact\models.py:30
 msgid "Enter your phone number (optional)"
 msgstr "ادخل رقم موبايلك (اختياري)"
 
-#: .\contact\models.py:33
+#: .\contact\models.py:36
 msgid "Select the type of your inquiry"
 msgstr "اختر نوع استفسارك"
 
-#: .\contact\models.py:38
+#: .\contact\models.py:41
 msgid "Brief description of your inquiry"
 msgstr "وصف مختصر لاستفسارك"
 
-#: .\contact\models.py:42
+#: .\contact\models.py:45
 msgid "Describe your requirements in detail"
 msgstr "صف متطلباتك بالتفصيل"
 
-#: .\contact\models.py:46
+#: .\contact\models.py:49
 msgid "Created At"
 msgstr "تاريخ الإنشاء"
 
-#: .\contact\models.py:53
+#: .\contact\models.py:56
 msgid "Mark as read when you review this inquiry"
 msgstr "ضع علامة كمقروء عند مراجعة هذا الاستفسار"
 
-#: .\contact\models.py:58
+#: .\contact\models.py:61
 #, fuzzy
 #| msgid "Contact Info"
 msgid "Contact Inquiry"
 msgstr "استفسار تواصل"
 
-#: .\contact\models.py:59
+#: .\contact\models.py:62
 #, fuzzy
 #| msgid "Contact Info"
 msgid "Contact Inquiries"
@@ -503,8 +499,8 @@ msgid ""
 "تواصل مع فريق روفانا تريد للحصول على استفسارات حول كابل التري والليدر، أو "
 "طلب عروض أسعار مخصصة. الدعم السريع لحلول إدارة الكابلات في مصر."
 msgstr ""
-"تواصل مع فريق روفانا تريد للاستفسار عن حوامل وسلالم الكابلات، أو اطلب عرض سعر مخصص. "
-"دعم سريع لحلول إدارة الكابلات في مصر."
+"تواصل مع فريق روفانا تريد للاستفسار عن حوامل وسلالم الكابلات، أو اطلب عرض "
+"سعر مخصص. دعم سريع لحلول إدارة الكابلات في مصر."
 
 #: .\contact\templates\contact\contact.html:12
 msgid ""
@@ -555,9 +551,11 @@ msgid ""
 "                        "
 msgstr ""
 "\n"
-"                        عندك أسئلة عن حوامل وسلالم الكابلات أو محتاج حل مخصص؟\n"
+"                        عندك أسئلة عن حوامل وسلالم الكابلات أو محتاج حل "
+"مخصص؟\n"
 "                        املأ الفورم تحت، وفريق روفانا هيرد عليك بسرعة.\n"
-"                        للمساعدة الفورية، اتصل بينا أو ابعت إيميل لفريق الدعم.\n"
+"                        للمساعدة الفورية، اتصل بينا أو ابعت إيميل لفريق "
+"الدعم.\n"
 "                        "
 
 #: .\contact\templates\contact\contact.html:61
@@ -950,14 +948,18 @@ msgid "Our Partners"
 msgstr "شركاؤنا"
 
 #: .\ourpartner\templates\ourpartner\ourpartner.html:30
+#| msgid ""
+#| "Discover Rovana Trade, experts in manufacturing cable trays and ladders "
+#| "with high quality and reliability across Egypt."
 msgid ""
-"\n"
-"نفخر بالتعاون مع شركائنا الموثوقين الذين يساهمون في تقديم حلول إدارة "
-"الكابلات عالية الجودة في مصر والشرق الأوسط.\n"
-msgstr ""
+"We are proud to collaborate with our trusted partners who contribute to "
+"delivering high-quality cable management solutions across Egypt and the "
+"Middle East."
 
+msgstr ""
+"نفخر بالتعاون مع شركائنا الموثوقين الذين يساهمون في تقديم حلول إدارة "
+"الكابلات عالية الجودة في مصر والشرق الأوسط."
 #: .\ourproject\templates\ourproject\project_list.html:6
-#, fuzzy
 #| msgid "Certificates & Accreditations - Rovana Trade Egypt"
 msgid "Our Projects - Rovana Trade Egypt"
 msgstr "مشروعاتنا - روفانا تريد مصر"
@@ -984,11 +986,11 @@ msgstr "استكشف أحدث مشروعاتنا في حوامل وسلالم ا
 msgid "No image available"
 msgstr "لا توجد صورة متاحة"
 
-#: .\project\settings.py:185
+#: .\project\settings.py:183
 msgid "English"
 msgstr "الإنجليزية"
 
-#: .\project\settings.py:186
+#: .\project\settings.py:184
 msgid "Arabic"
 msgstr "العربية"
 
@@ -1061,15 +1063,3 @@ msgstr "جميع الحقوق محفوظة"
 #: .\templates\parts\footer.html:81
 msgid "Designed and developed by"
 msgstr "تم التصميم والتطوير بواسطة"
-
-#, fuzzy
-#~| msgid ""
-#~| "Discover Rovana Trade, experts in manufacturing cable trays and ladders "
-#~| "with high quality and reliability across Egypt."
-#~ msgid ""
-#~ "We are proud to collaborate with our trusted partners who contribute to "
-#~ "delivering high-quality cable management solutions across Egypt and the "
-#~ "Middle East."
-#~ msgstr ""
-#~ "نفخر بالتعاون مع شركائنا الموثوقين الذين يساهمون في تقديم حلول إدارة "
-#~ "الكابلات عالية الجودة في مصر والشرق الأوسط."
